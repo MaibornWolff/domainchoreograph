@@ -15,69 +15,54 @@ Let's start with setting up the dependencies.
 ### Hello World
 Let's write a *Hello World* program next.
 
-```java
+```kotlin
 @DomainDefinition
-public class Name {
+data class Name (val value: String)
+```
 
-    private String value;
+```kotlin
+import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
+import de.maibornwolff.domainchoreograph.core.api.DomainFunction
 
-    public Name(String value) {
-        this.value = value;
-    }
+@DomainDefinition
+data class HelloWorld(val message: String) {
 
-    public String getName() {
-        return value;
-    }
-    
-    @Override
-    public String toString() {
-        return value;
+    companion object {
+
+        @DomainFunction
+        fun resolveHelloWorld(name: Name): HelloWorld {
+            return HelloWorld("Hello " + name.value)
+        }
     }
 }
 ```
 
-```java
-import de.maibornwolff.domainchoreograph.core.api.DomainFunction;
+```kotlin
+import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
+import de.maibornwolff.domainchoreograph.domainanalytics.DomainAnalytics
 
-@DomainDefinition
-public class HelloWorld {
+object Application {
 
-    private String message;
+    @JvmStatic
+    fun main(args: Array<String>) {
 
-    public HelloWorld(String message) {
-        this.message = message;
-    }
+        // start analytics server
+        val domainAnalytics = DomainAnalytics()
+        domainAnalytics.server.start()
 
-    public String getHelloWorld() {
-        return message;
-    }
-    
-    @DomainFunction
-    public static HelloWorld calculateHelloWorld(Name name) {
-        return new HelloWorld("Hello " + name.getValue());
-    }
-}
-```
+        // setup environment
+        val environment = DomainEnvironment.builder()
+            .addLogger(domainAnalytics.logger)
+            .build()
 
-```java
-import de.maibornwolff.domainchoreograph.core.api.Choreography;
+        // input parameter
+        val name = Name("Bob")
 
-public class Application {
+        // get generated implementation
+        val choreography: HelloWorldChoreography = environment.get()
+        val helloWorld = choreography.calculate(name)
 
-    public static void main(String[] args) {
-        
-        // start Debug server programatically (optional, just to get started)
-        Devtool devtool = new Devtool();
-        devtool.getServer().start();
-
-        Name name = new Name("Bob");
-        
-        HelloWorld helloWorld = Choreography
-                .basedOnValues(name)
-                .usingMiddleware(devtool.getLogger())   // this will ship the result to the running debug server (optional)
-                .calculate(HelloWorld.class);
-
-        System.out.println(helloWorld.getMessage()); 
+        println(helloWorld.message)
     }
 }
 ```

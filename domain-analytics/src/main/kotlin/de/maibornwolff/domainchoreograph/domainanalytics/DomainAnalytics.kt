@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph
+package de.maibornwolff.domainchoreograph.domainanalytics
 
 import de.maibornwolff.domainchoreograph.analyticslogger.DomainAnalyticsLogger
 import de.maibornwolff.domainchoreograph.analyticsserver.DomainAnalyticsServer
