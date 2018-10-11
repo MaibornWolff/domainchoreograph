@@ -120,7 +120,7 @@ A corresponding implementation of that interface is _generated_ at compile time 
 
 ### Domain Environment
 
-A *domain environment* is used to obtain generated implementations of a choreography. You can also configure logging plugins for different purposes.
+A *domain environment* is used to obtain generated implementations of a choreography. You can also configure a logging plugin.
   
 ## Other Information
 * [License](./LICENSE)
