@@ -10,7 +10,7 @@ interface ReflectionType : WithAnnotations {
     val companionType: ReflectionType?
 
     val simpleName: String
-        get() = className.packageName.split(".").last()
+        get() = className.canonicalName.split(".").last()
 }
 
 interface ReflectionVariable : WithAnnotations {

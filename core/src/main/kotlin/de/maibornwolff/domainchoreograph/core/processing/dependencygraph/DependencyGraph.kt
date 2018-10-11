@@ -115,8 +115,10 @@ private fun getDomainTypeOf(element: ReflectionType): ClassName {
     }
 
     val domainType = getDomainTypeOrNullOf(element)
-    return domainType ?: throw ChoreographyDependencyError("Missing @DomainDefinition or @DomainService on $element. " +
-        "Make sure that the class itself or one of this superclasses uses the annotation.")
+    return domainType ?: throw ChoreographyDependencyError(
+        "Missing @DomainDefinition or @DomainService on ${element.className}. " +
+        "Make sure that the class itself or one of this superclasses uses the annotation."
+    )
 }
 
 private fun getDomainTypeOrNullOf(element: ReflectionType): ClassName? {
@@ -130,7 +132,7 @@ private fun getDomainTypeOrNullOf(element: ReflectionType): ClassName? {
     }
     return when {
         domainDefinitions.size > 1 -> throw ChoreographyDependencyError(
-            "In the Hierarchy of a class. Only one @DomainDefinition or @DomainService is allowed. " +
+            "Only one @DomainDefinition or @DomainService is allowed in the inheritance hierarchy of a class. " +
                 "Found forbidden annotation at ${domainDefinitions.joinToString(", ")}"
         )
         domainDefinitions.isNotEmpty() -> domainDefinitions[0]
@@ -153,10 +155,10 @@ private fun getDomainMethodOf(element: ReflectionType): Pair<ReflectionType, Ref
     }
 
     if (domainMethods.isEmpty()) {
-        throw DomainException("No @DomainFunction defined for ${element.simpleName}")
+        throw DomainException("No @DomainFunction defined for ${element.className}")
     }
     if (domainMethods.size > 1) {
-        throw DomainException("Only one @DomainFunction allowed. Multiple @DomainFunctions are defined for ${element.simpleName}")
+        throw DomainException("Only one @DomainFunction allowed. Multiple @DomainFunctions are defined for ${element.className}")
     }
 
     return element to domainMethods[0]
