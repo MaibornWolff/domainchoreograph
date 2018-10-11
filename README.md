@@ -1,5 +1,7 @@
 # DomainChoreograph
 
+[![Build Status](https://travis-ci.org/MaibornWolff/domainchoreograph.svg?branch=master)](https://travis-ci.org/MaibornWolff/domainchoreograph)
+
 *DomainChoreograph* is a java library to describe, visualize and debug business algorithms in a declarative way. 
 
 ## Getting started
