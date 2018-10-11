@@ -6,24 +6,11 @@
 
 Let's start with setting up the dependencies.
 
-### Maven
+### Gradle/Maven
 
-```xml
-```
-
-```xml
-``` 
-
-### Gradle
-
-```groovy
-```
-
-```groovy
-```
+*coming soon*
 
 ### Hello World
-
 Let's write a *Hello World* program next.
 
 ```java
@@ -105,7 +92,7 @@ What your browser is showing:
 
 ## Some terminology
 
-In order to explain the underlaying concepts and to describe detailed usage of the library, let's agree on some terminology first.
+In order to explain the underlying concepts and to describe detailed usage of the library, let's agree on some terminology first.
 
 ### Domain Definition
 
@@ -143,12 +130,5 @@ A *domain object* is an instance of a *domain type* and represents a value that 
 The result of defining an bunch of *domain definitions* is a directed acyclic graph (DAG) whereas *domain definitions* represent the set of nodes. Ingoing edges of each node are defined by parameters of the *domain function*. 
 In order to actually calculate something we need to state what we want to calculate based on what. That statement we call *choreography* and is specified by a fluent API.
   
-
-## Full Documentation
-...
-
-## Bugs and Feedback
-...
-
-## LICENCE
-...
+## Other Information
+* [License](./LICENSE)
