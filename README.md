@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/MaibornWolff/domainchoreograph.svg?branch=master)](https://travis-ci.org/MaibornWolff/domainchoreograph)
 
-*DomainChoreograph* is a java library to describe, visualize and debug business algorithms in a declarative way. 
+*DomainChoreograph* is a kotlin library to describe, visualize and debug business algorithms in a declarative way. 
 
 ## Getting started
 
@@ -88,34 +88,39 @@ It uniquely identifies a *domain object* in a given context. Furthermore, an alg
 
 ### Domain Function
 
-A *Domain Function* represents the algorithm of a *Domain Definition*. It's supposed to be *pure* which means the method has no side effects and the result depends on method parameters only. The following constraints have to remain true:
-* the method annotated by `@DomainFunction` needs to be static.
+A *domain function* represents the algorithm of a *domain definition*. It's supposed to be _pure_ which means the method has no side effects and the result depends on method parameters only. The following constraints have to remain true:
+* the method annotated by `@DomainFunction` needs to be defined in a companion object (think of it as some sort of factory method).
 * there can only be one method in a class annotated by `@DomainFunction`.
 * if a class has a method annotated by `@DomainFunction` the class itself needs to be annotated by `@DomainDefinition`.
 
-If side effects are needed, for example to write or read something to a database, use *domain services* (see below).
+If side effects are needed, for example to write or read something to/from a database, use *domain services* (see below).
 
 #### Method Parameters of a Domain Function
-The method parameters of a domain function are *domain types* identified by *domain definitions*. If the provided *domain type* is a *domain definition*, no further specification is needed. If on the other hand the *domain type* is not a *domain definition* the parameter needs to be annotated by `@DefinedBy(SomeDomainDefinition.class)` whereas `SomeDomainDefinition.class` is a class annotated by `@DomainDefinition` and has a *domain function* which returns the *domain type*.
+The method parameters of a domain function are either *domain definition types* or *domain service types*.
 
-By specifying parameters you can accidentally build cycles in the resulting dependency graph. That does not make any sense and is of course not allowed. The resulting dependency graph needs to be acyclic. 
+By specifying parameters you can accidentally build cycles in the resulting dependency graph. That does not make any sense and is of course prohibited. The resulting dependency graph needs to be _acyclic_. 
 
 #### Return Type of a Domain Function
-The return type of a domain function is called *domain type* and **can** but not necessarily **is** a *domain definition type*.
+A *domain function* return the *domain definition type* the domain function is defined in.
 
-### Domain Type
-A *domain type* is any class that represents a data structure specific for the domain at hand. A *domain type* can of course also be a primitive or domain agnostic type (e.g. String, Date, ...) but it is not encouraged due to encapsulation reasons.
-
-### Domain Object
-A *domain object* is an instance of a *domain type* and represents a value that is used as input or result of the specified choreography. 
+### Domain Definition Object
+A *domain definition object* is an instance of a *domain definition type* and represents a value that is used as input or result of a choreography. 
 
 ### Domain Service
-...
+A *domain service* is similar to a *domain definition* but is not going to be serialized to during process visualization.
+
+### Domain Service Object
+A *domain service object* is an instance of a *domain service type* and represents a service that is used in domain functions. 
 
 ### Choreography
 
-The result of defining an bunch of *domain definitions* is a directed acyclic graph (DAG) whereas *domain definitions* represent the set of nodes. Ingoing edges of each node are defined by parameters of the *domain function*. 
-In order to actually calculate something we need to state what we want to calculate based on what. That statement we call *choreography* and is specified by a fluent API.
+The result of defining an bunch of domain definitions is a directed acyclic graph (DAG) whereas *domain definition types* represent the set of nodes. Ingoing edges of each node are defined by parameters of the *domain function*. In order to actually calculate something we need to state what we want to calculate based on what. That statement we call *choreography* and is defined by an interface annotated by `@DomainChoreography`.
+
+A corresponding implementation of that interface is _generated_ at compile time and can be obtained by a previously configured *domain environment* (see example above). It can also be stated as dependency in a domain definition. That way *sub choreographies* are made possible.
+
+### Domain Environment
+
+A *domain environment* is used to obtain generated implementations of a choreography. You can also configure logging plugins for different purposes.
   
 ## Other Information
 * [License](./LICENSE)
