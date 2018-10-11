@@ -1,0 +1,751 @@
+{
+  "nodes": {
+    "Node-59": {
+      "id": "Node-59",
+      "name": "Summe",
+      "scope": "Scope-6",
+      "value": {
+        "summe": 20
+      },
+      "preview": "20"
+    },
+    "Node-58": {
+      "id": "Node-58",
+      "name": "StdDev",
+      "scope": "Scope-6",
+      "value": {
+        "stdDev": 2.23606797749979
+      },
+      "preview": "2.23606797749979"
+    },
+    "Node-57": {
+      "id": "Node-57",
+      "name": "Mittelwert",
+      "scope": "Scope-6",
+      "value": {
+        "mittelwert": 5.0
+      },
+      "preview": "5.0"
+    },
+    "Node-56": {
+      "id": "Node-56",
+      "name": "Anzahl",
+      "scope": "Scope-6",
+      "value": {
+        "anzahl": 4
+      },
+      "preview": "4"
+    },
+    "Node-55": {
+      "id": "Node-55",
+      "name": "Varianz",
+      "scope": "Scope-6",
+      "value": {
+        "varianz": 5.0
+      },
+      "preview": "5.0"
+    },
+    "Node-77": {
+      "id": "Node-77",
+      "name": "Statistik",
+      "scope": "Scope-8",
+      "value": {
+        "stichprobe": {
+          "stichprobe": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "anzahl": {
+          "anzahl": 5
+        },
+        "summe": {
+          "summe": 15
+        },
+        "mittelwert": {
+          "mittelwert": 3.0
+        },
+        "varianz": {
+          "varianz": 2.0
+        },
+        "stdDev": {
+          "stdDev": 1.4142135623730951
+        }
+      },
+      "preview": "Statistik{stichprobe\u003d[1, 2, 3, 4, 5], anzahl\u003d5, summe\u003d15, mittelwert\u003d3.0, varianz\u003d2.0, stdDev\u003d1.4142135623730951}"
+    },
+    "Node-54": {
+      "id": "Node-54",
+      "name": "StichprobenPool",
+      "scope": "Scope-6",
+      "value": {
+        "stichprobenList": [
+          {
+            "stichprobe": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "stichprobe": [
+              5,
+              9,
+              4,
+              3,
+              1
+            ]
+          },
+          {
+            "stichprobe": [
+              2,
+              4,
+              6,
+              8
+            ]
+          }
+        ]
+      },
+      "preview": "Anzahl Stichproben: 3"
+    },
+    "Node-76": {
+      "id": "Node-76",
+      "name": "Stichprobe",
+      "scope": "Scope-8",
+      "value": {
+        "stichprobe": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "preview": "[1, 2, 3, 4, 5]"
+    },
+    "Node-53": {
+      "id": "Node-53",
+      "name": "StichprobenPool",
+      "scope": "root",
+      "value": {
+        "stichprobenList": [
+          {
+            "stichprobe": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "stichprobe": [
+              5,
+              9,
+              4,
+              3,
+              1
+            ]
+          },
+          {
+            "stichprobe": [
+              2,
+              4,
+              6,
+              8
+            ]
+          }
+        ]
+      },
+      "preview": "Anzahl Stichproben: 3"
+    },
+    "Node-75": {
+      "id": "Node-75",
+      "name": "Summe",
+      "scope": "Scope-8",
+      "value": {
+        "summe": 15
+      },
+      "preview": "15"
+    },
+    "Node-52": {
+      "id": "Node-52",
+      "name": "GesamtAuswertung",
+      "scope": "root",
+      "value": {
+        "statistikList": [
+          {
+            "stichprobe": {
+              "stichprobe": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            },
+            "anzahl": {
+              "anzahl": 5
+            },
+            "summe": {
+              "summe": 15
+            },
+            "mittelwert": {
+              "mittelwert": 3.0
+            },
+            "varianz": {
+              "varianz": 2.0
+            },
+            "stdDev": {
+              "stdDev": 1.4142135623730951
+            }
+          },
+          {
+            "stichprobe": {
+              "stichprobe": [
+                5,
+                9,
+                4,
+                3,
+                1
+              ]
+            },
+            "anzahl": {
+              "anzahl": 5
+            },
+            "summe": {
+              "summe": 22
+            },
+            "mittelwert": {
+              "mittelwert": 4.4
+            },
+            "varianz": {
+              "varianz": 6.6000000000000005
+            },
+            "stdDev": {
+              "stdDev": 2.569046515733026
+            }
+          },
+          {
+            "stichprobe": {
+              "stichprobe": [
+                2,
+                4,
+                6,
+                8
+              ]
+            },
+            "anzahl": {
+              "anzahl": 4
+            },
+            "summe": {
+              "summe": 20
+            },
+            "mittelwert": {
+              "mittelwert": 5.0
+            },
+            "varianz": {
+              "varianz": 5.0
+            },
+            "stdDev": {
+              "stdDev": 2.23606797749979
+            }
+          }
+        ]
+      },
+      "preview": "Anzahl Gesamtauswertungen: 3"
+    },
+    "Node-74": {
+      "id": "Node-74",
+      "name": "StdDev",
+      "scope": "Scope-8",
+      "value": {
+        "stdDev": 1.4142135623730951
+      },
+      "preview": "1.4142135623730951"
+    },
+    "Node-73": {
+      "id": "Node-73",
+      "name": "Mittelwert",
+      "scope": "Scope-8",
+      "value": {
+        "mittelwert": 3.0
+      },
+      "preview": "3.0"
+    },
+    "Node-72": {
+      "id": "Node-72",
+      "name": "Anzahl",
+      "scope": "Scope-8",
+      "value": {
+        "anzahl": 5
+      },
+      "preview": "5"
+    },
+    "Node-71": {
+      "id": "Node-71",
+      "name": "Varianz",
+      "scope": "Scope-8",
+      "value": {
+        "varianz": 2.0
+      },
+      "preview": "2.0"
+    },
+    "Node-70": {
+      "id": "Node-70",
+      "name": "StichprobenPool",
+      "scope": "Scope-8",
+      "value": {
+        "stichprobenList": [
+          {
+            "stichprobe": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "stichprobe": [
+              5,
+              9,
+              4,
+              3,
+              1
+            ]
+          },
+          {
+            "stichprobe": [
+              2,
+              4,
+              6,
+              8
+            ]
+          }
+        ]
+      },
+      "preview": "Anzahl Stichproben: 3"
+    },
+    "Node-69": {
+      "id": "Node-69",
+      "name": "Statistik",
+      "scope": "Scope-7",
+      "value": {
+        "stichprobe": {
+          "stichprobe": [
+            5,
+            9,
+            4,
+            3,
+            1
+          ]
+        },
+        "anzahl": {
+          "anzahl": 5
+        },
+        "summe": {
+          "summe": 22
+        },
+        "mittelwert": {
+          "mittelwert": 4.4
+        },
+        "varianz": {
+          "varianz": 6.6000000000000005
+        },
+        "stdDev": {
+          "stdDev": 2.569046515733026
+        }
+      },
+      "preview": "Statistik{stichprobe\u003d[5, 9, 4, 3, 1], anzahl\u003d5, summe\u003d22, mittelwert\u003d4.4, varianz\u003d6.6000000000000005, stdDev\u003d2.569046515733026}"
+    },
+    "Node-68": {
+      "id": "Node-68",
+      "name": "Stichprobe",
+      "scope": "Scope-7",
+      "value": {
+        "stichprobe": [
+          5,
+          9,
+          4,
+          3,
+          1
+        ]
+      },
+      "preview": "[5, 9, 4, 3, 1]"
+    },
+    "Node-67": {
+      "id": "Node-67",
+      "name": "Summe",
+      "scope": "Scope-7",
+      "value": {
+        "summe": 22
+      },
+      "preview": "22"
+    },
+    "Node-66": {
+      "id": "Node-66",
+      "name": "StdDev",
+      "scope": "Scope-7",
+      "value": {
+        "stdDev": 2.569046515733026
+      },
+      "preview": "2.569046515733026"
+    },
+    "Node-65": {
+      "id": "Node-65",
+      "name": "Mittelwert",
+      "scope": "Scope-7",
+      "value": {
+        "mittelwert": 4.4
+      },
+      "preview": "4.4"
+    },
+    "Node-64": {
+      "id": "Node-64",
+      "name": "Anzahl",
+      "scope": "Scope-7",
+      "value": {
+        "anzahl": 5
+      },
+      "preview": "5"
+    },
+    "Node-63": {
+      "id": "Node-63",
+      "name": "Varianz",
+      "scope": "Scope-7",
+      "value": {
+        "varianz": 6.6000000000000005
+      },
+      "preview": "6.6000000000000005"
+    },
+    "Node-62": {
+      "id": "Node-62",
+      "name": "StichprobenPool",
+      "scope": "Scope-7",
+      "value": {
+        "stichprobenList": [
+          {
+            "stichprobe": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          {
+            "stichprobe": [
+              5,
+              9,
+              4,
+              3,
+              1
+            ]
+          },
+          {
+            "stichprobe": [
+              2,
+              4,
+              6,
+              8
+            ]
+          }
+        ]
+      },
+      "preview": "Anzahl Stichproben: 3"
+    },
+    "Node-61": {
+      "id": "Node-61",
+      "name": "Statistik",
+      "scope": "Scope-6",
+      "value": {
+        "stichprobe": {
+          "stichprobe": [
+            2,
+            4,
+            6,
+            8
+          ]
+        },
+        "anzahl": {
+          "anzahl": 4
+        },
+        "summe": {
+          "summe": 20
+        },
+        "mittelwert": {
+          "mittelwert": 5.0
+        },
+        "varianz": {
+          "varianz": 5.0
+        },
+        "stdDev": {
+          "stdDev": 2.23606797749979
+        }
+      },
+      "preview": "Statistik{stichprobe\u003d[2, 4, 6, 8], anzahl\u003d4, summe\u003d20, mittelwert\u003d5.0, varianz\u003d5.0, stdDev\u003d2.23606797749979}"
+    },
+    "Node-60": {
+      "id": "Node-60",
+      "name": "Stichprobe",
+      "scope": "Scope-6",
+      "value": {
+        "stichprobe": [
+          2,
+          4,
+          6,
+          8
+        ]
+      },
+      "preview": "[2, 4, 6, 8]"
+    }
+  },
+  "dependencies": [
+    {
+      "src": "Node-53",
+      "target": "Node-52"
+    },
+    {
+      "src": "Node-57",
+      "target": "Node-55"
+    },
+    {
+      "src": "Node-56",
+      "target": "Node-55"
+    },
+    {
+      "src": "Node-60",
+      "target": "Node-55"
+    },
+    {
+      "src": "Node-60",
+      "target": "Node-56"
+    },
+    {
+      "src": "Node-56",
+      "target": "Node-57"
+    },
+    {
+      "src": "Node-59",
+      "target": "Node-57"
+    },
+    {
+      "src": "Node-55",
+      "target": "Node-58"
+    },
+    {
+      "src": "Node-60",
+      "target": "Node-59"
+    },
+    {
+      "src": "Node-55",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-56",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-57",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-58",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-59",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-60",
+      "target": "Node-61"
+    },
+    {
+      "src": "Node-65",
+      "target": "Node-63"
+    },
+    {
+      "src": "Node-64",
+      "target": "Node-63"
+    },
+    {
+      "src": "Node-68",
+      "target": "Node-63"
+    },
+    {
+      "src": "Node-68",
+      "target": "Node-64"
+    },
+    {
+      "src": "Node-64",
+      "target": "Node-65"
+    },
+    {
+      "src": "Node-67",
+      "target": "Node-65"
+    },
+    {
+      "src": "Node-63",
+      "target": "Node-66"
+    },
+    {
+      "src": "Node-68",
+      "target": "Node-67"
+    },
+    {
+      "src": "Node-63",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-64",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-65",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-66",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-67",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-68",
+      "target": "Node-69"
+    },
+    {
+      "src": "Node-73",
+      "target": "Node-71"
+    },
+    {
+      "src": "Node-72",
+      "target": "Node-71"
+    },
+    {
+      "src": "Node-76",
+      "target": "Node-71"
+    },
+    {
+      "src": "Node-76",
+      "target": "Node-72"
+    },
+    {
+      "src": "Node-72",
+      "target": "Node-73"
+    },
+    {
+      "src": "Node-75",
+      "target": "Node-73"
+    },
+    {
+      "src": "Node-71",
+      "target": "Node-74"
+    },
+    {
+      "src": "Node-76",
+      "target": "Node-75"
+    },
+    {
+      "src": "Node-71",
+      "target": "Node-77"
+    },
+    {
+      "src": "Node-72",
+      "target": "Node-77"
+    },
+    {
+      "src": "Node-73",
+      "target": "Node-77"
+    },
+    {
+      "src": "Node-74",
+      "target": "Node-77"
+    },
+    {
+      "src": "Node-75",
+      "target": "Node-77"
+    },
+    {
+      "src": "Node-76",
+      "target": "Node-77"
+    }
+  ],
+  "scopes": {
+    "root": {
+      "id": "root",
+      "executionContext": "Application",
+      "nodes": [
+        "Node-52",
+        "Node-53"
+      ]
+    },
+    "Scope-6": {
+      "id": "Scope-6",
+      "executionContext": "Node-52",
+      "nodes": [
+        "Node-54",
+        "Node-55",
+        "Node-56",
+        "Node-57",
+        "Node-58",
+        "Node-59",
+        "Node-60",
+        "Node-61"
+      ]
+    },
+    "Scope-8": {
+      "id": "Scope-8",
+      "executionContext": "Node-52",
+      "nodes": [
+        "Node-70",
+        "Node-71",
+        "Node-72",
+        "Node-73",
+        "Node-74",
+        "Node-75",
+        "Node-76",
+        "Node-77"
+      ]
+    },
+    "Scope-7": {
+      "id": "Scope-7",
+      "executionContext": "Node-52",
+      "nodes": [
+        "Node-62",
+        "Node-63",
+        "Node-64",
+        "Node-65",
+        "Node-66",
+        "Node-67",
+        "Node-68",
+        "Node-69"
+      ]
+    }
+  },
+  "executionContexts": {
+    "Node-52": {
+      "id": "Node-52",
+      "scopes": [
+        "Scope-6",
+        "Scope-7",
+        "Scope-8"
+      ]
+    },
+    "Application": {
+      "id": "Application",
+      "scopes": [
+        "root"
+      ]
+    }
+  }
+}

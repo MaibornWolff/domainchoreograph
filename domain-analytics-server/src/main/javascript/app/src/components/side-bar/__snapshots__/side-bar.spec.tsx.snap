@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar should render 1`] = `
+<div
+  class="class-mock class-mock emotion-14"
+  style="width:350px"
+>
+  <div
+    class="class-mock emotion-0"
+  />
+  <div
+    class="class-mock emotion-12 class-mock emotion-13"
+  >
+    <div>
+      <h2
+        class="class-mock emotion-1"
+      >
+        name
+      </h2>
+      <pre
+        class="class-mock emotion-2"
+      >
+        preview
+      </pre>
+      <div>
+        <div
+          class="class-mock emotion-8"
+        >
+          <div
+            class="class-mock emotion-3 class-mock emotion-4"
+          >
+            [object Object]
+          </div>
+          <div
+            class="class-mock emotion-5"
+          />
+          <h2
+            class="class-mock emotion-6"
+          >
+            Inspection
+          </h2>
+          <div
+            class="class-mock emotion-7"
+          />
+        </div>
+        <div
+          class="class-mock emotion-11"
+        >
+          <div
+            class="class-mock emotion-10"
+          >
+            <div
+              class="class-mock emotion-9"
+            >
+              <div
+                class="react-json-view"
+                style="font-family:monospace;cursor:default;background-color:rgba(0, 0, 0, 0);position:relative"
+              >
+                <div
+                  class="pretty-json-container object-container"
+                >
+                  <div
+                    class="object-content"
+                  >
+                    <div
+                      class="object-key-val"
+                    >
+                      <span>
+                        <span
+                          style="display:inline-block;cursor:pointer"
+                        >
+                          <div
+                            class="icon-container"
+                            style="display:inline-block;width:17px"
+                          >
+                            <span
+                              class="expanded-icon"
+                            >
+                              <svg
+                                fill="currentColor"
+                                style="vertical-align:top;color:#586e75;height:1em;width:1em;padding-left:2px"
+                                viewBox="0 0 15 15"
+                              >
+                                <path
+                                  d="M0 5l6 6 6-6z"
+                                />
+                              </svg>
+                            </span>
+                          </div>
+                          <span
+                            style="display:inline-block;color:#002b36;letter-spacing:0.5px;font-style:none;vertical-align:top;opacity:0.85;:hover:[object Object]"
+                          >
+                            <span
+                              class="object-key"
+                            >
+                              <span
+                                style="vertical-align:top"
+                              >
+                                "
+                              </span>
+                              <span>
+                                name
+                              </span>
+                              <span
+                                style="vertical-align:top"
+                              >
+                                "
+                              </span>
+                            </span>
+                            <span
+                              style="display:inline-block;margin:0px 5px;color:#002b36;vertical-align:top"
+                            >
+                              :
+                            </span>
+                          </span>
+                          <span
+                            style="display:inline-block;cursor:pointer;font-weight:bold;color:#002b36"
+                          >
+                            {
+                          </span>
+                        </span>
+                        <div
+                          class="object-meta-data"
+                          style="display:inline-block;padding:0px 0px 0px 10px"
+                        >
+                          <span
+                            class="object-size"
+                            style="color:rgba(0, 0, 0, 0.3);border-radius:3px;font-style:italic;margin:0px 6px 0px 0px;cursor:default"
+                          >
+                            1 item
+                          </span>
+                          <span
+                            class="copy-to-clipboard-container"
+                          >
+                            <span
+                              style="cursor:pointer;display:inline"
+                            >
+                              <span
+                                class="copy-icon"
+                              >
+                                <svg
+                                  fill="currentColor"
+                                  preserveAspectRatio="xMidYMid meet"
+                                  style="vertical-align:top;color:#268bd2;font-size:15px;margin-right:3px;height:1em;width:1em"
+                                  viewBox="0 0 40 40"
+                                >
+                                  <g>
+                                    <path
+                                      d="m30 35h-25v-22.5h25v7.5h2.5v-12.5c0-1.4-1.1-2.5-2.5-2.5h-7.5c0-2.8-2.2-5-5-5s-5 2.2-5 5h-7.5c-1.4 0-2.5 1.1-2.5 2.5v27.5c0 1.4 1.1 2.5 2.5 2.5h25c1.4 0 2.5-1.1 2.5-2.5v-5h-2.5v5z m-20-27.5h2.5s2.5-1.1 2.5-2.5 1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5 1.3 2.5 2.5 2.5h2.5s2.5 1.1 2.5 2.5h-20c0-1.5 1.1-2.5 2.5-2.5z m-2.5 20h5v-2.5h-5v2.5z m17.5-5v-5l-10 7.5 10 7.5v-5h12.5v-5h-12.5z m-17.5 10h7.5v-2.5h-7.5v2.5z m12.5-17.5h-12.5v2.5h12.5v-2.5z m-7.5 5h-5v2.5h5v-2.5z"
+                                    />
+                                  </g>
+                                </svg>
+                              </span>
+                            </span>
+                          </span>
+                        </div>
+                      </span>
+                      <div
+                        class="pushed-content object-container"
+                      >
+                        <div
+                          class="object-content"
+                          style="margin-left:6px"
+                        >
+                          <div
+                            class="variable-row"
+                            style="padding-top:3px;padding-right:5px;padding-bottom:3px;border-left:1px solid rgb(235, 235, 235);:hover:[object Object];padding-left:10px"
+                          >
+                            <span>
+                              <span
+                                class="object-key"
+                                style="display:inline-block;color:#002b36;letter-spacing:0.5px;font-style:none;vertical-align:top;opacity:0.85;:hover:[object Object]"
+                              >
+                                <span
+                                  style="vertical-align:top"
+                                >
+                                  "
+                                </span>
+                                <span
+                                  style="display:inline-block"
+                                >
+                                  test
+                                </span>
+                                <span
+                                  style="vertical-align:top"
+                                >
+                                  "
+                                </span>
+                              </span>
+                              <span
+                                style="display:inline-block;margin:0px 5px;color:#002b36;vertical-align:top"
+                              >
+                                :
+                              </span>
+                            </span>
+                            <div
+                              class="variable-value"
+                              style="display:inline-block;padding-right:6px;position:relative;cursor:default"
+                            >
+                              <div
+                                style="display:inline-block;color:#cb4b16"
+                              >
+                                <span
+                                  class="data-type-label"
+                                  style="font-size:11px;margin-right:4px;opacity:0.8"
+                                >
+                                  string
+                                </span>
+                                <span
+                                  class="string-value"
+                                  style="cursor:default"
+                                >
+                                  "123"
+                                </span>
+                              </div>
+                            </div>
+                            <span
+                              class="copy-to-clipboard-container"
+                            >
+                              <span
+                                style="cursor:pointer;display:inline"
+                              >
+                                <span
+                                  class="copy-icon"
+                                >
+                                  <svg
+                                    fill="currentColor"
+                                    preserveAspectRatio="xMidYMid meet"
+                                    style="vertical-align:top;color:#268bd2;font-size:15px;margin-right:3px;height:1em;width:1em"
+                                    viewBox="0 0 40 40"
+                                  >
+                                    <g>
+                                      <path
+                                        d="m30 35h-25v-22.5h25v7.5h2.5v-12.5c0-1.4-1.1-2.5-2.5-2.5h-7.5c0-2.8-2.2-5-5-5s-5 2.2-5 5h-7.5c-1.4 0-2.5 1.1-2.5 2.5v27.5c0 1.4 1.1 2.5 2.5 2.5h25c1.4 0 2.5-1.1 2.5-2.5v-5h-2.5v5z m-20-27.5h2.5s2.5-1.1 2.5-2.5 1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5 1.3 2.5 2.5 2.5h2.5s2.5 1.1 2.5 2.5h-20c0-1.5 1.1-2.5 2.5-2.5z m-2.5 20h5v-2.5h-5v2.5z m17.5-5v-5l-10 7.5 10 7.5v-5h12.5v-5h-12.5z m-17.5 10h7.5v-2.5h-7.5v2.5z m12.5-17.5h-12.5v2.5h12.5v-2.5z m-7.5 5h-5v2.5h5v-2.5z"
+                                      />
+                                    </g>
+                                  </svg>
+                                </span>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <span
+                        class="brace-row"
+                      >
+                        <span
+                          style="display:inline-block;cursor:pointer;font-weight:bold;color:#002b36;padding-left:3px"
+                        >
+                          }
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

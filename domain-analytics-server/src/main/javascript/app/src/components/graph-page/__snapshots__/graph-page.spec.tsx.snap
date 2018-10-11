@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GraphPage should render with graph 1`] = `
+<Wrapper>
+  <withRouter(renderNavigationBarWithRoutes) />
+  <ContentWrapper>
+    <GraphWrapper>
+      <MapInteractionCSS
+        key="root"
+      >
+        <PaddingWrapper>
+          <Connect(Graph)
+            scope="root"
+          />
+        </PaddingWrapper>
+      </MapInteractionCSS>
+    </GraphWrapper>
+    <Connect(WithTheme(SideBar)) />
+  </ContentWrapper>
+</Wrapper>
+`;
+
+exports[`GraphPage should render with graph without scopes 1`] = `
+<Wrapper>
+  <withRouter(renderNavigationBarWithRoutes) />
+  <ContentWrapper>
+    <GraphWrapper>
+      <p>
+        No Scopes
+      </p>
+    </GraphWrapper>
+    <Connect(WithTheme(SideBar)) />
+  </ContentWrapper>
+</Wrapper>
+`;
+
+exports[`GraphPage should render with scope 1`] = `
+<Wrapper>
+  <withRouter(renderNavigationBarWithRoutes) />
+  <ContentWrapper>
+    <GraphWrapper>
+      <MapInteractionCSS
+        key="root"
+      >
+        <PaddingWrapper>
+          <Connect(Graph)
+            scope="root"
+          />
+        </PaddingWrapper>
+      </MapInteractionCSS>
+    </GraphWrapper>
+    <Connect(WithTheme(SideBar)) />
+  </ContentWrapper>
+</Wrapper>
+`;
+
+exports[`GraphPage should render without graph 1`] = `
+<p>
+  Graph is required
+</p>
+`;

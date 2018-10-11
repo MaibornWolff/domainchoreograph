@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should call fetch graph on mount 1`] = `
+<Wrapper>
+  <Connect(DropZone)>
+    <ConnectedRouter
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          path="/load"
+        />
+        <Route
+          component={[Function]}
+          path="/:executionContext/:scope"
+        />
+        <Route
+          component={[Function]}
+          path="/:executionContext"
+        />
+        <Route
+          component={[Function]}
+          path="/"
+        />
+      </Switch>
+    </ConnectedRouter>
+  </Connect(DropZone)>
+</Wrapper>
+`;
+
+exports[`App should render if graph is loaded 1`] = `
+.emotion-2 {
+  color: rgba(0,0,0,.87);
+  background: #E0E0E0;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  height: 100vh;
+  width: 100vw;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  />
+</div>
+`;
+
+exports[`App should render if graph is not loaded 1`] = `
+.emotion-2 {
+  color: rgba(0,0,0,.87);
+  background: #E0E0E0;
+  overflow: hidden;
+}
+
+.emotion-0 {
+  height: 100vh;
+  width: 100vw;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  />
+</div>
+`;

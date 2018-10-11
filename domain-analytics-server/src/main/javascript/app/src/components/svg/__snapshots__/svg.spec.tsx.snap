@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Svg should render 1`] = `
+<Wrapper
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<svg><text>This is a test</text></svg>",
+    }
+  }
+/>
+`;
+
+exports[`Svg should render with class name 1`] = `
+<Wrapper
+  className="my-class"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<svg><text>This is a test</text></svg>",
+    }
+  }
+/>
+`;

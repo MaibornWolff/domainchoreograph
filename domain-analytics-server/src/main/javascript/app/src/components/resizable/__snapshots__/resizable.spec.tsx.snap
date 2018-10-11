@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Resizable should render 1`] = `
+<Wrapper
+  style={
+    Object {
+      "width": 350,
+    }
+  }
+>
+  <ResizeArea
+    onMouseDown={[Function]}
+  />
+  <ScrollWrapper />
+</Wrapper>
+`;

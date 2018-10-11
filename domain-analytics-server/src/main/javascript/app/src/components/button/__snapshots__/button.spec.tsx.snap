@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render 1`] = `
+.emotion-0 {
+  border: none;
+  padding: .5rem;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  color: rgba(0,0,0,.87);
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  outline: none;
+  background: rgba(0,0,0,.15);
+}
+
+<button
+  class="emotion-0 emotion-1"
+/>
+`;
+
+exports[`Button should render with light font 1`] = `
+.emotion-0 {
+  border: none;
+  padding: .5rem;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+  color: rgba(255,255,255,1);
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  outline: none;
+  background: rgba(0,0,0,.15);
+}
+
+<button
+  class="emotion-0 emotion-1"
+/>
+`;

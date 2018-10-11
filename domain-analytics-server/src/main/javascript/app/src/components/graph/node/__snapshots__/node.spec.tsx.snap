@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Node should render 1`] = `
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 8px;
+  width: 10px;
+  height: 5px;
+  font-size: calc(1rem * 0.5);
+  box-sizing: border-box;
+  left: 45px;
+  top: 97.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+<div
+  class="emotion-2 emotion-3"
+  scale="0.5"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    test
+  </div>
+</div>
+`;
+
+exports[`Node should render if selected 1`] = `
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px #3956ac;
+  box-shadow: 0 0 5px 1px rgba(57,86,172,0.5);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 8px;
+  width: 10px;
+  height: 5px;
+  font-size: calc(1rem * 0.5);
+  box-sizing: border-box;
+  left: 45px;
+  top: 97.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+<div
+  class="emotion-2 emotion-3"
+  scale="0.5"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    test
+  </div>
+</div>
+`;
+
+exports[`Node should render with preview 1`] = `
+.emotion-4 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 8px;
+  width: 10px;
+  height: 5px;
+  font-size: calc(1rem * 0.5);
+  box-sizing: border-box;
+  left: 45px;
+  top: 97.5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-2 {
+  margin: 0.15rem;
+  text-align: center;
+  font-size: 0.4rem;
+  color: rgba(0,0,0,.54);
+  white-space: pre-wrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+<div
+  class="emotion-4 emotion-5"
+  scale="0.5"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    test
+  </div>
+  <pre
+    class="emotion-2 emotion-3"
+    scale="0.5"
+  >
+    value
+  </pre>
+</div>
+`;

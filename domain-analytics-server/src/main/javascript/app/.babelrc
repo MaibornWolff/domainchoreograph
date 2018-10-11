@@ -1,0 +1,62 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "safari >= 7",
+            "ie 11"
+          ]
+        },
+        "useBuiltIns": true,
+        "modules": false
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "emotion"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+        [
+          "emotion",
+          {
+            "sourceMap": true,
+            "autoLabel": true
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": {
+                "node": "8"
+              }
+            },
+            "useBuiltIns": true,
+            "modules": "commonjs"
+          }
+        ]
+      ],
+      "plugins": [
+        [
+          "emotion",
+          {
+            "sourceMap": true,
+            "autoLabel": true
+          }
+        ]
+      ]
+    }
+  }
+}

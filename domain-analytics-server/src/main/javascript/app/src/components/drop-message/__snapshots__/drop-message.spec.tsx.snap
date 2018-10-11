@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropMessage should render 1`] = `
+.emotion-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-size: 2rem;
+  color: 0:#39ac60;
+  1: #36a35a;
+  2: #395;
+  3: #308f50;
+  4: #2d864a;
+  background: #FAFAFA;
+}
+
+.emotion-0 {
+  border: 2px rgba(0,0,0,0.3) dashed;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  />
+</div>
+`;
+
+exports[`DropMessage should render with message 1`] = `
+.emotion-2 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-size: 2rem;
+  color: 0:#39ac60;
+  1: #36a35a;
+  2: #395;
+  3: #308f50;
+  4: #2d864a;
+  background: #FAFAFA;
+}
+
+.emotion-0 {
+  border: 2px rgba(0,0,0,0.3) dashed;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+<div
+  class="emotion-2 emotion-3"
+>
+  <div
+    class="emotion-0 emotion-1"
+  >
+    Test
+  </div>
+</div>
+`;

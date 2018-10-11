@@ -1,0 +1,5 @@
+startingVersion = '0.1.0'
+
+autobump {
+
+}

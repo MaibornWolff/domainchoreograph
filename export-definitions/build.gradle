@@ -1,0 +1,43 @@
+buildscript {
+    ext.kotlin_version = '1.2.61'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+group 'de.maibornwolff.domainchoreograph'
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+apply plugin: 'kotlin-kapt'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':core')
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.7.22'
+    testCompile "com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC1"
+    testCompile("org.assertj:assertj-core:3.11.1")
+    kaptTest project(':core')
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}

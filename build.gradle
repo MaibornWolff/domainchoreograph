@@ -1,0 +1,7 @@
+repositories {
+    mavenCentral()
+}
+
+subprojects {
+    version = rootProject.version
+}

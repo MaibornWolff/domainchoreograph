@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NodeLink should render 1`] = `
+.emotion-4 {
+  position: absolute;
+  z-index: 2;
+  top: .3rem;
+  right: .3rem;
+  cursor: pointer;
+}
+
+.emotion-4,
+.emotion-4 > * {
+  height: .8rem;
+  width: .8rem;
+  box-sizing: border-box;
+}
+
+.emotion-4 > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-0 {
+  background: #39ac60;
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: scale(.8);
+  -ms-transform: scale(.8);
+  transform: scale(.8);
+}
+
+.emotion-5:hover .emotion-0 {
+  -webkit-transform: scale(.5);
+  -ms-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.emotion-2 {
+  background: transparent;
+  border: 1px solid #39ac60;
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: scale(.8);
+  -ms-transform: scale(.8);
+  transform: scale(.8);
+}
+
+.emotion-5:hover .emotion-2 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+<a
+  class="emotion-4 emotion-5"
+  href="/id"
+>
+  <div
+    class="emotion-0 emotion-1"
+  />
+  <div
+    class="emotion-2 emotion-3"
+  />
+</a>
+`;

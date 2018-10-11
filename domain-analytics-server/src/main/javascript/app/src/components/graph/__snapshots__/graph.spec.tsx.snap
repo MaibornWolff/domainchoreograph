@@ -1,0 +1,829 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Graph should render with data 1`] = `
+.emotion-14 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-12 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-8 {
+  position: absolute;
+  z-index: 2;
+  top: .3rem;
+  right: .3rem;
+  cursor: pointer;
+}
+
+.emotion-8,
+.emotion-8 > * {
+  height: .8rem;
+  width: .8rem;
+  box-sizing: border-box;
+}
+
+.emotion-8 > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-4 {
+  background: #39ac60;
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: scale(.8);
+  -ms-transform: scale(.8);
+  transform: scale(.8);
+}
+
+.emotion-9:hover .emotion-4 {
+  -webkit-transform: scale(.5);
+  -ms-transform: scale(.5);
+  transform: scale(.5);
+}
+
+.emotion-6 {
+  background: transparent;
+  border: 1px solid #39ac60;
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: scale(.8);
+  -ms-transform: scale(.8);
+  transform: scale(.8);
+}
+
+.emotion-9:hover .emotion-6 {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.emotion-15 {
+  fill: none;
+  stroke: #999;
+  stroke-width: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.emotion-17 {
+  fill: #999;
+}
+
+<div
+  class=""
+  style="height:150px;width:35.2px;position:relative;margin:auto"
+>
+  <div
+    class="emotion-14"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        A
+      </div>
+    </div>
+    <div
+      class="emotion-12 emotion-3"
+      scale="1"
+    >
+      <a
+        class="emotion-8 emotion-9"
+        href="/F"
+      >
+        <div
+          class="emotion-4 emotion-5"
+        />
+        <div
+          class="emotion-6 emotion-7"
+        />
+      </a>
+      <div
+        class="emotion-0 emotion-1"
+      >
+        F
+      </div>
+    </div>
+  </div>
+  <svg
+    class="emotion-14"
+    style="height:150px;width:35.2px"
+  >
+    <g>
+      <path
+        class="emotion-15 emotion-16"
+        d="M16,50L16,75L16,100"
+      />
+      <polygon
+        class="emotion-17 emotion-18"
+        height="8"
+        points="16,100 12.5,92 19.5,92"
+        transform="rotate(0 16 100)"
+        width="7"
+        x="16"
+        y="100"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Graph should render with just one node 1`] = `
+.emotion-0 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+<div
+  class=""
+  style="height:0;width:0;position:relative;margin:auto"
+>
+  <div
+    class="emotion-0"
+  />
+  <svg
+    class="emotion-0"
+    style="height:0;width:0"
+  />
+</div>
+`;
+
+exports[`Graph should render without data 1`] = `
+<p>
+  No Data
+</p>
+`;
+
+exports[`Graph should select edges 1`] = `
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-6 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-9 {
+  fill: none;
+  stroke: #657fcc;
+  stroke-width: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.emotion-11 {
+  fill: #657fcc;
+}
+
+<div
+  class=""
+  style="height:150px;width:35.2px;position:relative;margin:auto"
+>
+  <div
+    class="emotion-8"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-0
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-1
+      </div>
+    </div>
+  </div>
+  <svg
+    class="emotion-8"
+    style="height:150px;width:35.2px"
+  >
+    <g>
+      <path
+        class="emotion-9 emotion-10"
+        d="M16,50L16,75L16,100"
+      />
+      <polygon
+        class="emotion-11 emotion-12"
+        height="8"
+        points="16,100 12.5,92 19.5,92"
+        transform="rotate(0 16 100)"
+        width="7"
+        x="16"
+        y="100"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Graph should select edges with color 1`] = `
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-6 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-9 {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.emotion-11 {
+  fill: red;
+}
+
+<div
+  class=""
+  style="height:150px;width:35.2px;position:relative;margin:auto"
+>
+  <div
+    class="emotion-8"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-0
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-1
+      </div>
+    </div>
+  </div>
+  <svg
+    class="emotion-8"
+    style="height:150px;width:35.2px"
+  >
+    <g>
+      <path
+        class="emotion-9 emotion-10"
+        d="M16,50L16,75L16,100"
+      />
+      <polygon
+        class="emotion-11 emotion-12"
+        height="8"
+        points="16,100 12.5,92 19.5,92"
+        transform="rotate(0 16 100)"
+        width="7"
+        x="16"
+        y="100"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Graph should select nodes 1`] = `
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-6 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-9 {
+  fill: none;
+  stroke: #999;
+  stroke-width: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.emotion-11 {
+  fill: #999;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px #3956ac;
+  box-shadow: 0 0 5px 1px rgba(57,86,172,0.5);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+<div
+  class=""
+  style="height:150px;width:35.2px;position:relative;margin:auto"
+>
+  <div
+    class="emotion-8"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-0
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-1
+      </div>
+    </div>
+  </div>
+  <svg
+    class="emotion-8"
+    style="height:150px;width:35.2px"
+  >
+    <g>
+      <path
+        class="emotion-9 emotion-10"
+        d="M16,50L16,75L16,100"
+      />
+      <polygon
+        class="emotion-11 emotion-12"
+        height="8"
+        points="16,100 12.5,92 19.5,92"
+        transform="rotate(0 16 100)"
+        width="7"
+        x="16"
+        y="100"
+      />
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`Graph should select nodes with color 1`] = `
+.emotion-8 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.emotion-0 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.emotion-6 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 100px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+.emotion-9 {
+  fill: none;
+  stroke: #999;
+  stroke-width: 2px;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.emotion-11 {
+  fill: #999;
+}
+
+.emotion-2 {
+  position: absolute;
+  background: #FFFFFF;
+  border: solid 2px red;
+  box-shadow: 0 0 5px 1px rgba(255,0,0,0.5);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 16px;
+  width: 32px;
+  height: 50px;
+  font-size: calc(1rem * 1);
+  box-sizing: border-box;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 1;
+}
+
+<div
+  class=""
+  style="height:150px;width:35.2px;position:relative;margin:auto"
+>
+  <div
+    class="emotion-8"
+  >
+    <div
+      class="emotion-2 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-0
+      </div>
+    </div>
+    <div
+      class="emotion-6 emotion-3"
+      scale="1"
+    >
+      <div
+        class="emotion-0 emotion-1"
+      >
+        node-1
+      </div>
+    </div>
+  </div>
+  <svg
+    class="emotion-8"
+    style="height:150px;width:35.2px"
+  >
+    <g>
+      <path
+        class="emotion-9 emotion-10"
+        d="M16,50L16,75L16,100"
+      />
+      <polygon
+        class="emotion-11 emotion-12"
+        height="8"
+        points="16,100 12.5,92 19.5,92"
+        transform="rotate(0 16 100)"
+        width="7"
+        x="16"
+        y="100"
+      />
+    </g>
+  </svg>
+</div>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationBar should render with graph and scope 1`] = `
+<StyledNav>
+  <NavItems>
+    <Ul>
+      <li
+        key="contextApplication"
+      >
+        <StyledLabel>
+          Application
+        </StyledLabel>
+      </li>
+    </Ul>
+  </NavItems>
+  <NavItems />
+</StyledNav>
+`;
+
+exports[`NavigationBar should render with graph and without scope 1`] = `
+<StyledNav>
+  <NavItems>
+    <Ul>
+      <li
+        key="contextApplication"
+      >
+        <StyledLabel>
+          Application
+        </StyledLabel>
+      </li>
+    </Ul>
+  </NavItems>
+  <NavItems />
+</StyledNav>
+`;
+
+exports[`NavigationBar should render without graph 1`] = `""`;
