@@ -6,6 +6,7 @@ target/
 build/
 .gradle/
 .idea/
+*.iml
 out/
 .clove/
 src/main/resources/webapp
