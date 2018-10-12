@@ -12,6 +12,17 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-script:
-- ./gradlew build
+stages:
+- build
+- deploy
+
+jobs:
+    include:
+    - stage: build
+      script:
+      - ./gradlew build
+    - state: deploy
+      if: branch = master AND tag IS present
+      script:
+      - ./gradlew bintrayPublish -Pde.maibornwolff.domainchoreograph.bintrayuser=$BINTRAY_USER -Pde.maibornwolff.domainchoreograph.bintraykey=$BINTRAY_KEY
 

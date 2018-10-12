@@ -2,6 +2,14 @@ repositories {
     mavenCentral()
 }
 
+version '0.0.2'
+
 subprojects {
+    apply plugin: 'java'
+
     version = rootProject.version
+
+    jar {
+        from sourceSets.main.allSource
+    }
 }
