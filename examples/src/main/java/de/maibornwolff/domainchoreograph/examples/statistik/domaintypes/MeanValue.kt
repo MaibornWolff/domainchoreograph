@@ -4,22 +4,22 @@ import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
 
 @DomainDefinition
-data class Mittelwert(val mittelwert: Double) {
+data class MeanValue(val value: Double) {
 
     override fun toString(): String {
-        return mittelwert.toString()
+        return value.toString()
     }
 
     companion object {
 
         @DomainFunction
-        fun resolve(anzahl: Anzahl, summe: Summe): Mittelwert {
+        fun resolve(sampleSize: SampleSize, sum: Sum): MeanValue {
 
-            if (anzahl.anzahl == 0) {
-                throw IllegalArgumentException("Die Größe der Stichprobe darf nicht 0 sein.")
+            if (sampleSize.value == 0) {
+                throw IllegalArgumentException("The size of a sample can not be zero.")
             }
 
-            return Mittelwert(summe.summe.toDouble() / anzahl.anzahl)
+            return MeanValue(sum.value.toDouble() / sampleSize.value)
         }
     }
 }
