@@ -21,7 +21,7 @@ jobs:
     - stage: build
       script:
       - ./gradlew build
-    - state: deploy
+    - stage: deploy
       if: branch = master AND tag IS present
       script:
       - ./gradlew bintrayPublish -Pde.maibornwolff.domainchoreograph.bintrayuser=$BINTRAY_USER -Pde.maibornwolff.domainchoreograph.bintraykey=$BINTRAY_KEY
