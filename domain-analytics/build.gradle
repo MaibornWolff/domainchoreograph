@@ -11,8 +11,8 @@ buildscript {
 apply plugin: 'kotlin'
 
 bintray {
-    user = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayuser')
-    key = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintraykey')
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
     configurations = ['archives']
     pkg {
         repo = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayrepo')
