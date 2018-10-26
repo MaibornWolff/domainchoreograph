@@ -18,9 +18,6 @@ apply plugin: 'jacoco'
 
 group = 'de.maibornwolff.domainchoreograph'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 bintray {
     user = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayuser')
     key = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintraykey')
