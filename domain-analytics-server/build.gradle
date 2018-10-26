@@ -1,5 +1,4 @@
 buildscript {
-    ext.kotlin_version = '1.2.61'
 
     repositories {
         mavenCentral()
@@ -9,25 +8,27 @@ buildscript {
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "se.transmode.gradle:gradle-docker:1.2"
     }
 }
 
 plugins {
+    id "com.jfrog.bintray" version "1.8.4"
     id "com.moowork.node" version "1.2.0"
 }
 
-group 'de.maibornwolff.domainchoreograph'
-
-apply plugin: 'java'
 apply plugin: 'kotlin'
-apply plugin: 'maven'
 apply plugin: 'application'
 
-sourceCompatibility = 1.8
-
-repositories {
-    jcenter()
+bintray {
+    user = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayuser')
+    key = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintraykey')
+    configurations = ['archives']
+    pkg {
+        repo = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayrepo')
+        name = project.name
+        licenses = ['Apache-2.0']
+        vcsUrl = rootProject.findProperty('de.maibornwolff.domainchoreograph.github.url')
+    }
 }
 
 dependencies {

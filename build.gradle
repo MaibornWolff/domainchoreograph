@@ -1,15 +1,82 @@
+plugins {
+    id 'de.gliderpilot.semantic-release' version '1.4.0'
+}
+
+apply plugin: 'java'
+
 repositories {
     mavenCentral()
 }
 
-version '0.0.3'
-
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'maven'
+    
+    group 'de.maibornwolff.domainchoreograph'
 
-    version = rootProject.version
+    sourceCompatibility = 1.8
+
+    repositories {
+        jcenter()
+    }
 
     jar {
         from sourceSets.main.allSource
     }
+
+    ext.kotlin_version = '1.2.61'
 }
+
+// RELEASE config
+
+task sourcesJarCore(type: Jar) {
+    def moduleName = 'core'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+task sourcesJarDomainAnalytics(type: Jar) {
+    def moduleName = 'domain-analytics'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+task sourcesJarDomainAnalyticsLogger(type: Jar) {
+    def moduleName = 'domain-analytics-logger'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+task sourcesJarDomainAnalyticsServer(type: Jar) {
+    def moduleName = 'domain-analytics-server'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+task sourcesJarExamples(type: Jar) {
+    def moduleName = 'examples'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+task sourcesJarExportDefinitions(type: Jar) {
+    def moduleName = 'export-definitions'
+    classifier = moduleName
+    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+}
+
+semanticRelease {
+    repo.ghToken = System.getenv('GH_TOKEN')
+
+    repo {
+        releaseAsset sourcesJarCore
+        releaseAsset sourcesJarDomainAnalytics
+        releaseAsset sourcesJarDomainAnalyticsLogger
+        releaseAsset sourcesJarDomainAnalyticsServer
+        releaseAsset sourcesJarExamples
+        releaseAsset sourcesJarExportDefinitions
+    }
+}
+
+if (!version.toString().endsWith('-SNAPSHOT'))
+    publish.dependsOn bintrayUpload
