@@ -1,8 +1,11 @@
 plugins {
     id 'de.gliderpilot.semantic-release' version '1.4.0'
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
 apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()

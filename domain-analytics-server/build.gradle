@@ -12,7 +12,6 @@ buildscript {
 }
 
 plugins {
-    id "com.jfrog.bintray" version "1.8.4"
     id "com.moowork.node" version "1.2.0"
 }
 
