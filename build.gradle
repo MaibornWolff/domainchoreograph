@@ -28,7 +28,7 @@ subprojects {
         from sourceSets.main.allSource
     }
 
-    ext.kotlin_version = '1.2.61'
+    ext.kotlin_version = '1.2.71'
 }
 
 // RELEASE config
