@@ -37,7 +37,7 @@ function _calculateGraph({ graph, scopeKey, nodeOptions, targetWidth, targetHeig
 
   const g = new dagre.graphlib.Graph();
 
-  g.setGraph({});
+  g.setGraph({marginx: 100}); // TODO can this be done somewhere else?
   g.setDefaultEdgeLabel(() => ({}));
 
   const isOutsideScope = (nodeId: string) => !scope.nodes.includes(nodeId);
