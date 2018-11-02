@@ -1,3 +1,5 @@
+@file:JvmName("Application")
+
 package de.maibornwolff.domainchoreograph.examples.statistik
 
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment

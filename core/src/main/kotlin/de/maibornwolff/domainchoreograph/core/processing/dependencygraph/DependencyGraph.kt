@@ -59,7 +59,12 @@ class DependencyGraph {
     }
 }
 
-private fun getNodeFrom(returnTypeElement: ReflectionType, definedTypeElement: ReflectionType, graph: DependencyGraph, caller: ReflectionType? = null): DependencyNode {
+private fun getNodeFrom(
+    returnTypeElement: ReflectionType,
+    definedTypeElement: ReflectionType,
+    graph: DependencyGraph,
+    caller: ReflectionType? = null
+): DependencyNode {
     val domainType = getDomainTypeOf(definedTypeElement)
     val returnType = returnTypeElement.className
     if (graph.hasElement(domainType)) {
