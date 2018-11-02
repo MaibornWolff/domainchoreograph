@@ -1,11 +1,10 @@
-package de.maibornwolff.domainchoreograph.examples.statistik.domaintypes
-
+package de.maibornwolff.domainchoreograph.examples.statistic.domaintypes
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
 
 @DomainDefinition
-data class SampleSize(val value: Int) {
+data class Sum(val value: Int) {
 
     override fun toString(): String {
         return value.toString()
@@ -14,8 +13,8 @@ data class SampleSize(val value: Int) {
     companion object {
 
         @DomainFunction
-        fun resolve(sample: Sample): SampleSize {
-            return SampleSize(sample.size)
+        fun resolve(sample: Sample): Sum {
+            return Sum(sample.value.sum())
         }
     }
 }

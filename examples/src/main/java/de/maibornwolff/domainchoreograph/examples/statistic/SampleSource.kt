@@ -1,7 +1,7 @@
-package de.maibornwolff.domainchoreograph.examples.statistik
+package de.maibornwolff.domainchoreograph.examples.statistic
 
-import de.maibornwolff.domainchoreograph.examples.statistik.domaintypes.Sample
-import de.maibornwolff.domainchoreograph.examples.statistik.domaintypes.SampleAdapter
+import de.maibornwolff.domainchoreograph.examples.statistic.domaintypes.Sample
+import de.maibornwolff.domainchoreograph.examples.statistic.domaintypes.SampleAdapter
 import java.util.*
 
 class SampleSource : SampleAdapter {

@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph.examples.statistik.domaintypes
+package de.maibornwolff.domainchoreograph.examples.statistic.domaintypes
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 

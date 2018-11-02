@@ -1,10 +1,10 @@
 @file:JvmName("Application")
 
-package de.maibornwolff.domainchoreograph.examples.statistik
+package de.maibornwolff.domainchoreograph.examples.statistic
 
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
 import de.maibornwolff.domainchoreograph.domainanalytics.DomainAnalytics
-import de.maibornwolff.domainchoreograph.examples.statistik.choreographies.StatisticalEvaluationsCalculator
+import de.maibornwolff.domainchoreograph.examples.statistic.choreographies.StatisticalEvaluationsCalculator
 
 fun main(args: Array<String>) {
     // start server

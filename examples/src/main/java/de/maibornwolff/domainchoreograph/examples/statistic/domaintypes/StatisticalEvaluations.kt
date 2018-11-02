@@ -1,8 +1,8 @@
-package de.maibornwolff.domainchoreograph.examples.statistik.domaintypes
+package de.maibornwolff.domainchoreograph.examples.statistic.domaintypes
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
-import de.maibornwolff.domainchoreograph.examples.statistik.choreographies.StatisticCalculator
+import de.maibornwolff.domainchoreograph.examples.statistic.choreographies.StatisticCalculator
 
 @DomainDefinition
 data class StatisticalEvaluations(val statistics: List<Statistic>) {

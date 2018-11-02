@@ -1,10 +1,11 @@
-package de.maibornwolff.domainchoreograph.examples.statistik.domaintypes
+package de.maibornwolff.domainchoreograph.examples.statistic.domaintypes
+
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
 
 @DomainDefinition
-data class StdDev(val value: Double) {
+data class SampleSize(val value: Int) {
 
     override fun toString(): String {
         return value.toString()
@@ -13,8 +14,8 @@ data class StdDev(val value: Double) {
     companion object {
 
         @DomainFunction
-        fun resolve(variance: Variance): StdDev {
-            return StdDev(Math.sqrt(variance.value))
+        fun resolve(sample: Sample): SampleSize {
+            return SampleSize(sample.size)
         }
     }
 }

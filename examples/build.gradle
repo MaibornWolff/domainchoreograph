@@ -34,6 +34,6 @@ task runHelloWorld(type: JavaExec) {
 }
 
 task runStatistik(type: JavaExec) {
-    main = 'de.maibornwolff.domainchoreograph.examples.statistik.Application'
+    main = 'de.maibornwolff.domainchoreograph.examples.statistic.Application'
     classpath = sourceSets.main.runtimeClasspath
 }
