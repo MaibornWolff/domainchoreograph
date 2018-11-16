@@ -1,6 +1,7 @@
 plugins {
     id 'de.gliderpilot.semantic-release' version '1.4.0'
     id "com.jfrog.bintray" version "1.8.4"
+    id "com.github.ben-manes.versions" version "0.20.0"
 }
 
 apply plugin: 'java'
@@ -14,7 +15,7 @@ repositories {
 subprojects {
     apply plugin: 'java'
     apply plugin: 'maven'
-    
+
     group 'de.maibornwolff.domainchoreograph'
 
     sourceCompatibility = 1.8
