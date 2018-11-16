@@ -1,6 +1,7 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.model
+package de.maibornwolff.domainchoreograph.exportdefinitions.model
 
-import de.maibornwolff.domainchoreograph.exportDefinitions.model.utils.IdGenerator
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.IdGenerator
+
 
 data class ExportScope(
   val id: String = "Scope-" + generateId(),

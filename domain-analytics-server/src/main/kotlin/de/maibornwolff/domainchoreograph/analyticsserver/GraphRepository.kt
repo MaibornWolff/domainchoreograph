@@ -1,7 +1,7 @@
 package de.maibornwolff.domainchoreograph.analyticsserver
 import de.maibornwolff.domainchoreograph.analyticsserver.events.EventEmitter
 import de.maibornwolff.domainchoreograph.analyticsserver.events.Subscribable
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportGraph
 
 class GraphRepository {
   private val graphsStore: MutableList<ExportGraph> = mutableListOf()

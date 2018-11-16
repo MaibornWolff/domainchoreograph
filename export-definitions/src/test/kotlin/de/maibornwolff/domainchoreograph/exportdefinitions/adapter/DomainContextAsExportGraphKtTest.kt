@@ -1,11 +1,11 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.adapter
+package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
 import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainChoreographyOptions
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.*
 import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.choreographies.OrderPriceCalculator
 import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes.*
-import de.maibornwolff.domainchoreography.exportdefinitions.model.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

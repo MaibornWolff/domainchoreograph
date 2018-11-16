@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.utils
+package de.maibornwolff.domainchoreograph.exportdefinitions.utils
 
 internal fun String.firstLetterLowercase() = if (this.isEmpty()) {
     ""

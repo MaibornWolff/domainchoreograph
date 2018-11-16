@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.utils
+package de.maibornwolff.domainchoreograph.exportdefinitions.utils
 
 internal class UniqueIdGenerator(private val addNumberIfZero: Boolean = false) {
     private val ids = mutableSetOf<String>()

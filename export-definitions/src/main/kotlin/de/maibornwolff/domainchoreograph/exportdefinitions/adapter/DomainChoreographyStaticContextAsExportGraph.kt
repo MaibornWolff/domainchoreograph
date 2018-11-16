@@ -1,11 +1,11 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.adapter
+package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
 import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyNode
 import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainContextNode
 import de.maibornwolff.domainchoreograph.core.processing.utils.asJavaClass
-import de.maibornwolff.domainchoreography.exportdefinitions.model.*
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.UniqueIdGenerator
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.*
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.UniqueIdGenerator
 import java.util.*
 
 fun DomainContext.asExportGraph(id: String = UUID.randomUUID().toString()): ExportGraph {

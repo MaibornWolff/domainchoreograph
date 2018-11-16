@@ -1,10 +1,10 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.adapter
+package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportNode
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportScope
-import de.maibornwolff.domainchoreography.exportdefinitions.model.toExportException
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.UniqueIdGenerator
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.firstLetterLowercase
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportNode
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportScope
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.toExportException
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.UniqueIdGenerator
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.firstLetterLowercase
 
 internal class ExportNodeCreator(
     private val idGenerator: UniqueIdGenerator,

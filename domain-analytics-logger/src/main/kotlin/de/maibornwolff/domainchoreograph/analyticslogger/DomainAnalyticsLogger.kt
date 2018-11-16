@@ -2,8 +2,8 @@ package de.maibornwolff.domainchoreograph.analyticslogger
 
 import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainLogger
-import de.maibornwolff.domainchoreography.exportdefinitions.adapter.asExportGraph
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.toJson
+import de.maibornwolff.domainchoreograph.exportdefinitions.adapter.asExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.toJson
 import kotlinx.coroutines.experimental.launch
 import org.apache.http.client.methods.HttpPost
 import org.apache.http.entity.StringEntity

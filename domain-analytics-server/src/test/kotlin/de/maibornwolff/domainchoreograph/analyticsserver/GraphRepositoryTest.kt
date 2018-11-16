@@ -3,7 +3,7 @@ package de.maibornwolff.domainchoreograph.analyticsserver
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import de.maibornwolff.domainchoreograph.analyticsserver.events.EventListenerCallback
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportGraph
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

@@ -1,7 +1,7 @@
 @file:JvmName("DevtoolServerMain")
 package de.maibornwolff.domainchoreograph.analyticsserver
 
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.jsonToExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.jsonToExportGraph
 import io.javalin.Javalin
 import java.awt.Desktop
 import java.net.URI
@@ -47,7 +47,7 @@ class DomainAnalyticsServer(
   private fun listenToIncomingGraphs() {
     app.post("/graph") { ctx ->
       val graph = try {
-        jsonToExportGraph(ctx.body())
+          jsonToExportGraph(ctx.body())
       } catch (e: Exception) {
         e.printStackTrace()
         ctx.status(400)

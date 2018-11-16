@@ -2,7 +2,7 @@ package de.maibornwolff.domainchoreograph.analyticsserver
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.toJson
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.toJson
 import org.eclipse.jetty.websocket.api.Session
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

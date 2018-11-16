@@ -1,8 +1,8 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.utils
+package de.maibornwolff.domainchoreograph.exportdefinitions.utils
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportGraph
 
 private val jsonMapper = jacksonObjectMapper()
 

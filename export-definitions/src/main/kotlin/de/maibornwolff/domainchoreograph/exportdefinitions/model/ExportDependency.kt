@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.model
+package de.maibornwolff.domainchoreograph.exportdefinitions.model
 
 data class ExportDependency(
   val src: String,

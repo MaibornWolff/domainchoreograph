@@ -1,8 +1,8 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.adapter
+package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportExecutionContext
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportScope
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.UniqueIdGenerator
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportExecutionContext
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportScope
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.UniqueIdGenerator
 
 internal class ExportScopeCreator(
     private val idGenerator: UniqueIdGenerator,

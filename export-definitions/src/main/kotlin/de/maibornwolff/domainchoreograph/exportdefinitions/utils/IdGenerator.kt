@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph.exportDefinitions.model.utils
+package de.maibornwolff.domainchoreograph.exportdefinitions.utils
 
 open class IdGenerator {
     private var id = 0

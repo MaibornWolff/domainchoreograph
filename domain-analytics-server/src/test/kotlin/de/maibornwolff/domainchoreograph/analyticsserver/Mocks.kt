@@ -1,6 +1,6 @@
 package de.maibornwolff.domainchoreograph.analyticsserver
 
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportGraph
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportGraph
 
 val mockGraph = ExportGraph(
     id = "id",

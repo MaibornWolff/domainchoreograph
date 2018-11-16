@@ -1,6 +1,6 @@
 package de.maibornwolff.domainchoreograph.analyticsserver
 
-import de.maibornwolff.domainchoreography.exportdefinitions.utils.toJson
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.toJson
 import org.eclipse.jetty.websocket.api.Session
 
 class WebSocketController(

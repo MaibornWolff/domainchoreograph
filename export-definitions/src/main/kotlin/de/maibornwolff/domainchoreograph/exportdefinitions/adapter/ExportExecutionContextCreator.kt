@@ -1,7 +1,7 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.adapter
+package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportExecutionContext
-import de.maibornwolff.domainchoreography.exportdefinitions.model.ExportNode
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportExecutionContext
+import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportNode
 
 internal class ExportExecutionContextCreator(
     private val node: ExportNode

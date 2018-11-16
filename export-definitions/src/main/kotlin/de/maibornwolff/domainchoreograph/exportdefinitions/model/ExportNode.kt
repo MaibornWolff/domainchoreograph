@@ -1,7 +1,7 @@
-package de.maibornwolff.domainchoreography.exportdefinitions.model
+package de.maibornwolff.domainchoreograph.exportdefinitions.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import de.maibornwolff.domainchoreograph.exportDefinitions.model.utils.IdGenerator
+import de.maibornwolff.domainchoreograph.exportdefinitions.utils.IdGenerator
 
 data class ExportNode(
     val name: String,
