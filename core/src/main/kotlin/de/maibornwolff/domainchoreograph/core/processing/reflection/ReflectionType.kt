@@ -26,9 +26,18 @@ interface ReflectionExecutable : WithAnnotations {
 
 interface WithAnnotations {
     fun <T : Annotation> getAnnotation(annotation: Class<T>): T?
-    fun <T : Annotation> getAnnotationTypeValue(annotation: Class<T>): ReflectionType?
+
+    fun <T : Annotation> getAnnotationTypeValue(annotation: Class<T>): ReflectionType? =
+        getAnnotation(annotation)?.getAnnotationTypeValueAsReflectionType()
 
     fun <T : Annotation> hasAnnotation(annotation: Class<T>): Boolean {
         return getAnnotation(annotation) != null
     }
+}
+
+private fun Annotation.getAnnotationTypeValueAsReflectionType(): ReflectionType {
+    val nameField = annotationClass
+        .java
+        .declaredMethods[0]
+    return (nameField(this) as Class<*>).kotlin.asReflectionType()
 }

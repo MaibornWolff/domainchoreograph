@@ -4,7 +4,7 @@ import de.maibornwolff.domainchoreograph.core.processing.context.MutableDomainCh
 import de.maibornwolff.domainchoreograph.core.processing.utils.NameUtils
 
 class DomainEnvironment(
-    val logger: Set<DomainLogger>? = null
+    logger: Set<DomainLogger>? = null
 ) {
     companion object {
         @JvmStatic

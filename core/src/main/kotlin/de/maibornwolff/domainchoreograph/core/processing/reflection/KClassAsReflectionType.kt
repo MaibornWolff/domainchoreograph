@@ -9,12 +9,13 @@ import kotlin.reflect.KType
 import kotlin.reflect.full.companionObject
 import kotlin.reflect.full.declaredFunctions
 import kotlin.reflect.full.superclasses
+import kotlin.reflect.full.valueParameters
 
 fun KClass<*>.asReflectionType(): ReflectionType = KClassReflectionType(this)
 
-fun KType.asReflectionType(): ReflectionType = KClassReflectionType(this as KClass<*>)
+fun KType.asReflectionType(): ReflectionType = KClassReflectionType(this.classifier as KClass<*>)
 
-private class KClassReflectionType(
+private data class KClassReflectionType(
     private val base: KClass<*>
 ) : ReflectionType {
     override val className: ClassName
@@ -44,37 +45,34 @@ private class KClassReflectionType(
     override fun <T : Annotation> getAnnotation(annotation: Class<T>): T? {
         return base.java.getAnnotation(annotation)
     }
-
-    override fun <T : Annotation> getAnnotationTypeValue(annotation: Class<T>): ReflectionType? =
-        base.java.getAnnotationTypeValueAsReflectionType(annotation)
-
 }
 
 fun KFunction<*>.asReflectionExecutable(): ReflectionExecutable {
     return KFunctionReflectionExecutable(this)
 }
 
-private class KFunctionReflectionExecutable(
+private data class KFunctionReflectionExecutable(
     private val base: KFunction<*>
 ) : ReflectionExecutable {
     override val name: String
         get() = base.name
+
     override val parameters: List<ReflectionVariable>
-        get() = base.parameters
+        get() = base.valueParameters
             .map { it.asReflectionVariable() }
+
     override val returnType: ReflectionType
         get() = base.returnType.asReflectionType()
 
-    override fun <T : Annotation> getAnnotation(annotation: Class<T>): T? =
-        base.javaClass.getAnnotation(annotation)
-
-    override fun <T : Annotation> getAnnotationTypeValue(annotation: Class<T>): ReflectionType? =
-        base.javaClass.getAnnotationTypeValueAsReflectionType(annotation)
+    override fun <T : Annotation> getAnnotation(annotation: Class<T>): T? {
+        return base.annotations
+            .find { annotation.isInstance(it) } as T?
+    }
 }
 
 fun KParameter.asReflectionVariable(): ReflectionVariable = KParameterReflectionVariable(this)
 
-private class KParameterReflectionVariable(
+private data class KParameterReflectionVariable(
     private val base: KParameter
 ) : ReflectionVariable {
     override val name: String
@@ -84,15 +82,7 @@ private class KParameterReflectionVariable(
         get() = base.type.asReflectionType()
 
     override fun <T : Annotation> getAnnotation(annotation: Class<T>): T? {
-        return base.javaClass.getAnnotation(annotation)
+        return base.annotations.find { annotation.isInstance(it) } as T?
     }
-
-    override fun <T : Annotation> getAnnotationTypeValue(annotation: Class<T>): ReflectionType? =
-        base.javaClass.getAnnotationTypeValueAsReflectionType(annotation)
 }
 
-private fun <T : Annotation> Class<*>.getAnnotationTypeValueAsReflectionType(annotation: Class<T>): ReflectionType {
-    val annotation = getAnnotation(annotation)
-    val nameField = annotation.javaClass.getField("name")
-    return (nameField.get(annotation) as Class<*>).kotlin.asReflectionType()
-}
