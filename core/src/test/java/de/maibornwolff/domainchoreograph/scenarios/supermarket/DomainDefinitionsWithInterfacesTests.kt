@@ -1,11 +1,11 @@
-package de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces
+package de.maibornwolff.domainchoreograph.scenarios.supermarket
 
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
-import de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.choreographies.Cashier
-import de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.domaindefinitions.Article
-import de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.domaindefinitions.Basket
-import de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.domaindefinitions.BasketPrice
-import de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.serviceimplementations.PriceServiceImplementation
+import de.maibornwolff.domainchoreograph.scenarios.supermarket.choreographies.Cashier
+import de.maibornwolff.domainchoreograph.scenarios.supermarket.domaindefinitions.Article
+import de.maibornwolff.domainchoreograph.scenarios.supermarket.domaindefinitions.Basket
+import de.maibornwolff.domainchoreograph.scenarios.supermarket.domaindefinitions.BasketPrice
+import de.maibornwolff.domainchoreograph.scenarios.supermarket.serviceimplementations.PriceServiceImplementation
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

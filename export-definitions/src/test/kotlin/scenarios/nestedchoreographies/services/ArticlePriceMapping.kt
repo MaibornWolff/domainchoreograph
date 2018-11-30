@@ -1,6 +1,6 @@
-package de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.services
+package de.maibornwolff.domainchoreograph.scenarios.orderprice.services
 
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes.ArticlePriceService
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes.ArticlePriceService
 
 data class ArticlePriceMapping(val prices: Map<String, Float>): ArticlePriceService {
 

@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes
+package de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes
 
 import de.maibornwolff.domainchoreograph.core.api.DomainService
 

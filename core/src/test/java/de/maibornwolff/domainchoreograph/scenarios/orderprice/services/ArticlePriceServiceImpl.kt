@@ -1,6 +1,6 @@
-package de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.services
+package de.maibornwolff.domainchoreograph.scenarios.orderprice.services
 
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes.ArticlePriceService
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes.ArticlePriceService
 
 class ArticlePriceServiceImpl(vararg prices: Pair<String, Float>): ArticlePriceService {
     private val prices = mapOf(*prices)

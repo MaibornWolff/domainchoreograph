@@ -4,11 +4,11 @@ import com.squareup.kotlinpoet.ClassName
 import de.maibornwolff.domainchoreograph.core.processing.utils.getSimpleTypeName
 import de.maibornwolff.domainchoreograph.core.processing.utils.pascalCaseToCamelCase
 
-sealed class DependencyNode(val type: ClassName, val domainType: ClassName) {
+sealed class DependencyNode(open val type: ClassName, open val domainType: ClassName) {
 
-    class FunctionNode(
-        type: ClassName,
-        domainType: ClassName,
+    data class FunctionNode(
+        override val type: ClassName,
+        override val domainType: ClassName,
         val caller: ClassName,
         val name: String,
         val parameters: List<DependencyNode> = listOf()
@@ -16,15 +16,15 @@ sealed class DependencyNode(val type: ClassName, val domainType: ClassName) {
         fun getVariableName(): String = domainType.getSimpleTypeName().pascalCaseToCamelCase()
     }
 
-    class VariableNode(
-        type: ClassName,
-        domainType: ClassName,
+    data class VariableNode(
+        override val type: ClassName,
+        override val domainType: ClassName,
         val name: String
     ) : DependencyNode(type, domainType)
 
-    class ChoreographyNode(
-        type: ClassName,
-        domainType: ClassName,
+    data class ChoreographyNode(
+        override val type: ClassName,
+        override val domainType: ClassName,
         val caller: ClassName
     ) : DependencyNode(type, domainType) {
         fun getVariableName(): String {

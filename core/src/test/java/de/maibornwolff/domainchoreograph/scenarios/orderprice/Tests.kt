@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies
+package de.maibornwolff.domainchoreograph.scenarios.orderprice
 
 import com.google.gson.GsonBuilder
 import com.nhaarman.mockitokotlin2.argumentCaptor
@@ -8,16 +8,16 @@ import com.nhaarman.mockitokotlin2.whenever
 import com.squareup.kotlinpoet.asClassName
 import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyNode
 import de.maibornwolff.domainchoreograph.core.api.*
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.choreographies.ArticlePriceCalculator
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.choreographies.OrderPriceCalculator
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.choreographies.OrderPriceCalculatorWithImplementation
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes.*
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.services.ArticlePriceServiceImpl
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.choreographies.ArticlePriceCalculator
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.choreographies.OrderPriceCalculator
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.choreographies.OrderPriceCalculatorWithImplementation
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes.*
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.services.ArticlePriceServiceImpl
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class NestedChoreographiesScenarioTests {
+class OrderPriceScenarioTests {
 
     @Test
     fun `should work with nested Choreographies`() {

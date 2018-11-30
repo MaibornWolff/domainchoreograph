@@ -6,12 +6,9 @@ import de.maibornwolff.domainchoreograph.core.api.*
 import de.maibornwolff.domainchoreograph.core.processing.reflection.ReflectionExecutable
 import de.maibornwolff.domainchoreograph.core.processing.reflection.ReflectionType
 import de.maibornwolff.domainchoreograph.core.processing.reflection.ReflectionVariable
-import javax.annotation.processing.ProcessingEnvironment
 
 class ChoreographyDependencyError(msg: String)
     : RuntimeException("Error while resolving the Choreography Dependencies: $msg")
-
-var env: ProcessingEnvironment? = null
 
 class DependencyGraph {
     private val nodeMapping: MutableMap<TypeName, DependencyNode> = mutableMapOf()
@@ -24,7 +21,7 @@ class DependencyGraph {
     val nodes: List<DependencyNode>
         get() = nodeOrder
 
-    fun addElement(node: DependencyNode) {
+    internal fun addElement(node: DependencyNode) {
         if (nodeMapping.containsKey(node.type)) {
             return
         }
@@ -32,11 +29,11 @@ class DependencyGraph {
         nodeOrder.add(node)
     }
 
-    fun hasElement(type: TypeName): Boolean {
+    internal fun hasElement(type: TypeName): Boolean {
         return nodeMapping.containsKey(type)
     }
 
-    fun getElement(type: TypeName): DependencyNode {
+    internal fun getElement(type: TypeName): DependencyNode {
         return nodeMapping[type]!!
     }
 

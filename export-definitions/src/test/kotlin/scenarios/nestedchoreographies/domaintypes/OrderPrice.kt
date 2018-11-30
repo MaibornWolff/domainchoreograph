@@ -1,8 +1,8 @@
-package de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.domaintypes
+package de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
-import de.maibornwolff.domainchoreograph.scenarios.nestedchoreographies.choreographies.ArticlePriceCalculator
+import de.maibornwolff.domainchoreograph.scenarios.orderprice.choreographies.ArticlePriceCalculator
 
 @DomainDefinition
 data class OrderPrice(val value: Float) {

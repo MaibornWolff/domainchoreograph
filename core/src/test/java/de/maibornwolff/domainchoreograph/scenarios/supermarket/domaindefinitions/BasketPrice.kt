@@ -1,4 +1,4 @@
-package de.maibornwolff.domainchoreograph.scenarios.domaindefinitionswithinterfaces.domaindefinitions
+package de.maibornwolff.domainchoreograph.scenarios.supermarket.domaindefinitions
 
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
