@@ -8,7 +8,9 @@ import de.maibornwolff.domainchoreograph.core.processing.reflection.KReflectionV
 import de.maibornwolff.domainchoreograph.core.processing.reflection.ReflectionVariable
 import de.maibornwolff.domainchoreograph.core.processing.reflection.asReflectionType
 import de.maibornwolff.domainchoreograph.core.processing.utils.asJavaClass
-import java.lang.NullPointerException
+import java.lang.reflect.InvocationHandler
+import java.lang.reflect.Method
+import java.lang.reflect.Proxy
 import kotlin.reflect.KClass
 import kotlin.reflect.full.companionObject
 import kotlin.reflect.full.companionObjectInstance
@@ -32,6 +34,7 @@ fun <T : Any> resolveDomainDefinition(target: KClass<T>, params: List<Any>): T {
                 references[it.domainType] = it.invoke(references)
             }
             is DependencyNode.ChoreographyNode -> {
+                references[it.domainType] = it.resolve()
             }
         }
     }
@@ -60,3 +63,20 @@ private fun References.resolve(params: List<DependencyNode>) = params
     .map { this[it.type]!! }
     .toTypedArray()
 
+private fun DependencyNode.ChoreographyNode.resolve(): Any {
+    val choreographyInterface = type.asJavaClass()
+    return Proxy.newProxyInstance(
+        choreographyInterface.classLoader,
+        arrayOf(choreographyInterface),
+        ChoreographyInvocationHandler()
+    )
+}
+
+private class ChoreographyInvocationHandler : InvocationHandler {
+    override fun invoke(proxy: Any, method: Method, args: Array<out Any>): Any {
+        return resolveDomainDefinition(
+            target = method.returnType.kotlin,
+            params = args.toList()
+        )
+    }
+}
