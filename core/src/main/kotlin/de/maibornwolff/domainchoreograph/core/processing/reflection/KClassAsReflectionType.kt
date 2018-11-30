@@ -86,3 +86,10 @@ private data class KParameterReflectionVariable(
     }
 }
 
+data class KReflectionVariable(
+    override val name: String,
+    override val type: ReflectionType
+) : ReflectionVariable {
+    override fun <T : Annotation> getAnnotation(annotation: Class<T>): T? = null
+}
+
