@@ -9,7 +9,7 @@ export interface GraphPageContainerProps {
 
 export const GraphPageContainer = connect(
   (state: GlobalState, ownProps: GraphPageContainerProps): GraphPageProps => ({
-    graph: state.graph,
+    graph: state.app.graph,
     ...ownProps
   })
 )(GraphPage);

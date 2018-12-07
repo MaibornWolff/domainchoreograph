@@ -1,15 +1,22 @@
+import { connectRouter } from 'connected-react-router';
+import { combineReducers } from 'redux';
 import { Actions } from '~constants/actions';
+import { history } from '~history';
 import { ThemeKey } from '~styles/theme';
 import { ChoreoGraph } from '~types/choreo-graph';
 import { createReduxContext } from '~utils/redux.utils';
 
 export interface GlobalState {
+  app: AppState;
+}
+
+export interface AppState {
   graph: ChoreoGraph | null;
   selectedNodeId?: string;
   theme: ThemeKey;
 }
 
-const initialState: GlobalState = {
+const initialState: AppState = {
   graph: null,
   theme: 'light'
 };
@@ -56,7 +63,7 @@ export namespace ActionCreators {
   );
 
   interface LoadStatePayload {
-    state: GlobalState;
+    state: AppState;
   }
 
   export const loadState = context.createActionCreator(
@@ -88,4 +95,7 @@ export namespace ActionCreators {
   );
 }
 
-export const reducer = context.createReducer();
+export const reducer = combineReducers({
+  app: context.createReducer(),
+  router: connectRouter(history)
+});

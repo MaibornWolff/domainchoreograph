@@ -5,7 +5,7 @@ export interface ButtonProps {
   lightColor?: boolean;
 }
 
-export const Button = styled.button<ButtonProps>`
+export const Button = styled('button')<ButtonProps>`
   border: none;
   padding: .5rem;
   background: none;

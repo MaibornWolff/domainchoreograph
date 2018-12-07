@@ -39,7 +39,7 @@ interface BodyProps {
   innerHeight: string;
 }
 
-const Body = styled.div<BodyProps>`
+const Body = styled('div')<BodyProps>`
   overflow: hidden;
   transition: height ${({ theme }) => theme.animations.duration.toggle}ms ease;
   height: ${({ isOpen, innerHeight }) => isOpen ? innerHeight : '0'};
@@ -87,7 +87,7 @@ export class Section extends React.Component<SectionProps, SectionState> {
         </Head>
         <Body
           isOpen={isOpen}
-          innerRef={ref => this.bodyRef = ref}
+          ref={ref => this.bodyRef = ref}
           innerHeight={bodyHeight}
         ><ChildrenWrapper>{children}</ChildrenWrapper></Body>
       </div>

@@ -1,7 +1,8 @@
-import { connect } from 'react-redux';
-import { Graph, GraphProps } from '~components/graph/graph';
+import * as React from 'react';
+import { Graph } from '~components/graph/graph';
 import { NODE_OPTIONS } from '~constants/node-options';
-import { ActionCreators, GlobalState } from '~ducks';
+import { ActionCreators } from '~ducks';
+import { useRedux } from '~utils/redux.utils';
 
 export interface GraphContainerProps {
   className?: string;
@@ -10,14 +11,14 @@ export interface GraphContainerProps {
   height?: number;
 }
 
-export const GraphContainer = connect(
-  (state: GlobalState, ownProps: GraphContainerProps): Partial<GraphProps> => ({
-    graph: state.graph,
-    nodeOptions: NODE_OPTIONS,
-    selectedNodeIds: state.selectedNodeId ? { [state.selectedNodeId!]: true } : undefined,
-    ...ownProps
-  }),
-  (dispatch): Partial<GraphProps> => ({
-    toggleNode: (nodeId) => dispatch(ActionCreators.toggleNode({nodeId}))
-  })
-)(Graph);
+export const GraphContainer = (props: GraphContainerProps) => {
+  const [state, dispatch] = useRedux();
+
+  return <Graph
+    graph={state.app.graph}
+    nodeOptions={NODE_OPTIONS}
+    selectedNodeIds={state.app.selectedNodeId ? { [state.app.selectedNodeId!]: true } : undefined}
+    toggleNode={(nodeId) => dispatch(ActionCreators.toggleNode({ nodeId }))}
+    {...props}
+  />
+};

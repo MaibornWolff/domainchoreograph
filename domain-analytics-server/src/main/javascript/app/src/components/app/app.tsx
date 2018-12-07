@@ -1,14 +1,14 @@
-import { injectGlobal } from 'emotion';
+import { Global, css } from '@emotion/core';
 import * as React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import { DropMessage } from '~components/drop-message/drop-message';
 import { DropZoneContainer } from '~containers/drop-zone.container';
 import { GraphPageContainer } from '~containers/graph-page.container';
-import { history } from '~store';
+import { history } from '~history';
 import { styled } from '~utils/styled';
 
-injectGlobal`
+const globalStyles = css`
   html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -51,6 +51,7 @@ export class App extends React.Component<AppProps, AppState> {
   public render() {
     return (
       <Wrapper>
+        <Global styles={globalStyles}/>
         <DropZoneContainer>
           <ConnectedRouter history={history}>
             <Switch>

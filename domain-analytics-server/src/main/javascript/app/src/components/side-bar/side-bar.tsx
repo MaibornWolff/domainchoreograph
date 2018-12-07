@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { ClassNames, css } from '@emotion/core';
 import * as React from 'react';
 import ReactJson from 'react-json-view';
 import { Markdown } from '~components/markdown/markdown';
@@ -44,6 +44,7 @@ const NoSelection = styled('div')`
 
 const JsonWrapper = styled('div')`
     font-size: .8rem;
+
     .react-json-view {
       background: none !important;
     }
@@ -90,44 +91,48 @@ export class SideBar extends React.Component<SideBarProps, SideBarState> {
     }
 
     return (
-      <StyledResizable wrapperClassName={resizableWrapperStyle}>
-        {
-          node
-            ? (
-              <div>
-                <StyledHeader>{node.name}</StyledHeader>
-                {node.preview && <PreviewLabel>{node.preview}</PreviewLabel>}
-                {node.exception
-                  ? (
-                    <SectionContainer header={'Exception'} isInitiallyOpen={true}>
-                      <Danger>
-                        <ExceptionLabel>Exception:</ExceptionLabel>
-                        <ExceptionMessage>{node.exception.detailMessage}</ExceptionMessage>
-                      </Danger>
+      <ClassNames>
+        {({ css }) => (
+          <StyledResizable wrapperClassName={css(resizableWrapperStyle)}>
+            {
+              node
+                ? (
+                  <div>
+                    <StyledHeader>{node.name}</StyledHeader>
+                    {node.preview && <PreviewLabel>{node.preview}</PreviewLabel>}
+                    {node.exception
+                      ? (
+                        <SectionContainer header={'Exception'} isInitiallyOpen={true}>
+                          <Danger>
+                            <ExceptionLabel>Exception:</ExceptionLabel>
+                            <ExceptionMessage>{node.exception.detailMessage}</ExceptionMessage>
+                          </Danger>
+                        </SectionContainer>
+                      )
+                      : null
+                    }
+                    {node.doc
+                      ? <SectionContainer header={'Documentation'} isInitiallyOpen={true}><Markdown
+                        markdown={node.doc}/></SectionContainer>
+                      : null}
+                    <SectionContainer header={'Inspection'} isInitiallyOpen={true}>
+                      <JsonWrapper>
+                        <ReactJson
+                          src={getNodeValueAsJson(node)}
+                          theme={theme.jsonViewTheme}
+                          name={getNodeNameForJson(node)}
+                          indentWidth={2}
+                          collapsed={1}
+                        />
+                      </JsonWrapper>
                     </SectionContainer>
-                  )
-                  : null
-                }
-                {node.doc
-                  ? <SectionContainer header={'Documentation'} isInitiallyOpen={true}><Markdown
-                    markdown={node.doc}/></SectionContainer>
-                  : null}
-                <SectionContainer header={'Inspection'} isInitiallyOpen={true}>
-                  <JsonWrapper>
-                    <ReactJson
-                      src={getNodeValueAsJson(node)}
-                      theme={theme.jsonViewTheme}
-                      name={getNodeNameForJson(node)}
-                      indentWidth={2}
-                      collapsed={1}
-                    />
-                  </JsonWrapper>
-                </SectionContainer>
-              </div>
-            )
-            : <NoSelection>No Selection</NoSelection>
-        }
-      </StyledResizable>
+                  </div>
+                )
+                : <NoSelection>No Selection</NoSelection>
+            }
+          </StyledResizable>
+        )}
+      </ClassNames>
     );
   }
 }

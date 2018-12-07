@@ -9,8 +9,8 @@ type ConnectedNavigationBarProps = Omit<NavigationBarProps, 'currentThemeKey' | 
 
 const ConnectedNavigationBar = connect(
   (state: GlobalState, ownProps: ConnectedNavigationBarProps): Partial<NavigationBarProps> => ({
-    graph: state.graph,
-    currentThemeKey: state.theme,
+    graph: state.app.graph,
+    currentThemeKey: state.app.theme,
     ...ownProps
   }),
   (dispatch): Partial<NavigationBarProps> => ({

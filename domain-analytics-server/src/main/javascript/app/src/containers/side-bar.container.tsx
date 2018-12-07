@@ -1,9 +1,15 @@
-import { withTheme } from 'emotion-theming';
-import { connect } from 'react-redux';
-import { SideBar, SideBarProps } from '~components/side-bar/side-bar';
-import { GlobalState } from '~ducks';
+import * as React from 'react';
+import { SideBar } from '~components/side-bar/side-bar';
 import { selectSelectedNode } from '~selectors/selectors';
+import { useReduxSelector } from '~utils/redux.utils';
+import { useTheme } from '~utils/styled';
 
-export const SideBarContainer = connect(
-  (state: GlobalState): Partial<SideBarProps> => ({ node: selectSelectedNode(state) })
-)(withTheme(SideBar));
+export const SideBarContainer = () => {
+  const node = useReduxSelector(selectSelectedNode);
+  const theme = useTheme();
+
+  return <SideBar
+    node={node}
+    theme={theme}
+  />;
+};

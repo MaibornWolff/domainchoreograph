@@ -1,4 +1,3 @@
-import { css } from 'emotion';
 import * as React from 'react';
 import { CSSProperties } from 'react';
 import { calculateGraph } from '~components/graph/calculate-graph';
@@ -7,17 +6,20 @@ import { getSelectedOptionsOrUndefined, SelectedOptions } from '~components/grap
 import { Node } from '~components/graph/node/node';
 import { NodeOptions } from '~constants/node-options';
 import { ChoreoGraph } from '~types/choreo-graph';
+import { styled } from '~utils/styled';
 
 export const EDGE_ARROW_WIDTH = 7;
 export const EDGE_ARROW_HEIGHT = 8;
 
-const wrapperStyles = css`
+const NodeWrapper = styled('div')`
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
 `;
+
+const EdgeWrapper = NodeWrapper.withComponent('svg');
 
 export interface GraphProps {
   className?: string;
@@ -67,7 +69,7 @@ export class Graph extends React.PureComponent<GraphProps, GraphState> {
 
     return (
       <div style={style} className={this.props.className || ''}>
-        <div className={wrapperStyles}>
+        <NodeWrapper>
           {nodes.map((node, i) => <Node
             toggleNode={toggleNode}
             isSelected={!!selectedNodeIds[node.id]}
@@ -77,10 +79,9 @@ export class Graph extends React.PureComponent<GraphProps, GraphState> {
             scale={scale}
             options={nodeOptions}/>
           )}
-        </div>
-        <svg
+        </NodeWrapper>
+        <EdgeWrapper
           style={widthHeight}
-          className={wrapperStyles}
         >
           {edges.map((edge, i) => <Edge
             key={i}
@@ -88,7 +89,7 @@ export class Graph extends React.PureComponent<GraphProps, GraphState> {
             selectedOptions={getSelectedOptionsOrUndefined(selectedEdgeIds[edge.id])}
             isSelected={!!selectedEdgeIds[edge.id]}
           />)}
-        </svg>
+        </EdgeWrapper>
       </div>
     );
   }

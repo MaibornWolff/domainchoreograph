@@ -1,5 +1,5 @@
 import React from 'react';
-import { push } from 'react-router-redux';
+import { push } from 'connected-react-router';
 import { DropZone } from '~components/drop-zone/drop-zone';
 import { DropZoneContainer } from '~containers/drop-zone.container';
 import { ActionCreators } from '~ducks';

@@ -38,7 +38,7 @@ function getBorderColor(args: { theme: Theme } & NodeProps) {
   return theme.colors.border.normal;
 }
 
-const Wrapper = styled.div<NodeProps>`
+const Wrapper = styled('div')<NodeProps>`
   position: absolute;
   background: ${({ theme }) => theme.colors.background[3]};
   border: ${(args) => `
@@ -67,7 +67,7 @@ const Wrapper = styled.div<NodeProps>`
   z-index: 1;
 `;
 
-const ValueWrapper = styled.pre<NodeProps>`
+const ValueWrapper = styled('pre')<NodeProps>`
   margin: ${({ scale }) => scale * .3}rem;
   text-align: center;
   font-size: ${({ scale }) => scale * .8}rem;
@@ -77,7 +77,7 @@ const ValueWrapper = styled.pre<NodeProps>`
   overflow: hidden;
 `;
 
-const NameWrapper = styled.div`
+const NameWrapper = styled('div')`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;

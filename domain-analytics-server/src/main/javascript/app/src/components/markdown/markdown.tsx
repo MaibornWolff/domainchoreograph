@@ -21,7 +21,7 @@ export interface MarkdownState {
 }
 
 export class Markdown extends React.Component<MarkdownProps, MarkdownState> {
-  private md: MarkdownIt.MarkdownIt = new MarkdownIt();
+  private md: MarkdownIt = new MarkdownIt();
 
   public render() {
     const html: string = this.transformMarkdownToHtml(this.props.markdown);
@@ -41,6 +41,6 @@ export class Markdown extends React.Component<MarkdownProps, MarkdownState> {
   }
 
   private initializeMarkdownIt(): void {
-    this.md.use(MarkdownItKatex);
+    this.md.use(MarkdownItKatex as any);
   }
 }

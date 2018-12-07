@@ -1,4 +1,8 @@
-import { Reducer } from 'redux';
+import { useContext } from 'react';
+// @ts-ignore
+import { ReactReduxContext } from 'react-redux';
+import { Action as ReduxAction, Dispatch, Reducer } from 'redux';
+import { GlobalState } from '~ducks';
 
 export interface BaseAction<T extends string = string> {
   type: T;
@@ -55,4 +59,14 @@ export function createReduxContext<S>(defaultState: S): ReduxContext<S> {
     },
     createReducer: () => createReducer(defaultState, actionCreators),
   };
+}
+
+export function useRedux<T extends ReduxAction>(): [GlobalState, Dispatch<T>] {
+  const { storeState: state, store: { dispatch } } = useContext(ReactReduxContext);
+  return [state, dispatch];
+}
+
+export function useReduxSelector<T>(select: (state: GlobalState) => T): T {
+  const [state] = useRedux();
+  return select(state);
 }
