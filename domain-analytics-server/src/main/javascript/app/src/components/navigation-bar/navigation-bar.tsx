@@ -121,7 +121,6 @@ type NavigationNode = {
 };
 
 function getNavigationPath(startingPoint: NavigationNode | undefined, graph: ChoreoGraph): NavigationNode[] {
-  console.log(startingPoint, graph);
   let result: NavigationNode[] = [];
 
   if (!startingPoint) {
@@ -146,7 +145,6 @@ function getNavigationPath(startingPoint: NavigationNode | undefined, graph: Cho
     }
     const parentScopeId = node.scope;
     const parentScope = graph.scopes[parentScopeId];
-    console.log('PARENT SCOPE', parentScopeId, parentScope);
     parentNode = { type: 'scope', item: parentScope };
 
   } else {
