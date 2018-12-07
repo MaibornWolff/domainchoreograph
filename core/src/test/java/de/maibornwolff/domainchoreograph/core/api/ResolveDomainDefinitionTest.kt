@@ -1,11 +1,12 @@
 package de.maibornwolff.domainchoreograph.core.api
 
-import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.argumentCaptor
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.squareup.kotlinpoet.asClassName
 import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyNode
+import de.maibornwolff.domainchoreograph.scenarios.choreographywithexception.ExceptionDomainObject
+import de.maibornwolff.domainchoreograph.scenarios.choreographywithexception.TestException
 import de.maibornwolff.domainchoreograph.scenarios.deepchoreography.*
 import de.maibornwolff.domainchoreograph.scenarios.nestedchoreography.NestedDomainResult
 import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDomainObject1
@@ -13,7 +14,6 @@ import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDoma
 import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDomainObject3
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
-import java.lang.reflect.Proxy
 
 class ResolveDomainDefinitionTest {
     @Test
@@ -208,6 +208,70 @@ class ResolveDomainDefinitionWithOptionsTest {
             assertThat(actual.nodes[DeepDomainObject1::class.java]).isEqualTo(expected.nodes[DeepDomainObject1::class.java])
             assertThat(actual.nodes[DeepDomainObject2::class.java]).isEqualTo(expected.nodes[DeepDomainObject2::class.java])
             assertThat(actual.nodes[NestedDomainResult::class.java]).isEqualTo(expected.nodes[NestedDomainResult::class.java])
+        }
+    }
+
+    @Test
+    fun `resolve a domain definition with exception during runtime with options`() {
+        val logger: DomainLogger = mock()
+
+        val object1 = SimpleDomainObject1(1)
+        val object2 = SimpleDomainObject2(2)
+
+        val node1 = DependencyNode.VariableNode(
+            type = SimpleDomainObject1::class.asClassName(),
+            domainType = SimpleDomainObject1::class.asClassName(),
+            name = "Parameter 0"
+        )
+        val node2 = DependencyNode.VariableNode(
+            type = SimpleDomainObject2::class.asClassName(),
+            domainType = SimpleDomainObject2::class.asClassName(),
+            name = "Parameter 1"
+        )
+        val node3 = DependencyNode.FunctionNode(
+            type = ExceptionDomainObject::class.asClassName(),
+            domainType = ExceptionDomainObject::class.asClassName(),
+            caller = ExceptionDomainObject::class.asClassName(),
+            name = "create",
+            parameters = listOf(
+                node1,
+                node2
+            )
+        )
+        val expectedException = TestException()
+        val expected = DomainContext(
+            schema = DomainChoreographySchema(
+                rootNode = node3,
+                nodeOrder = listOf(node1, node2, node3)
+            ),
+            nodes = mapOf(
+                SimpleDomainObject1::class.java to DomainContextNode(object1),
+                SimpleDomainObject2::class.java to DomainContextNode(object2),
+                ExceptionDomainObject::class.java to DomainContextNode(
+                    value = null,
+                    exception = expectedException
+                )
+            ),
+            choreographyInterface = null,
+            exception = expectedException
+        )
+
+        var exception: TestException? = null
+        try {
+            resolveDomainDefinitionWithOptions<ExceptionDomainObject>(
+                DomainChoreographyOptions(logger = setOf(logger)),
+                object1,
+                object2
+            )
+        } catch (e: TestException) {
+            exception = e
+        }
+
+        assertThat(exception).isEqualTo(expectedException)
+        argumentCaptor<DomainContext> {
+            verify(logger).onComplete(capture())
+            val actual = firstValue
+            assertThat(actual).isEqualTo(expected)
         }
     }
 }

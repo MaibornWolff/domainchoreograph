@@ -13,6 +13,7 @@ import de.maibornwolff.domainchoreograph.core.processing.reflection.ReflectionVa
 import de.maibornwolff.domainchoreograph.core.processing.reflection.asReflectionType
 import de.maibornwolff.domainchoreograph.core.processing.utils.asJavaClass
 import java.lang.reflect.InvocationHandler
+import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
 import java.lang.reflect.Proxy
 import kotlin.reflect.KClass
@@ -58,9 +59,14 @@ fun <T : Any> resolveDomainDefinitionWithOptions(
         graph.nodes.forEach {
             when (it) {
                 is DependencyNode.FunctionNode -> {
-                    val result = it.invoke(references)
-                    references[it.domainType] = result
-                    context.save(it.domainType.asJavaClass(), result)
+                    try {
+                        val result = it.invoke(references)
+                        references[it.domainType] = result
+                        context.save(it.domainType.asJavaClass(), result)
+                    } catch (e: Exception) {
+                        context.registerException(e)
+                        throw e
+                    }
                 }
                 is DependencyNode.ChoreographyNode -> {
                     val calls = mutableListOf<DomainContext>()
@@ -94,7 +100,11 @@ private fun DependencyNode.FunctionNode.invoke(references: References): Any {
     val method = companion.methods
         .find { it.name == name }
         ?: throw NullPointerException("Method '$name' not found on '${callerClass.canonicalName}'")
-    return method.invoke(callerClass.kotlin.companionObjectInstance, *references.resolve(parameters))
+    try {
+        return method.invoke(callerClass.kotlin.companionObjectInstance, *references.resolve(parameters))
+    } catch (e: InvocationTargetException) {
+        throw e.targetException
+    }
 }
 
 private fun References.resolve(params: List<DependencyNode>) = params
