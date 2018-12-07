@@ -20,6 +20,7 @@ jobs:
     include:
     - stage: build
       script:
+      - ./gradlew testWebapp
       - ./gradlew build
     - stage: deploy
       if: branch = master

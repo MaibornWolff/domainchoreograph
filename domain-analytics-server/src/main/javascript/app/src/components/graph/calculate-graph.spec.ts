@@ -1,3 +1,4 @@
+import { number } from 'prop-types';
 import { calculateGraph, CalculateGraphProps } from '~components/graph/calculate-graph';
 
 describe('calculateGraph', () => {
@@ -82,9 +83,9 @@ describe('calculateGraph', () => {
             line: expect.any(String)
           }
         ],
-      height: 90,
-      width: 11,
-      scale: 1
+      height: expect.any(Number),
+      width: expect.any(Number),
+      scale: expect.any(Number)
     };
 
     const actual = calculateGraph(baseProps);
