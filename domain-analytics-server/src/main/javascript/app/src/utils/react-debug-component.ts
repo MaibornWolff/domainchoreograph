@@ -108,7 +108,7 @@ const analyzeShouldComponentUpdate: ShouldComponentUpdate<any, any> = function(n
 };
 
 export class ReactDebugComponent<P, S> extends React.Component<P, S> {
-  public shouldComponentUpdate(nextProps: P, nextState: S) {
+  public shouldComponentUpdate(nextProps: P, nextState: S): boolean {
     return analyzeShouldComponentUpdate.call(this, nextProps, nextState);
   }
 }
