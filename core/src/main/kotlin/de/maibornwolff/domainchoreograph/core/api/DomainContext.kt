@@ -7,7 +7,7 @@ data class DomainContextNode<T>(
 )
 
 data class DomainContext(
-    val choreographyInterface: Class<*>,
+    val choreographyInterface: Class<*>?,
     val schema: DomainChoreographySchema,
     val nodes: Map<Class<*>, DomainContextNode<*>>,
     val exception: Throwable? = null

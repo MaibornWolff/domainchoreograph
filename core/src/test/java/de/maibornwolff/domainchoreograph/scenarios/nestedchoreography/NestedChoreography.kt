@@ -8,7 +8,7 @@ import de.maibornwolff.domainchoreograph.scenarios.deepchoreography.DeepDomainOb
 import de.maibornwolff.domainchoreograph.scenarios.deepchoreography.DeepDomainObject2
 
 @DomainDefinition
-class NestedDomainResult(val value: Int) {
+data class NestedDomainResult(val value: Int) {
     companion object {
         @DomainFunction
         fun create(d1: DeepDomainObject1, d2: DeepDomainObject2, deepChoreography: DeepChoreography) = NestedDomainResult(

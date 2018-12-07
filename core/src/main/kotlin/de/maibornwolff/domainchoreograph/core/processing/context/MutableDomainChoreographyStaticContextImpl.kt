@@ -7,7 +7,7 @@ import de.maibornwolff.domainchoreograph.core.api.DomainContextNode
 import de.maibornwolff.domainchoreograph.core.processing.utils.asJavaClass
 
 class MutableDomainChoreographyStaticContextImpl(
-    private val choreographyInterface: Class<*>,
+    private val choreographyInterface: Class<*>?,
     private val schema: DomainChoreographySchema
 ) : MutableDomainChoreographyStaticContext, CastableToDomainChoreographyStaticContext {
     private val values: MutableMap<Class<*>, MutableDomainChoreographyStaticContextNode<Any>> = mutableMapOf()
