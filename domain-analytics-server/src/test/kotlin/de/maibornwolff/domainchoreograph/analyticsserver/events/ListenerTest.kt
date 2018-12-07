@@ -2,7 +2,7 @@ package de.maibornwolff.domainchoreograph.analyticsserver.events
 
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
-import org.junit.jupiter.api.Test
+import org.junit.Test
 
 internal class ListenerTest {
 

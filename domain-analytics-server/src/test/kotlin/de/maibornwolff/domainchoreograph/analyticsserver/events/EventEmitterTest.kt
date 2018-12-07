@@ -1,7 +1,8 @@
 package de.maibornwolff.domainchoreograph.analyticsserver.events
 
-import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.*
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.Test
+
 
 internal class EventEmitterTest {
 
@@ -14,7 +15,7 @@ internal class EventEmitterTest {
     emitter.subscribe { actualValue = it }
     emitter.emit(expectedValue)
 
-    assertEquals(expectedValue, actualValue)
+    assertThat(actualValue).isEqualTo(expectedValue)
   }
 
 }

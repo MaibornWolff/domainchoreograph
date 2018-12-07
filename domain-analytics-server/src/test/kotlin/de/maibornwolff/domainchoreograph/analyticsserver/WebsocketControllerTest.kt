@@ -4,15 +4,15 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import de.maibornwolff.domainchoreograph.exportdefinitions.utils.toJson
 import org.eclipse.jetty.websocket.api.Session
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.junit.Before
+import org.junit.Test
 import org.mockito.Mockito.`when`
 
 internal class WebsocketControllerTest {
   private lateinit var repository: GraphRepository
   private lateinit var controller: WebSocketController
 
-  @BeforeEach
+  @Before
   fun beforeEach() {
     repository = GraphRepository()
     controller = WebSocketController(repository)

@@ -4,14 +4,14 @@ import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import de.maibornwolff.domainchoreograph.analyticsserver.events.EventListenerCallback
 import de.maibornwolff.domainchoreograph.exportdefinitions.model.ExportGraph
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Test
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.Before
+import org.junit.Test
 
 internal class GraphRepositoryTest {
   lateinit var repository: GraphRepository
 
-  @BeforeEach
+  @Before
   fun beforeEach() {
     repository = GraphRepository()
   }
@@ -23,7 +23,7 @@ internal class GraphRepositoryTest {
     repository.onAddGraph.subscribe(mockListener)
     repository.addGraph(mockGraph)
 
-    assertEquals(repository.graphs, listOf(mockGraph))
+    assertThat(repository.graphs).isEqualTo(listOf(mockGraph))
     verify(mockListener).invoke(mockGraph)
   }
 }
