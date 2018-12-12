@@ -1,57 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GraphPage should render with graph 1`] = `
-<Wrapper>
+<styled.div>
   <withRouter(renderNavigationBarWithRoutes) />
-  <ContentWrapper>
-    <GraphWrapper>
+  <styled.div>
+    <styled.div>
       <MapInteractionCSS
         key="root"
       >
-        <PaddingWrapper>
-          <Connect(Graph)
+        <styled.div>
+          <Component
             scope="root"
           />
-        </PaddingWrapper>
+        </styled.div>
       </MapInteractionCSS>
-    </GraphWrapper>
-    <Connect(WithTheme(SideBar)) />
-  </ContentWrapper>
-</Wrapper>
+    </styled.div>
+    <Component />
+  </styled.div>
+</styled.div>
 `;
 
 exports[`GraphPage should render with graph without scopes 1`] = `
-<Wrapper>
+<styled.div>
   <withRouter(renderNavigationBarWithRoutes) />
-  <ContentWrapper>
-    <GraphWrapper>
+  <styled.div>
+    <styled.div>
       <p>
         No Scopes
       </p>
-    </GraphWrapper>
-    <Connect(WithTheme(SideBar)) />
-  </ContentWrapper>
-</Wrapper>
+    </styled.div>
+    <Component />
+  </styled.div>
+</styled.div>
 `;
 
 exports[`GraphPage should render with scope 1`] = `
-<Wrapper>
+<styled.div>
   <withRouter(renderNavigationBarWithRoutes) />
-  <ContentWrapper>
-    <GraphWrapper>
+  <styled.div>
+    <styled.div>
       <MapInteractionCSS
         key="root"
       >
-        <PaddingWrapper>
-          <Connect(Graph)
+        <styled.div>
+          <Component
             scope="root"
           />
-        </PaddingWrapper>
+        </styled.div>
       </MapInteractionCSS>
-    </GraphWrapper>
-    <Connect(WithTheme(SideBar)) />
-  </ContentWrapper>
-</Wrapper>
+    </styled.div>
+    <Component />
+  </styled.div>
+</styled.div>
 `;
 
 exports[`GraphPage should render without graph 1`] = `

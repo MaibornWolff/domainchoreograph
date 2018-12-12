@@ -18,19 +18,13 @@
   "env": {
     "production": {
       "plugins": [
-        "emotion"
+        "styled-components"
       ]
     },
     "development": {
       "plugins": [
         "react-hot-loader/babel",
-        [
-          "emotion",
-          {
-            "sourceMap": true,
-            "autoLabel": true
-          }
-        ]
+        "styled-components"
       ]
     },
     "test": {
@@ -49,13 +43,7 @@
         ]
       ],
       "plugins": [
-        [
-          "emotion",
-          {
-            "sourceMap": true,
-            "autoLabel": true
-          }
-        ]
+        "styled-components"
       ]
     }
   }

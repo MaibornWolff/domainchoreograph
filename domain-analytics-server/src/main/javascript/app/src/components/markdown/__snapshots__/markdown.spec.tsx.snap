@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Markdown should render 1`] = `
-.emotion-2 .markdown-body {
+.c0 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
@@ -11,211 +11,211 @@ exports[`Markdown should render 1`] = `
   word-wrap: break-word;
 }
 
-.emotion-2 .markdown-body .pl-c {
+.c0 .markdown-body .pl-c {
   color: rgba(0,0,0,.54);
 }
 
-.emotion-2 .markdown-body .pl-c1,
-.emotion-2 .markdown-body .pl-s .pl-v {
+.c0 .markdown-body .pl-c1,
+.c0 .markdown-body .pl-s .pl-v {
   color: #005cc5;
 }
 
-.emotion-2 .markdown-body .pl-e,
-.emotion-2 .markdown-body .pl-en {
+.c0 .markdown-body .pl-e,
+.c0 .markdown-body .pl-en {
   color: #6f42c1;
 }
 
-.emotion-2 .markdown-body .pl-smi,
-.emotion-2 .markdown-body .pl-s .pl-s1 {
+.c0 .markdown-body .pl-smi,
+.c0 .markdown-body .pl-s .pl-s1 {
   color: rgba(0,0,0,.87);
 }
 
-.emotion-2 .markdown-body .pl-ent {
+.c0 .markdown-body .pl-ent {
   color: #22863a;
 }
 
-.emotion-2 .markdown-body .pl-k {
+.c0 .markdown-body .pl-k {
   color: #d73a49;
 }
 
-.emotion-2 .markdown-body .pl-s,
-.emotion-2 .markdown-body .pl-pds,
-.emotion-2 .markdown-body .pl-s .pl-pse .pl-s1,
-.emotion-2 .markdown-body .pl-sr,
-.emotion-2 .markdown-body .pl-sr .pl-cce,
-.emotion-2 .markdown-body .pl-sr .pl-sre,
-.emotion-2 .markdown-body .pl-sr .pl-sra {
+.c0 .markdown-body .pl-s,
+.c0 .markdown-body .pl-pds,
+.c0 .markdown-body .pl-s .pl-pse .pl-s1,
+.c0 .markdown-body .pl-sr,
+.c0 .markdown-body .pl-sr .pl-cce,
+.c0 .markdown-body .pl-sr .pl-sre,
+.c0 .markdown-body .pl-sr .pl-sra {
   color: #032f62;
 }
 
-.emotion-2 .markdown-body .pl-v,
-.emotion-2 .markdown-body .pl-smw {
+.c0 .markdown-body .pl-v,
+.c0 .markdown-body .pl-smw {
   color: #e36209;
 }
 
-.emotion-2 .markdown-body .pl-bu {
+.c0 .markdown-body .pl-bu {
   color: #b31d28;
 }
 
-.emotion-2 .markdown-body .pl-ii {
+.c0 .markdown-body .pl-ii {
   color: #fafbfc;
   background-color: #b31d28;
 }
 
-.emotion-2 .markdown-body .pl-c2 {
+.c0 .markdown-body .pl-c2 {
   color: #fafbfc;
   background-color: #d73a49;
 }
 
-.emotion-2 .markdown-body .pl-c2::before {
+.c0 .markdown-body .pl-c2::before {
   content: "^M";
 }
 
-.emotion-2 .markdown-body .pl-sr .pl-cce {
+.c0 .markdown-body .pl-sr .pl-cce {
   font-weight: bold;
   color: #22863a;
 }
 
-.emotion-2 .markdown-body .pl-ml {
+.c0 .markdown-body .pl-ml {
   color: #735c0f;
 }
 
-.emotion-2 .markdown-body .pl-mh,
-.emotion-2 .markdown-body .pl-mh .pl-en,
-.emotion-2 .markdown-body .pl-ms {
+.c0 .markdown-body .pl-mh,
+.c0 .markdown-body .pl-mh .pl-en,
+.c0 .markdown-body .pl-ms {
   font-weight: bold;
   color: #005cc5;
 }
 
-.emotion-2 .markdown-body .pl-mi {
+.c0 .markdown-body .pl-mi {
   font-style: italic;
   color: rgba(0,0,0,.87);
 }
 
-.emotion-2 .markdown-body .pl-mb {
+.c0 .markdown-body .pl-mb {
   font-weight: bold;
   color: rgba(0,0,0,.87);
 }
 
-.emotion-2 .markdown-body .pl-md {
+.c0 .markdown-body .pl-md {
   color: #b31d28;
   background-color: #ffeef0;
 }
 
-.emotion-2 .markdown-body .pl-mi1 {
+.c0 .markdown-body .pl-mi1 {
   color: #22863a;
   background-color: #f0fff4;
 }
 
-.emotion-2 .markdown-body .pl-mc {
+.c0 .markdown-body .pl-mc {
   color: #e36209;
   background-color: #ffebda;
 }
 
-.emotion-2 .markdown-body .pl-mi2 {
+.c0 .markdown-body .pl-mi2 {
   color: #f6f8fa;
   background-color: #005cc5;
 }
 
-.emotion-2 .markdown-body .pl-mdr {
+.c0 .markdown-body .pl-mdr {
   font-weight: bold;
   color: #6f42c1;
 }
 
-.emotion-2 .markdown-body .pl-ba {
+.c0 .markdown-body .pl-ba {
   color: #586069;
 }
 
-.emotion-2 .markdown-body .pl-sg {
+.c0 .markdown-body .pl-sg {
   color: #959da5;
 }
 
-.emotion-2 .markdown-body .pl-corl {
+.c0 .markdown-body .pl-corl {
   -webkit-text-decoration: underline;
   text-decoration: underline;
   color: #032f62;
 }
 
-.emotion-2 .markdown-body .octicon {
+.c0 .markdown-body .octicon {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
 }
 
-.emotion-2 .markdown-body a {
+.c0 .markdown-body a {
   background-color: transparent;
 }
 
-.emotion-2 .markdown-body a:active,
-.emotion-2 .markdown-body a:hover {
+.c0 .markdown-body a:active,
+.c0 .markdown-body a:hover {
   outline-width: 0;
 }
 
-.emotion-2 .markdown-body strong {
+.c0 .markdown-body strong {
   font-weight: inherit;
 }
 
-.emotion-2 .markdown-body strong {
+.c0 .markdown-body strong {
   font-weight: bolder;
 }
 
-.emotion-2 .markdown-body img {
+.c0 .markdown-body img {
   border-style: none;
 }
 
-.emotion-2 .markdown-body code,
-.emotion-2 .markdown-body kbd,
-.emotion-2 .markdown-body pre {
+.c0 .markdown-body code,
+.c0 .markdown-body kbd,
+.c0 .markdown-body pre {
   font-family: monospace,monospace;
   font-size: 1em;
 }
 
-.emotion-2 .markdown-body hr {
+.c0 .markdown-body hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
 
-.emotion-2 .markdown-body input {
+.c0 .markdown-body input {
   font: inherit;
   margin: 0;
 }
 
-.emotion-2 .markdown-body input {
+.c0 .markdown-body input {
   overflow: visible;
 }
 
-.emotion-2 .markdown-body [type="checkbox"] {
+.c0 .markdown-body [type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
 }
 
-.emotion-2 .markdown-body * {
+.c0 .markdown-body * {
   box-sizing: border-box;
 }
 
-.emotion-2 .markdown-body input {
+.c0 .markdown-body input {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
 
-.emotion-2 .markdown-body a {
+.c0 .markdown-body a {
   color: #0366d6;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.emotion-2 .markdown-body a:hover {
+.c0 .markdown-body a:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2 .markdown-body strong {
+.c0 .markdown-body strong {
   font-weight: 600;
 }
 
-.emotion-2 .markdown-body hr {
+.c0 .markdown-body hr {
   height: 0;
   margin: 15px 0;
   overflow: hidden;
@@ -224,161 +224,161 @@ exports[`Markdown should render 1`] = `
   border-bottom: 1px solid #dfe2e5;
 }
 
-.emotion-2 .markdown-body hr::before {
+.c0 .markdown-body hr::before {
   display: table;
   content: "";
 }
 
-.emotion-2 .markdown-body hr::after {
+.c0 .markdown-body hr::after {
   display: table;
   clear: both;
   content: "";
 }
 
-.emotion-2 .markdown-body table {
+.c0 .markdown-body table {
   border-spacing: 0;
   border-collapse: collapse;
 }
 
-.emotion-2 .markdown-body td,
-.emotion-2 .markdown-body th {
+.c0 .markdown-body td,
+.c0 .markdown-body th {
   padding: 0;
 }
 
-.emotion-2 .markdown-body h1,
-.emotion-2 .markdown-body h2,
-.emotion-2 .markdown-body h3,
-.emotion-2 .markdown-body h4,
-.emotion-2 .markdown-body h5,
-.emotion-2 .markdown-body h6 {
+.c0 .markdown-body h1,
+.c0 .markdown-body h2,
+.c0 .markdown-body h3,
+.c0 .markdown-body h4,
+.c0 .markdown-body h5,
+.c0 .markdown-body h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.emotion-2 .markdown-body p {
+.c0 .markdown-body p {
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.emotion-2 .markdown-body blockquote {
+.c0 .markdown-body blockquote {
   margin: 0;
 }
 
-.emotion-2 .markdown-body ul,
-.emotion-2 .markdown-body ol {
+.c0 .markdown-body ul,
+.c0 .markdown-body ol {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.emotion-2 .markdown-body ol ol,
-.emotion-2 .markdown-body ul ol {
+.c0 .markdown-body ol ol,
+.c0 .markdown-body ul ol {
   list-style-type: lower-roman;
 }
 
-.emotion-2 .markdown-body ul ul ol,
-.emotion-2 .markdown-body ul ol ol,
-.emotion-2 .markdown-body ol ul ol,
-.emotion-2 .markdown-body ol ol ol {
+.c0 .markdown-body ul ul ol,
+.c0 .markdown-body ul ol ol,
+.c0 .markdown-body ol ul ol,
+.c0 .markdown-body ol ol ol {
   list-style-type: lower-alpha;
 }
 
-.emotion-2 .markdown-body dd {
+.c0 .markdown-body dd {
   margin-left: 0;
 }
 
-.emotion-2 .markdown-body code {
+.c0 .markdown-body code {
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   font-size: 12px;
 }
 
-.emotion-2 .markdown-body pre {
+.c0 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   font-size: 12px;
 }
 
-.emotion-2 .markdown-body .octicon {
+.c0 .markdown-body .octicon {
   vertical-align: text-bottom;
 }
 
-.emotion-2 .markdown-body .pl-0 {
+.c0 .markdown-body .pl-0 {
   padding-left: 0 !important;
 }
 
-.emotion-2 .markdown-body .pl-1 {
+.c0 .markdown-body .pl-1 {
   padding-left: 4px !important;
 }
 
-.emotion-2 .markdown-body .pl-2 {
+.c0 .markdown-body .pl-2 {
   padding-left: 8px !important;
 }
 
-.emotion-2 .markdown-body .pl-3 {
+.c0 .markdown-body .pl-3 {
   padding-left: 16px !important;
 }
 
-.emotion-2 .markdown-body .pl-4 {
+.c0 .markdown-body .pl-4 {
   padding-left: 24px !important;
 }
 
-.emotion-2 .markdown-body .pl-5 {
+.c0 .markdown-body .pl-5 {
   padding-left: 32px !important;
 }
 
-.emotion-2 .markdown-body .pl-6 {
+.c0 .markdown-body .pl-6 {
   padding-left: 40px !important;
 }
 
-.emotion-2 .markdown-body::before {
+.c0 .markdown-body::before {
   display: table;
   content: "";
 }
 
-.emotion-2 .markdown-body::after {
+.c0 .markdown-body::after {
   display: table;
   clear: both;
   content: "";
 }
 
-.emotion-2 .markdown-body>*:first-child {
+.c0 .markdown-body>*:first-child {
   margin-top: 0 !important;
 }
 
-.emotion-2 .markdown-body>*:last-child {
+.c0 .markdown-body>*:last-child {
   margin-bottom: 0 !important;
 }
 
-.emotion-2 .markdown-body a:not([href]) {
+.c0 .markdown-body a:not([href]) {
   color: inherit;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.emotion-2 .markdown-body .anchor {
+.c0 .markdown-body .anchor {
   float: left;
   padding-right: 4px;
   margin-left: -20px;
   line-height: 1;
 }
 
-.emotion-2 .markdown-body .anchor:focus {
+.c0 .markdown-body .anchor:focus {
   outline: none;
 }
 
-.emotion-2 .markdown-body p,
-.emotion-2 .markdown-body blockquote,
-.emotion-2 .markdown-body ul,
-.emotion-2 .markdown-body ol,
-.emotion-2 .markdown-body dl,
-.emotion-2 .markdown-body table,
-.emotion-2 .markdown-body pre {
+.c0 .markdown-body p,
+.c0 .markdown-body blockquote,
+.c0 .markdown-body ul,
+.c0 .markdown-body ol,
+.c0 .markdown-body dl,
+.c0 .markdown-body table,
+.c0 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-.emotion-2 .markdown-body hr {
+.c0 .markdown-body hr {
   height: 0.25em;
   padding: 0;
   margin: 24px 0;
@@ -386,21 +386,21 @@ exports[`Markdown should render 1`] = `
   border: 0;
 }
 
-.emotion-2 .markdown-body blockquote {
+.c0 .markdown-body blockquote {
   padding: 0 1em;
   color: #6a737d;
   border-left: 0.25em solid #dfe2e5;
 }
 
-.emotion-2 .markdown-body blockquote>:first-child {
+.c0 .markdown-body blockquote>:first-child {
   margin-top: 0;
 }
 
-.emotion-2 .markdown-body blockquote>:last-child {
+.c0 .markdown-body blockquote>:last-child {
   margin-bottom: 0;
 }
 
-.emotion-2 .markdown-body kbd {
+.c0 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
   font-size: 11px;
@@ -414,106 +414,106 @@ exports[`Markdown should render 1`] = `
   box-shadow: inset 0 -1px 0 #959da5;
 }
 
-.emotion-2 .markdown-body h1,
-.emotion-2 .markdown-body h2,
-.emotion-2 .markdown-body h3,
-.emotion-2 .markdown-body h4,
-.emotion-2 .markdown-body h5,
-.emotion-2 .markdown-body h6 {
+.c0 .markdown-body h1,
+.c0 .markdown-body h2,
+.c0 .markdown-body h3,
+.c0 .markdown-body h4,
+.c0 .markdown-body h5,
+.c0 .markdown-body h6 {
   margin-top: 24px;
   margin-bottom: 16px;
   line-height: 1.25;
 }
 
-.emotion-2 .markdown-body h1 .octicon-link,
-.emotion-2 .markdown-body h2 .octicon-link,
-.emotion-2 .markdown-body h3 .octicon-link,
-.emotion-2 .markdown-body h4 .octicon-link,
-.emotion-2 .markdown-body h5 .octicon-link,
-.emotion-2 .markdown-body h6 .octicon-link {
+.c0 .markdown-body h1 .octicon-link,
+.c0 .markdown-body h2 .octicon-link,
+.c0 .markdown-body h3 .octicon-link,
+.c0 .markdown-body h4 .octicon-link,
+.c0 .markdown-body h5 .octicon-link,
+.c0 .markdown-body h6 .octicon-link {
   color: #1b1f23;
   vertical-align: middle;
   visibility: hidden;
 }
 
-.emotion-2 .markdown-body h1:hover .anchor,
-.emotion-2 .markdown-body h2:hover .anchor,
-.emotion-2 .markdown-body h3:hover .anchor,
-.emotion-2 .markdown-body h4:hover .anchor,
-.emotion-2 .markdown-body h5:hover .anchor,
-.emotion-2 .markdown-body h6:hover .anchor {
+.c0 .markdown-body h1:hover .anchor,
+.c0 .markdown-body h2:hover .anchor,
+.c0 .markdown-body h3:hover .anchor,
+.c0 .markdown-body h4:hover .anchor,
+.c0 .markdown-body h5:hover .anchor,
+.c0 .markdown-body h6:hover .anchor {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
-.emotion-2 .markdown-body h1:hover .anchor .octicon-link,
-.emotion-2 .markdown-body h2:hover .anchor .octicon-link,
-.emotion-2 .markdown-body h3:hover .anchor .octicon-link,
-.emotion-2 .markdown-body h4:hover .anchor .octicon-link,
-.emotion-2 .markdown-body h5:hover .anchor .octicon-link,
-.emotion-2 .markdown-body h6:hover .anchor .octicon-link {
+.c0 .markdown-body h1:hover .anchor .octicon-link,
+.c0 .markdown-body h2:hover .anchor .octicon-link,
+.c0 .markdown-body h3:hover .anchor .octicon-link,
+.c0 .markdown-body h4:hover .anchor .octicon-link,
+.c0 .markdown-body h5:hover .anchor .octicon-link,
+.c0 .markdown-body h6:hover .anchor .octicon-link {
   visibility: visible;
 }
 
-.emotion-2 .markdown-body h1 {
+.c0 .markdown-body h1 {
   padding-bottom: 0.3em;
   font-size: 1.3em;
   border-bottom: 1px solid #eaecef;
 }
 
-.emotion-2 .markdown-body h2 {
+.c0 .markdown-body h2 {
   padding-bottom: 0.3em;
   font-size: 1.15em;
   border-bottom: 1px solid #eaecef;
 }
 
-.emotion-2 .markdown-body h3 {
+.c0 .markdown-body h3 {
   font-size: 1em;
 }
 
-.emotion-2 .markdown-body h4 {
+.c0 .markdown-body h4 {
   font-size: 0.875em;
 }
 
-.emotion-2 .markdown-body h5 {
+.c0 .markdown-body h5 {
   font-size: 0.85em;
 }
 
-.emotion-2 .markdown-body h6 {
+.c0 .markdown-body h6 {
   font-size: 0.8em;
   color: #6a737d;
 }
 
-.emotion-2 .markdown-body ul,
-.emotion-2 .markdown-body ol {
+.c0 .markdown-body ul,
+.c0 .markdown-body ol {
   padding-left: 2em;
 }
 
-.emotion-2 .markdown-body ul ul,
-.emotion-2 .markdown-body ul ol,
-.emotion-2 .markdown-body ol ol,
-.emotion-2 .markdown-body ol ul {
+.c0 .markdown-body ul ul,
+.c0 .markdown-body ul ol,
+.c0 .markdown-body ol ol,
+.c0 .markdown-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.emotion-2 .markdown-body li {
+.c0 .markdown-body li {
   word-wrap: break-all;
 }
 
-.emotion-2 .markdown-body li>p {
+.c0 .markdown-body li>p {
   margin-top: 16px;
 }
 
-.emotion-2 .markdown-body li+li {
+.c0 .markdown-body li+li {
   margin-top: 0.25em;
 }
 
-.emotion-2 .markdown-body dl {
+.c0 .markdown-body dl {
   padding: 0;
 }
 
-.emotion-2 .markdown-body dl dt {
+.c0 .markdown-body dl dt {
   padding: 0;
   margin-top: 16px;
   font-size: 1em;
@@ -521,50 +521,51 @@ exports[`Markdown should render 1`] = `
   font-weight: 600;
 }
 
-.emotion-2 .markdown-body dl dd {
+.c0 .markdown-body dl dd {
   padding: 0 16px;
   margin-bottom: 16px;
 }
 
-.emotion-2 .markdown-body table {
+.c0 .markdown-body table {
   display: block;
   width: 100%;
   overflow: auto;
 }
 
-.emotion-2 .markdown-body table th {
+.c0 .markdown-body table th {
   font-weight: 600;
 }
 
-.emotion-2 .markdown-body table th,
-.emotion-2 .markdown-body table td {
+.c0 .markdown-body table th,
+.c0 .markdown-body table td {
   padding: 6px 13px;
   border: 1px solid rgba(0,0,0,0.3);
 }
 
-.emotion-2 .markdown-body table tr {
-  background-color: #FAFAFA border-top:1px solid rgba(0,0,0,0.3);
+.c0 .markdown-body table tr {
+  background-color: #FAFAFA;
+  border-top: 1px solid rgba(0,0,0,0.3);
 }
 
-.emotion-2 .markdown-body table tr:nth-child(2n) {
+.c0 .markdown-body table tr:nth-child(2n) {
   background-color: rgba(0,0,0,0.3);
 }
 
-.emotion-2 .markdown-body img {
+.c0 .markdown-body img {
   max-width: 100%;
   box-sizing: content-box;
   background-color: #FAFAFA;
 }
 
-.emotion-2 .markdown-body img[align=right] {
+.c0 .markdown-body img[align=right] {
   padding-left: 20px;
 }
 
-.emotion-2 .markdown-body img[align=left] {
+.c0 .markdown-body img[align=left] {
   padding-right: 20px;
 }
 
-.emotion-2 .markdown-body code {
+.c0 .markdown-body code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
@@ -572,11 +573,11 @@ exports[`Markdown should render 1`] = `
   border-radius: 3px;
 }
 
-.emotion-2 .markdown-body pre {
+.c0 .markdown-body pre {
   word-wrap: normal;
 }
 
-.emotion-2 .markdown-body pre>code {
+.c0 .markdown-body pre>code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -586,25 +587,26 @@ exports[`Markdown should render 1`] = `
   border: 0;
 }
 
-.emotion-2 .markdown-body .highlight {
+.c0 .markdown-body .highlight {
   margin-bottom: 16px;
 }
 
-.emotion-2 .markdown-body .highlight pre {
+.c0 .markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
 }
 
-.emotion-2 .markdown-body .highlight pre,
-.emotion-2 .markdown-body pre {
+.c0 .markdown-body .highlight pre,
+.c0 .markdown-body pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #F5F5F5 border-radius:3px;
+  background-color: #F5F5F5;
+  border-radius: 3px;
 }
 
-.emotion-2 .markdown-body pre code {
+.c0 .markdown-body pre code {
   display: inline;
   max-width: auto;
   padding: 0;
@@ -616,12 +618,12 @@ exports[`Markdown should render 1`] = `
   border: 0;
 }
 
-.emotion-2 .markdown-body .full-commit .btn-outline:not(:disabled):hover {
+.c0 .markdown-body .full-commit .btn-outline:not(:disabled):hover {
   color: #005cc5;
   border-color: #005cc5;
 }
 
-.emotion-2 .markdown-body kbd {
+.c0 .markdown-body kbd {
   display: inline-block;
   padding: 3px 5px;
   font: 11px "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
@@ -635,30 +637,30 @@ exports[`Markdown should render 1`] = `
   box-shadow: inset 0 -1px 0 #c6cbd1;
 }
 
-.emotion-2 .markdown-body:checked+.radio-label {
+.c0 .markdown-body :checked+.radio-label {
   position: relative;
   z-index: 1;
   border-color: #0366d6;
 }
 
-.emotion-2 .markdown-body .task-list-item {
+.c0 .markdown-body .task-list-item {
   list-style-type: none;
 }
 
-.emotion-2 .markdown-body .task-list-item+.task-list-item {
+.c0 .markdown-body .task-list-item+.task-list-item {
   margin-top: 3px;
 }
 
-.emotion-2 .markdown-body .task-list-item input {
+.c0 .markdown-body .task-list-item input {
   margin: 0 0.2em 0.25em -1.6em;
   vertical-align: middle;
 }
 
-.emotion-2 .markdown-body hr {
+.c0 .markdown-body hr {
   border-bottom-color: #eee;
 }
 
-.emotion-0 {
+.c1 {
   font-size: 1rem;
   line-height: 1rem;
   position: relative;
@@ -667,10 +669,10 @@ exports[`Markdown should render 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="c0"
 >
   <div
-    class="markdown-body emotion-0 emotion-1"
+    class="markdown-body c1"
   >
     <h1>
       Hello World

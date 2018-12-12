@@ -68,7 +68,7 @@ module.exports = {
       },
       ...isProduction
         ? []
-        : [{enforce: 'pre', test: /\.js$/, loader: 'source-map-loader'}]
+        : [{ enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }]
     ]
   },
 
@@ -76,7 +76,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new HardsourceWebpackPlugin(),
+    // new HardsourceWebpackPlugin(),
     ...isProduction
       ? [
         new CleanPlugin(['dist']),

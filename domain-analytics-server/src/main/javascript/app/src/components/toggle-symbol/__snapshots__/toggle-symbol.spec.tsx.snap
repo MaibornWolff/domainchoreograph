@@ -1,29 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ToggleSymbol should render if closed 1`] = `
-.emotion-1 {
+.c1 {
   height: 24px;
   width: 24px;
+}
+
+.c1 svg {
+  fill: rgba(0,0,0,.87);
+}
+
+.c0 {
   -webkit-transition: -webkit-transform 300ms ease;
   -webkit-transition: transform 300ms ease;
   transition: transform 300ms ease;
 }
 
-.emotion-1 svg {
-  fill: rgba(0,0,0,.87);
-}
-
 <div
-  class="emotion-0 emotion-1 emotion-2"
+  class="c0 c1"
 >
   [object Object]
 </div>
 `;
 
 exports[`ToggleSymbol should render if open 1`] = `
-.emotion-1 {
+.c1 {
   height: 24px;
   width: 24px;
+}
+
+.c1 svg {
+  fill: rgba(0,0,0,.87);
+}
+
+.c0 {
   -webkit-transition: -webkit-transform 300ms ease;
   -webkit-transition: transform 300ms ease;
   transition: transform 300ms ease;
@@ -32,12 +42,8 @@ exports[`ToggleSymbol should render if open 1`] = `
   transform: rotate(90deg);
 }
 
-.emotion-1 svg {
-  fill: rgba(0,0,0,.87);
-}
-
 <div
-  class="emotion-0 emotion-1 emotion-2"
+  class="c0 c1"
 >
   [object Object]
 </div>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { THEME } from '~styles/theme';
-import { mockEmotion, renderWithProviders } from '~utils/test.utils';
+import { renderWithProviders } from '~utils/test.utils';
 import { SideBar } from './side-bar';
-
-jest.mock('emotion', () => mockEmotion());
 
 describe('SideBar', () => {
   it('should render', () => {

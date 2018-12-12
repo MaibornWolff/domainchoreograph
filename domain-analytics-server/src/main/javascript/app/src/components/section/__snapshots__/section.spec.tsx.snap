@@ -1,7 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Section should render 1`] = `
-.emotion-9 {
+.c2 {
+  height: 24px;
+  width: 24px;
+}
+
+.c2 svg {
+  fill: rgba(0,0,0,.87);
+}
+
+.c1 {
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,38 +36,14 @@ exports[`Section should render 1`] = `
   cursor: pointer;
 }
 
-.emotion-1 {
-  height: 24px;
-  width: 24px;
-  -webkit-transition: -webkit-transform 300ms ease;
-  -webkit-transition: transform 300ms ease;
-  transition: transform 300ms ease;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.emotion-1 svg {
-  fill: rgba(0,0,0,.87);
-}
-
-.emotion-3 {
-  height: 1px;
-  background: rgba(0,0,0,.38);
-  -webkit-flex: 0 0 1rem;
-  -ms-flex: 0 0 1rem;
-  flex: 0 0 1rem;
-  margin-right: .5rem;
-}
-
-.emotion-5 {
+.c4 {
   font-size: 1rem;
   padding: 0;
   margin: 0;
   font-weight: bold;
 }
 
-.emotion-7 {
+.c5 {
   height: 1px;
   background: rgba(0,0,0,.38);
   -webkit-flex: 1 1 0;
@@ -58,44 +52,53 @@ exports[`Section should render 1`] = `
   margin-left: .5rem;
 }
 
-.emotion-13 {
+.c3 {
+  height: 1px;
+  background: rgba(0,0,0,.38);
+  -webkit-flex: 0 0 1rem;
+  -ms-flex: 0 0 1rem;
+  flex: 0 0 1rem;
+  margin-right: .5rem;
+}
+
+.c6 {
   overflow: hidden;
   -webkit-transition: height 300ms ease;
   transition: height 300ms ease;
   height: auto;
 }
 
-.emotion-11 {
+.c7 {
   box-sizing: border-box;
   padding: .5rem 0 .5rem 1rem;
 }
 
 <div>
   <div
-    class="emotion-9 emotion-10"
+    class="c0"
   >
     <div
-      class="emotion-0 emotion-1 emotion-2"
+      class="c1 c2"
     >
       [object Object]
     </div>
     <div
-      class="emotion-3 emotion-4"
+      class="c3"
     />
     <h2
-      class="emotion-5 emotion-6"
+      class="c4"
     >
       Hello
     </h2>
     <div
-      class="emotion-7 emotion-8"
+      class="c5"
     />
   </div>
   <div
-    class="emotion-13 emotion-14"
+    class="c6"
   >
     <div
-      class="emotion-11 emotion-12"
+      class="c7"
     >
       Body
     </div>

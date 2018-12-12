@@ -1,56 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SideBar should render 1`] = `
+.c8 {
+  height: 24px;
+  width: 24px;
+}
+
+.c8 svg {
+  fill: rgba(0,0,0,.87);
+}
+
+.c7 {
+  -webkit-transition: -webkit-transform 300ms ease;
+  -webkit-transition: transform 300ms ease;
+  transition: transform 300ms ease;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .5rem 0;
+  cursor: pointer;
+}
+
+.c10 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+
+.c11 {
+  height: 1px;
+  background: rgba(0,0,0,.38);
+  -webkit-flex: 1 1 0;
+  -ms-flex: 1 1 0;
+  flex: 1 1 0;
+  margin-left: .5rem;
+}
+
+.c9 {
+  height: 1px;
+  background: rgba(0,0,0,.38);
+  -webkit-flex: 0 0 1rem;
+  -ms-flex: 0 0 1rem;
+  flex: 0 0 1rem;
+  margin-right: .5rem;
+}
+
+.c12 {
+  overflow: hidden;
+  -webkit-transition: height 300ms ease;
+  transition: height 300ms ease;
+  height: auto;
+}
+
+.c13 {
+  box-sizing: border-box;
+  padding: .5rem 0 .5rem 1rem;
+}
+
+.c0 {
+  position: relative;
+  height: 100%;
+}
+
+.c3 {
+  overflow: auto;
+  height: 100%;
+}
+
+.c1 {
+  position: absolute;
+  width: 50px;
+  left: -25px;
+  top: 0;
+  bottom: 0;
+  cursor: col-resize;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 .8rem 0;
+}
+
+.c2 {
+  padding: .5rem 1rem;
+  overflow-x: auto;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  background: #FAFAFA;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+}
+
+.c2 .resizable-wrapper {
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.c14 {
+  font-size: .8rem;
+}
+
+.c14 .react-json-view {
+  background: none !important;
+}
+
+.c5 {
+  color: rgba(0,0,0,.54);
+  font-size: .8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 1rem;
+  white-space: pre-wrap;
+}
+
 <div
-  class="class-mock class-mock emotion-14"
+  class=".resizable-wrapper c0"
   style="width:350px"
 >
   <div
-    class="class-mock emotion-0"
+    class="c1"
   />
   <div
-    class="class-mock emotion-12 class-mock emotion-13"
+    class="c2 c3"
   >
     <div>
       <h2
-        class="class-mock emotion-1"
+        class="c4"
       >
         name
       </h2>
       <pre
-        class="class-mock emotion-2"
+        class="c5"
       >
         preview
       </pre>
       <div>
         <div
-          class="class-mock emotion-8"
+          class="c6"
         >
           <div
-            class="class-mock emotion-3 class-mock emotion-4"
+            class="c7 c8"
           >
             [object Object]
           </div>
           <div
-            class="class-mock emotion-5"
+            class="c9"
           />
           <h2
-            class="class-mock emotion-6"
+            class="c10"
           >
             Inspection
           </h2>
           <div
-            class="class-mock emotion-7"
+            class="c11"
           />
         </div>
         <div
-          class="class-mock emotion-11"
+          class="c12"
         >
           <div
-            class="class-mock emotion-10"
+            class="c13"
           >
             <div
-              class="class-mock emotion-9"
+              class="c14"
             >
               <div
                 class="react-json-view"

@@ -17,7 +17,7 @@ describe('Resizable', () => {
       dragStart: null,
     });
 
-    component.find('ResizeArea').simulate('mousedown', { clientX: 100 } as any);
+    component.childAt(0).simulate('mousedown', { clientX: 100 } as any);
 
     expect(resizableInstance.state).toMatchObject({
       isDragging: true,

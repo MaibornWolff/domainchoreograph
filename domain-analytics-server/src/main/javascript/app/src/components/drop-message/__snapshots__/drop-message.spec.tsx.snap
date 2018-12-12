@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropMessage should render 1`] = `
-.emotion-2 {
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -28,7 +28,7 @@ exports[`DropMessage should render 1`] = `
   background: #FAFAFA;
 }
 
-.emotion-0 {
+.c1 {
   border: 2px rgba(0,0,0,0.3) dashed;
   width: 100%;
   height: 100%;
@@ -48,16 +48,16 @@ exports[`DropMessage should render 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="c0"
 >
   <div
-    class="emotion-0 emotion-1"
+    class="c1"
   />
 </div>
 `;
 
 exports[`DropMessage should render with message 1`] = `
-.emotion-2 {
+.c0 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -84,7 +84,7 @@ exports[`DropMessage should render with message 1`] = `
   background: #FAFAFA;
 }
 
-.emotion-0 {
+.c1 {
   border: 2px rgba(0,0,0,0.3) dashed;
   width: 100%;
   height: 100%;
@@ -104,10 +104,10 @@ exports[`DropMessage should render with message 1`] = `
 }
 
 <div
-  class="emotion-2 emotion-3"
+  class="c0"
 >
   <div
-    class="emotion-0 emotion-1"
+    class="c1"
   >
     Test
   </div>

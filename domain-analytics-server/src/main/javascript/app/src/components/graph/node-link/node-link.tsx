@@ -8,11 +8,13 @@ const StyledLink = styled(Link)`
   top: .3rem;
   right: .3rem;
   cursor: pointer;
+
   &, & > * {
     height: .8rem;
     width: .8rem;
     box-sizing: border-box;
   }
+
   & > * {
     position: absolute;
     top: 0;
@@ -23,7 +25,7 @@ const StyledLink = styled(Link)`
 `;
 
 const InnerPoint = styled('div')`
-  background: ${({theme}) => theme.colors.secondary[0]};
+  background: ${({ theme }) => theme.colors.secondary[0]};
   border-radius: 100%;
   transition: transform 300ms ease;
   transform: scale(.8);
@@ -35,7 +37,7 @@ const InnerPoint = styled('div')`
 
 const OuterPoint = styled('div')`
   background: transparent;
-  border: 1px solid ${({theme}) => theme.colors.secondary[0]};
+  border: 1px solid ${({ theme }) => theme.colors.secondary[0]};
   border-radius: 100%;
   transition: transform 300ms ease;
   transform: scale(.8);

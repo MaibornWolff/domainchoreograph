@@ -1,14 +1,15 @@
-import { Global, css } from '@emotion/core';
+import { ConnectedRouter } from 'connected-react-router';
 import * as React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
-import { ConnectedRouter } from 'connected-react-router';
+import { createGlobalStyle } from 'styled-components';
 import { DropMessage } from '~components/drop-message/drop-message';
+import { TestingPage } from '~components/testing-page/testing-page';
 import { DropZoneContainer } from '~containers/drop-zone.container';
 import { GraphPageContainer } from '~containers/graph-page.container';
 import { history } from '~history';
 import { styled } from '~utils/styled';
 
-const globalStyles = css`
+const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -32,10 +33,10 @@ const Wrapper = styled('div')`
 `;
 
 const ContentWrapper = styled('div')`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
 `;
 
 export interface AppProps {
@@ -51,10 +52,11 @@ export class App extends React.Component<AppProps, AppState> {
   public render() {
     return (
       <Wrapper>
-        <Global styles={globalStyles}/>
+        <GlobalStyle/>
         <DropZoneContainer>
           <ConnectedRouter history={history}>
             <Switch>
+              <Route path="/testing" component={TestingPage}/>
               <Route path="/load" component={() =>
                 this.props.loadedGraph
                   ? <Redirect to={'/Application'}/>

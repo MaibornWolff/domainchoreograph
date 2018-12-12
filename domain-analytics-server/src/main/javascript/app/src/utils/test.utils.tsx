@@ -1,10 +1,11 @@
-import { ThemeProvider } from 'emotion-theming';
+import { ConnectedRouter, routerMiddleware, RouterState } from 'connected-react-router';
 import { render, shallow, ShallowWrapper } from 'enzyme';
+import createMemoryHistory from 'history/createMemoryHistory';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
 import { Store } from 'redux';
 import _createMockStore, { MockStore } from 'redux-mock-store';
+import { ThemeProvider } from 'styled-components';
 import { GlobalState } from '~ducks';
 import { history } from '~history';
 import { Theme, THEME } from '~styles/theme';
@@ -45,8 +46,17 @@ interface Context {
 }
 
 function createContext(options: ProviderOptions = {}) {
+  const routerState: RouterState = {
+    location: history.location,
+    action: 'PUSH'
+  };
   options = {
-    store: createMockStore([])({}),
+    store: createMockStore([
+      routerMiddleware(createMemoryHistory()),
+    ])({
+      app: {},
+      router: routerState
+    }),
     ...options,
   };
   const context: Context = {
@@ -59,11 +69,13 @@ function createContext(options: ProviderOptions = {}) {
 const Providers: React.StatelessComponent<{ options?: ProviderOptions }> = ({ options, children }) => {
   const context = createContext(options);
   let result = (
-    <ConnectedRouter history={history}>
+    <Provider store={context.store!}>
       <ThemeProvider theme={context.theme}>
-        {children}
+        <ConnectedRouter history={history}>
+          {children}
+        </ConnectedRouter>
       </ThemeProvider>
-    </ConnectedRouter>
+    </Provider>
   );
   if (context.store) {
     result = <Provider store={context.store} children={result}/>;

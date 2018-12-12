@@ -1,5 +1,5 @@
-import { ThemeProvider } from 'emotion-theming';
 import { connect } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import { GlobalState } from '~ducks';
 import { selectTheme } from '~selectors/selectors';
 

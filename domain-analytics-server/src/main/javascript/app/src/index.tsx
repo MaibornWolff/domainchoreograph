@@ -1,4 +1,6 @@
+import DateFnsUtils from '@date-io/date-fns';
 import 'babel-polyfill';
+import { MuiPickersUtilsProvider } from 'material-ui-pickers';
 import * as React from 'react';
 import { render } from 'react-dom';
 import { AppContainer as HotLoadingContainer, setConfig } from 'react-hot-loader';
@@ -22,7 +24,9 @@ const renderApp = () =>
     <HotLoadingContainer>
       <Provider store={store}>
         <ThemeProviderContainer>
-          <AppContainer/>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <AppContainer/>
+          </MuiPickersUtilsProvider>
         </ThemeProviderContainer>
       </Provider>
     </HotLoadingContainer>,

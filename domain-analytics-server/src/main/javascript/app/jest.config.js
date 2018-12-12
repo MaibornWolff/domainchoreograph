@@ -1,8 +1,8 @@
 module.exports = {
   'globals': {
     'ts-jest': {
-      "useBabelrc": true,
-      'tsConfigFile': './tsconfig.spec.json',
+      'babelConfig': true,
+      'tsConfig': './tsconfig.spec.json',
     }
   },
   'testURL': 'http://localhost/',

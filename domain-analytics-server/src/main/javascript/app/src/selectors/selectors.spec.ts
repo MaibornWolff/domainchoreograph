@@ -4,16 +4,20 @@ import { THEME } from '~styles/theme';
 import { graphMock } from '~types/cheoreo-graph.mock';
 
 const mockState: GlobalState = {
-  graph: graphMock,
-  theme: 'light'
+  app: {
+    graph: graphMock,
+    theme: 'light'
+  },
 };
 
 describe('selectSelectedNode', () => {
   it('should work', () => {
     expect(selectSelectedNode(mockState)).toBe(null);
     expect(selectSelectedNode({
-      ...mockState,
-      selectedNodeId: '0'
+      app: {
+        ...mockState.app,
+        selectedNodeId: '0'
+      }
     })).toBe(graphMock.nodes['0']);
   });
 });

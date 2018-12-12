@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getComponentFromSchema should throw error if the schema couldn't be matched 1`] = `"Couldn't match the schema"`;

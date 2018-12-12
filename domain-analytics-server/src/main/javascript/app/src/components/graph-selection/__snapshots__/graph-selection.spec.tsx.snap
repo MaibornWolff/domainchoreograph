@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GraphSelection should render 1`] = `
-.emotion-18 {
+.c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.c1 {
   padding: 0;
   margin: .5rem;
   border: rgba(0,0,0,0.3) solid 1px;
@@ -20,16 +20,16 @@ exports[`GraphSelection should render 1`] = `
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.emotion-4:hover {
+.c1:hover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
 }
 
-.emotion-0 {
+.c2 {
   padding: .5rem;
   pointer-events: none;
 }
 
-.emotion-2 {
+.c3 {
   padding: .2rem;
   font-size: .8rem;
   margin: 0;
@@ -38,55 +38,55 @@ exports[`GraphSelection should render 1`] = `
 }
 
 <div
-  class="emotion-18 emotion-19"
+  class="c0"
 >
   <a
-    class="emotion-4 emotion-5"
+    class="c1"
     href="/context/1"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="c2"
     >
       <p>
         No Data
       </p>
     </div>
     <h3
-      class="emotion-2 emotion-3"
+      class="c3"
     >
       1
     </h3>
   </a>
   <a
-    class="emotion-4 emotion-5"
+    class="c1"
     href="/context/2"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="c2"
     >
       <p>
         No Data
       </p>
     </div>
     <h3
-      class="emotion-2 emotion-3"
+      class="c3"
     >
       2
     </h3>
   </a>
   <a
-    class="emotion-4 emotion-5"
+    class="c1"
     href="/context/3"
   >
     <div
-      class="emotion-0 emotion-1"
+      class="c2"
     >
       <p>
         No Data
       </p>
     </div>
     <h3
-      class="emotion-2 emotion-3"
+      class="c3"
     >
       3
     </h3>
