@@ -33,7 +33,7 @@ const createTextField = <T extends {}>(
 });
 
 export const TextField = createTextField(
-  event => event.target.value,
+  event => event.target.value || undefined,
   value => value || ''
 );
 
@@ -42,6 +42,9 @@ const numberRegex = /^[1-9]\d*(\.\d+)?$/;
 export const NumberTextField = createTextField<number>(
   event => {
     const valueAsString = event.target.value;
+    if (valueAsString == '') {
+      return undefined;
+    }
     const valueAsNumber = +valueAsString;
     if (numberRegex.test(valueAsString) && !isNaN(valueAsNumber)) {
       return +valueAsString;

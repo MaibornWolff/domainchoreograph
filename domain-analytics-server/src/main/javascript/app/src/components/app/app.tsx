@@ -1,12 +1,13 @@
 import { ConnectedRouter } from 'connected-react-router';
 import * as React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
+import { Link } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { DropMessage } from '~components/drop-message/drop-message';
 import { TestingPage } from '~components/testing-page/testing-page';
 import { DropZoneContainer } from '~containers/drop-zone.container';
 import { GraphPageContainer } from '~containers/graph-page.container';
-import { history } from '~history';
+import { history } from '~create-history';
 import { styled } from '~utils/styled';
 
 const GlobalStyle = createGlobalStyle`

@@ -1,7 +1,7 @@
 import { connectRouter } from 'connected-react-router';
 import { combineReducers } from 'redux';
 import { Actions } from '~constants/actions';
-import { history } from '~history';
+import { history } from '~create-history';
 import { ThemeKey } from '~styles/theme';
 import { ChoreoGraph } from '~types/choreo-graph';
 import { createReduxContext } from '~utils/redux.utils';

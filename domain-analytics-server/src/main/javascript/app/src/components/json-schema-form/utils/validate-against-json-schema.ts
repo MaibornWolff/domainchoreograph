@@ -15,7 +15,7 @@ export function validateAgainstJsonSchema(schema: JSONSchema4): ValidationFuncti
       if (error.name === 'required') {
         message = `is required`;
         schema = schema.properties![error.argument];
-        property = joinProperties(property, error.argument);
+        property = correctArrayProperties(joinProperties(property, error.argument));
       }
 
       const title = schema.title || '';
@@ -23,8 +23,13 @@ export function validateAgainstJsonSchema(schema: JSONSchema4): ValidationFuncti
 
       return [ property, message ] as [string, string];
     });
+    console.log(result, errors);
     return errors;
   }
+}
+
+function correctArrayProperties(path: string): string {
+  return path.replace(/\[(\d+)]/g, '.$1')
 }
 
 function joinProperties(path1: string, path2: string): string {

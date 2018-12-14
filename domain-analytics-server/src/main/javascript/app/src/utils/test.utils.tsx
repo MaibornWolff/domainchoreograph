@@ -7,7 +7,7 @@ import { Store } from 'redux';
 import _createMockStore, { MockStore } from 'redux-mock-store';
 import { ThemeProvider } from 'styled-components';
 import { GlobalState } from '~ducks';
-import { history } from '~history';
+import { history } from '~create-history';
 import { Theme, THEME } from '~styles/theme';
 
 export function mockDragEvent(file: File): DragEvent {

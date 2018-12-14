@@ -1,10 +1,10 @@
 import { JSONSchema4, JSONSchema4TypeName } from 'json-schema';
 
 const defaultValues: Record<Exclude<JSONSchema4TypeName, 'object'>, any> = {
-  string: '',
+  string: undefined,
   number: undefined,
   integer: undefined,
-  boolean: false,
+  boolean: undefined,
   array: [],
   'null': null,
   any: ''

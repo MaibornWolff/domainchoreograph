@@ -5,7 +5,7 @@ exports[`App should call fetch graph on mount 1`] = `
   <GlobalStyleComponent />
   <React.Memo>
     <Connect(ConnectedRouterWithContext)
-      history={
+      createHistory={
         Object {
           "action": "POP",
           "block": [Function],

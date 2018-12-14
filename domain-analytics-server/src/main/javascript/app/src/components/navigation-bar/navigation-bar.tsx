@@ -92,6 +92,7 @@ export class NavigationBar extends React.Component<NavigationBarProps, Navigatio
           </Ul>
         </NavItems>
         <NavItems>
+          <StyledLink to="testing">Playground</StyledLink>
           {setThemeKey && currentThemeKey && <Button lightColor={true} onClick={this.switchTheme}>Change Theme</Button>}
         </NavItems>
       </StyledNav>

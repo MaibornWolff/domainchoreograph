@@ -1,6 +1,7 @@
 import { AxiosError } from 'axios';
 import { FieldGroup, Form, FormState, ValidationMapping } from 'clean-forms';
 import { push } from 'connected-react-router';
+import { JSONSchema4 } from 'json-schema';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { RestApi, RunChoreographyRequest } from '~api/rest';
 import { Button } from '~components/button/button';
@@ -96,7 +97,8 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
       }
     });
     let schema = await RestApi.getSchema(reverseJavaClassEscape(javaClass));
-    // schema = RefParser.dereference(schema);
+    schema = await RefParser.dereference(schema) as JSONSchema4;
+    console.log(schema);
     const newInstance = {
       javaClass,
       schema,

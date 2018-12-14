@@ -1,7 +1,8 @@
-import { FormLabel } from '@material-ui/core';
-import { FieldGroup } from 'clean-forms';
+import { Button, FormLabel } from '@material-ui/core';
+import { FieldArray, FieldArrayItems, FieldGroup } from 'clean-forms';
 import { JSONSchema4 } from 'json-schema';
 import React, { memo } from 'react';
+import { createDefaultValue } from '~components/json-schema-form/utils/create-default-value';
 import { getComponentFromSchema } from '~components/json-schema-form/utils/get-component-from-schema';
 import { styled } from '~utils/styled';
 
@@ -43,6 +44,22 @@ const JsonSchemaField = memo(function _JsonSchemaField({
       <FieldGroup name={name}>
         <JsonSchemaFields schema={schema}/>
       </FieldGroup>
+    );
+  }
+  if (schema.type === 'array') {
+    const itemSchema = schema.items instanceof Array ? schema.items[0] : schema.items!;
+    return (
+      <FieldArray name={name} render={({ addItem }) => (
+        <div>
+          <FieldArrayItems render={({ remove }) => (
+            <div>
+              <Button onClick={remove}>Delete</Button>
+              <JsonSchemaFields schema={itemSchema}/>
+            </div>
+          )}/>
+          <Button onClick={() => addItem(createDefaultValue(itemSchema))}>Add Item</Button>
+        </div>
+      )}/>
     );
   }
   const Field = getComponentFromSchema(schema);
