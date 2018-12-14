@@ -1,6 +1,8 @@
+import { Paper } from '@material-ui/core';
 import { JSONSchema4 } from 'json-schema';
 import React from 'react';
 import { JsonSchemaFields } from '~components/json-schema-form/json-schema-fields';
+import { FormItems } from '~components/json-schema-form/utils/form-items';
 import { styled } from '~utils/styled';
 
 interface JsonSchemaFormProps {
@@ -9,13 +11,15 @@ interface JsonSchemaFormProps {
 
 export const JsonSchemaForm: React.FunctionComponent<JsonSchemaFormProps> = ({ schema }) => {
   return (
-    <FormWrapper>
-      <JsonSchemaFields schema={schema}/>
-    </FormWrapper>
+    <Paper>
+      <FormWrapper>
+        <JsonSchemaFields schema={schema}/>
+      </FormWrapper>
+    </Paper>
   );
 };
 
-const FormWrapper = styled('div')`
-    background: white;
+const FormWrapper = styled(FormItems)`
+  padding: 1rem;
 `;
 

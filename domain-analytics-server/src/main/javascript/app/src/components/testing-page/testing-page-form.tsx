@@ -1,10 +1,11 @@
+import { Button } from '@material-ui/core';
 import { AxiosError } from 'axios';
 import { FieldGroup, Form, FormState, ValidationMapping } from 'clean-forms';
 import { push } from 'connected-react-router';
 import { JSONSchema4 } from 'json-schema';
+import RefParser from 'json-schema-ref-parser';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { RestApi, RunChoreographyRequest } from '~api/rest';
-import { Button } from '~components/button/button';
 import { GraphInputNodeSelection } from '~components/graph-input-node-selection/graph-input-node-selection';
 import { JsonSchemaForm } from '~components/json-schema-form/json-schema-form';
 import { createDefaultValue } from '~components/json-schema-form/utils/create-default-value';
@@ -16,7 +17,6 @@ import { ActionCreators } from '~ducks';
 import { ChoreoGraph } from '~types/choreo-graph';
 import { useRedux } from '~utils/redux.utils';
 import { styled } from '~utils/styled';
-import RefParser from 'json-schema-ref-parser';
 
 interface AsyncState<T> {
   value: T | null;
@@ -77,7 +77,9 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
       inputs: {}
     }
   });
-  const [validationState, setValidationState] = useState<ValidationMapping<TestingPageFormModel>>({});
+  const [validationState, setValidationState] = useState<ValidationMapping<TestingPageFormModel>>({
+    target: ({value}) => value ? null : 'Required',
+  });
   const { model } = formState;
 
   const inputJavaClasses = useMemo(() => {
@@ -105,6 +107,7 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
       value: createDefaultValue(schema)
     };
     setValidationState({
+      ...validationState,
       inputs: {
         [javaClass]: {
           value: validateAgainstJsonSchema(schema)
@@ -121,7 +124,7 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
         }
       }
     });
-  }, [formState, model, setFormState]);
+  }, [formState, model, setFormState, validationState]);
 
   const handleOnInputRemove = useCallback((javaClass: string) => {
     javaClass = escapeJavaClass(javaClass);
@@ -184,12 +187,12 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
         </div>
         <div>
           {graph &&
-            <GraphInputNodeSelection
-              graph={graph}
-              selectedJavaClasses={inputJavaClasses}
-              onAdd={handleOnInputAdd}
-              onRemove={handleOnInputRemove}
-            />
+          <GraphInputNodeSelection
+            graph={graph}
+            selectedJavaClasses={inputJavaClasses}
+            onAdd={handleOnInputAdd}
+            onRemove={handleOnInputRemove}
+          />
           }
         </div>
         <div>
@@ -209,9 +212,9 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
               })}
           </FieldGroup>
         </div>
-        <div>
-          <Button type="submit">Submit</Button>
-        </div>
+        <SubmitWrapper>
+          <Button color="primary" variant="contained" type="submit">Submit</Button>
+        </SubmitWrapper>
       </Wrapper>
     </Form>
   );
@@ -232,4 +235,15 @@ function mapFormModelToRequest(model: TestingPageFormModel): RunChoreographyRequ
 const Wrapper = styled.div`
     width: 800px;
     margin: auto;
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+`;
+
+const SubmitWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
 `;

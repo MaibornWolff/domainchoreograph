@@ -3,6 +3,7 @@ import { FieldArray, FieldArrayItems, FieldGroup } from 'clean-forms';
 import { JSONSchema4 } from 'json-schema';
 import React, { memo } from 'react';
 import { createDefaultValue } from '~components/json-schema-form/utils/create-default-value';
+import { FormItems } from '~components/json-schema-form/utils/form-items';
 import { getComponentFromSchema } from '~components/json-schema-form/utils/get-component-from-schema';
 import { styled } from '~utils/styled';
 
@@ -24,9 +25,8 @@ export const JsonSchemaFields = memo(function _JsonSchemaField({
   );
 });
 
-const GroupWrapper = styled('div')`
+const GroupWrapper = styled(FormItems)`
     padding: 0 1rem;
-    max-width: 30rem;
 `;
 
 
@@ -41,24 +41,29 @@ const JsonSchemaField = memo(function _JsonSchemaField({
 }: JsonSchemaFieldProps) {
   if (schema.type === 'object') {
     return (
-      <FieldGroup name={name}>
-        <JsonSchemaFields schema={schema}/>
-      </FieldGroup>
+      <FieldGroupWrapper>
+        <FieldGroup name={name}>
+          <JsonSchemaFields schema={schema}/>
+        </FieldGroup>
+      </FieldGroupWrapper>
     );
   }
   if (schema.type === 'array') {
     const itemSchema = schema.items instanceof Array ? schema.items[0] : schema.items!;
     return (
       <FieldArray name={name} render={({ addItem }) => (
-        <div>
+        <>
+          {schema.title && <FormLabel>{schema.title}</FormLabel>}
           <FieldArrayItems render={({ remove }) => (
-            <div>
-              <Button onClick={remove}>Delete</Button>
-              <JsonSchemaFields schema={itemSchema}/>
-            </div>
+            <FieldGroupWrapper>
+              <FormItems>
+                <Button color="secondary" onClick={remove}>Delete</Button>
+                <JsonSchemaFields schema={itemSchema}/>
+              </FormItems>
+            </FieldGroupWrapper>
           )}/>
-          <Button onClick={() => addItem(createDefaultValue(itemSchema))}>Add Item</Button>
-        </div>
+          <Button color="primary" onClick={() => addItem(createDefaultValue(itemSchema))}>Add Item</Button>
+        </>
       )}/>
     );
   }
@@ -70,3 +75,10 @@ const JsonSchemaField = memo(function _JsonSchemaField({
     schema={schema}
   />
 });
+
+const FieldGroupWrapper = styled.div`
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.17);
+    padding: 1rem;
+    margin: .5rem;
+`;
