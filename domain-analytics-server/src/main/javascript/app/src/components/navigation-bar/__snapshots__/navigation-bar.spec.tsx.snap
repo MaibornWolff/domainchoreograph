@@ -5,15 +5,21 @@ exports[`NavigationBar should render with graph and scope 1`] = `
   <styled.div>
     <styled.ul>
       <li
-        key="contextApplication"
+        key="contextroot"
       >
         <styled.span>
-          Application
+          root
         </styled.span>
       </li>
     </styled.ul>
   </styled.div>
-  <styled.div />
+  <styled.div>
+    <Styled(Link)
+      to="testing"
+    >
+      Playground
+    </Styled(Link)>
+  </styled.div>
 </styled.nav>
 `;
 
@@ -22,15 +28,21 @@ exports[`NavigationBar should render with graph and without scope 1`] = `
   <styled.div>
     <styled.ul>
       <li
-        key="contextApplication"
+        key="contextroot"
       >
         <styled.span>
-          Application
+          root
         </styled.span>
       </li>
     </styled.ul>
   </styled.div>
-  <styled.div />
+  <styled.div>
+    <Styled(Link)
+      to="testing"
+    >
+      Playground
+    </Styled(Link)>
+  </styled.div>
 </styled.nav>
 `;
 

@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
+import { ChoreoGraph } from '~types/choreo-graph';
 import { GraphPage } from './graph-page';
 
 describe('GraphPage', () => {
@@ -13,60 +14,70 @@ describe('GraphPage', () => {
         'A': {
           id: 'A',
           name: 'A',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },
         'F': {
           id: 'F',
           name: 'F',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },
         '0-B': {
           id: '0-B',
           name: '0-B',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-C': {
           id: '0-C',
           name: '0-C',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-D': {
           id: '0-D',
           name: '0-D',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-E': {
           id: '0-E',
           name: '0-E',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '1-B': {
           id: '1-B',
           name: '1-B',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-C': {
           id: '1-C',
           name: '1-C',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-D': {
           id: '1-D',
           name: '1-D',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-E': {
           id: '1-E',
           name: '1-E',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         }
@@ -167,65 +178,75 @@ describe('GraphPage', () => {
   });
 
   it('should render with scope', () => {
-    const graph = {
+    const graph: ChoreoGraph = {
       nodes: {
         'A': {
           id: 'A',
           name: 'A',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },
         'F': {
           id: 'F',
           name: 'F',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },
         '0-B': {
           id: '0-B',
           name: '0-B',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-C': {
           id: '0-C',
           name: '0-C',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-D': {
           id: '0-D',
           name: '0-D',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '0-E': {
           id: '0-E',
           name: '0-E',
+          javaClass: 'Class',
           scope: '0',
           value: {},
         },
         '1-B': {
           id: '1-B',
           name: '1-B',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-C': {
           id: '1-C',
           name: '1-C',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-D': {
           id: '1-D',
           name: '1-D',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         },
         '1-E': {
           id: '1-E',
           name: '1-E',
+          javaClass: 'Class',
           scope: '1',
           value: {},
         }
@@ -326,17 +347,19 @@ describe('GraphPage', () => {
   });
 
   it('should render with graph without scopes', () => {
-    const graph = {
+    const graph: ChoreoGraph = {
       nodes: {
         A: {
           id: 'A',
           name: 'A',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },
         F: {
           id: 'F',
           name: 'F',
+          javaClass: 'Class',
           scope: 'root',
           value: {},
         },

@@ -55,7 +55,7 @@ const schema: JSONSchema4 = {
 describe('createDefaultValue', () => {
   it('should create default value for schema', async () => {
     const expectedValue = {
-      a: '',
+      a: undefined,
       b: undefined,
       c: undefined,
       d: undefined,

@@ -74,7 +74,10 @@ exports[`SideBar should render 1`] = `
 }
 
 .c0 {
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
   height: 100%;
 }
 

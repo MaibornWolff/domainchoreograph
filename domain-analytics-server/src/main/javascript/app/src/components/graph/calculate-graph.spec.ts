@@ -11,12 +11,14 @@ describe('calculateGraph', () => {
         0: {
           id: '0',
           name: 'node-0',
+          javaClass: 'class',
           scope: 'root',
           value: { key: 'value-0' },
         },
         1: {
           id: '1',
           name: 'node-1',
+          javaClass: 'class',
           scope: 'root',
           value: { key: 'value-1' },
         }
@@ -53,6 +55,7 @@ describe('calculateGraph', () => {
             id: '0',
             name: 'node-0',
             scope: 'root',
+            javaClass: 'class',
             value: baseProps.graph.nodes['0'].value,
             outsideScope: false,
             executionContext: undefined,
@@ -65,6 +68,7 @@ describe('calculateGraph', () => {
             id: '1',
             name: 'node-1',
             scope: 'root',
+            javaClass: 'class',
             value: baseProps.graph.nodes['1'].value,
             outsideScope: false,
             executionContext: undefined,
@@ -102,12 +106,14 @@ describe('calculateGraph', () => {
           0: {
             id: '0',
             name: 'node-0',
+            javaClass: 'class',
             scope: 's1',
             value: { key: 'value-0' },
           },
           1: {
             id: '1',
             name: 'node-1',
+            javaClass: 'class',
             scope: 'root',
             value: { key: 'value-1' },
           }
