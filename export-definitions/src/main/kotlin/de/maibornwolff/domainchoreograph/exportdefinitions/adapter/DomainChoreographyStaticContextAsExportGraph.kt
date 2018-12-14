@@ -1,12 +1,23 @@
 package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
+import de.maibornwolff.domainchoreograph.core.api.DomainChoreographySchema
 import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyNode
 import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainContextNode
+import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyGraph
 import de.maibornwolff.domainchoreograph.core.processing.utils.asJavaClass
 import de.maibornwolff.domainchoreograph.exportdefinitions.model.*
 import de.maibornwolff.domainchoreograph.exportdefinitions.utils.UniqueIdGenerator
 import java.util.*
+
+fun DependencyGraph.asExportGraph(id: String = UUID.randomUUID().toString()): ExportGraph {
+    val schema = DomainChoreographySchema(rootNode = target, nodeOrder = nodes)
+    return DomainContext(
+        choreographyInterface = null,
+        schema = schema,
+        nodes = mapOf()
+    ).asExportGraph(id)
+}
 
 fun DomainContext.asExportGraph(id: String = UUID.randomUUID().toString()): ExportGraph {
     return ExportGraphCreator(id).create(this)

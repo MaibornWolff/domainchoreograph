@@ -25,6 +25,7 @@ export interface NodeProps {
   isSelected: boolean;
   selectedOptions?: SelectedOptions;
   toggleNode?: (nodeId: string) => void;
+  disableDeepNavigation?: boolean;
 }
 
 function getBorderColor(args: { theme: Theme } & NodeProps) {
@@ -63,7 +64,7 @@ const Wrapper = styled('div')<NodeProps>`
   left: ${({ node, scale }) => (node.x - node.width / 2) * scale}px;
   top: ${({ node, scale }) => (node.y - node.height / 2) * scale}px;
   cursor: pointer;
-  transition: ${({theme}) => theme.animations.all};
+  transition: ${({ theme }) => theme.animations.all};
   z-index: 1;
 `;
 
@@ -78,20 +79,25 @@ const ValueWrapper = styled('pre')<NodeProps>`
 `;
 
 const NameWrapper = styled('div')`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 `;
 
 const _Node = (props: NodeProps) => {
   props = {
     ...props,
-    scale: props.scale || 1
+    scale: props.scale || 1,
+    disableDeepNavigation: false
   };
   const { node, toggleNode } = props;
   const previewMessage = selectPreviewTextFromNode(node);
   return <Wrapper {...props} onClick={() => toggleNode && toggleNode(node.id)}>
-    {node.executionContext ? <NodeLink executionContextId={node.executionContext.id}/> : null}
+    {
+      (node.executionContext && !props.disableDeepNavigation)
+        ? <NodeLink executionContextId={node.executionContext.id}/>
+        : null
+    }
     <NameWrapper>{node.name}</NameWrapper>
     {previewMessage == null ? null : <ValueWrapper {...props}>{previewMessage}</ValueWrapper>}
   </Wrapper>;

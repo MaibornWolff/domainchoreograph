@@ -6,6 +6,7 @@ import de.maibornwolff.domainchoreograph.exportdefinitions.utils.IdGenerator
 data class ExportNode(
     val name: String,
     val scope: String? = null,
+    val javaClass: String,
     val value: Any?,
     val exception: ExportException? = null,
     val hasException: Boolean = exception != null,

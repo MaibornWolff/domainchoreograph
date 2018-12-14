@@ -2,6 +2,7 @@ export interface ChoreoNode {
   id: string;
   name: string;
   scope: string;
+  javaClass: string;
   value: object | string | number | boolean;
   doc?: string;
   exception?: ChoreoException;

@@ -13,9 +13,9 @@ class ChoreographyDependencyError(msg: String)
 class DependencyGraph {
     private val nodeMapping: MutableMap<TypeName, DependencyNode> = mutableMapOf()
     private val nodeOrder: MutableList<DependencyNode> = mutableListOf()
-    private var _target: DependencyNode.FunctionNode? = null
+    private var _target: DependencyNode? = null
 
-    val target: DependencyNode.FunctionNode
+    val target: DependencyNode
         get() = _target!!
 
     val nodes: List<DependencyNode>
@@ -38,7 +38,7 @@ class DependencyGraph {
     }
 
     companion object {
-        fun create(rootElement: ReflectionType, givenValues: List<ReflectionVariable>): DependencyGraph {
+        fun create(rootElement: ReflectionType, givenValues: List<ReflectionVariable>, unsafe: Boolean = false): DependencyGraph {
             val graph = DependencyGraph()
 
             givenValues.forEach {
@@ -49,8 +49,8 @@ class DependencyGraph {
                     name = it.name
                 ))
             }
-            val node = getNodeFrom(rootElement, rootElement, graph)
-            graph._target = node as DependencyNode.FunctionNode
+            val node = getNodeFrom(rootElement, rootElement, graph, unsafe)
+            graph._target = node
             return graph
         }
     }
@@ -60,6 +60,7 @@ private fun getNodeFrom(
     returnTypeElement: ReflectionType,
     definedTypeElement: ReflectionType,
     graph: DependencyGraph,
+    unsafe: Boolean,
     caller: ReflectionType? = null
 ): DependencyNode {
     val domainType = getDomainTypeOf(definedTypeElement)
@@ -68,6 +69,9 @@ private fun getNodeFrom(
         return graph.getElement(domainType)
     }
     return if (returnTypeElement.isDomainChoreography()) {
+        println(returnType)
+        println(domainType)
+        println(caller)
         val node = DependencyNode.ChoreographyNode(
             type = returnType,
             domainType = domainType,
@@ -76,20 +80,32 @@ private fun getNodeFrom(
         graph.addElement(node)
         node
     } else {
-        val (callerClass, domainMethod) = getDomainMethodOf(definedTypeElement)
-        val node = DependencyNode.FunctionNode(
-            type = returnType,
-            domainType = domainType,
-            name = domainMethod.name,
-            caller = callerClass.className,
-            parameters = domainMethod.getParametersAsNodes(graph, callerClass)
-        )
+        var node: DependencyNode
+        try {
+            val (callerClass, domainMethod) = getDomainMethodOf(definedTypeElement)
+            node = DependencyNode.FunctionNode(
+                type = returnType,
+                domainType = domainType,
+                name = domainMethod.name,
+                caller = callerClass.className,
+                parameters = domainMethod.getParametersAsNodes(graph, callerClass, unsafe)
+            )
+        } catch (err: DomainException) {
+            if (!unsafe) {
+                throw err
+            }
+            node = DependencyNode.VariableNode(
+                type = returnType,
+                domainType = domainType,
+                name = domainType.simpleName.decapitalize()
+            )
+        }
         graph.addElement(node)
         node
     }
 }
 
-private fun ReflectionExecutable.getParametersAsNodes(graph: DependencyGraph, caller: ReflectionType): List<DependencyNode> {
+private fun ReflectionExecutable.getParametersAsNodes(graph: DependencyGraph, caller: ReflectionType, unsafe: Boolean): List<DependencyNode> {
     return this.parameters
         .map { resolveParameterTypes(it) }
         .mapNotNull { (returnTypeElement, definedTypeElement) ->
@@ -97,7 +113,7 @@ private fun ReflectionExecutable.getParametersAsNodes(graph: DependencyGraph, ca
             if (graph.hasElement(type)) {
                 graph.getElement(type)
             } else {
-                getNodeFrom(returnTypeElement, definedTypeElement, graph, caller)
+                getNodeFrom(returnTypeElement, definedTypeElement, graph, unsafe, caller)
             }
         }
 }

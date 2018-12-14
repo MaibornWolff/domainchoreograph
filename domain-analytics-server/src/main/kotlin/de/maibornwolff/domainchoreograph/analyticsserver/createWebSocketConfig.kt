@@ -1,8 +1,8 @@
 package de.maibornwolff.domainchoreograph.analyticsserver
 
-import io.javalin.embeddedserver.jetty.websocket.WebSocketConfig
+import io.javalin.websocket.WsHandler
 
-fun createWebSocketConfig(controller: WebSocketController) = WebSocketConfig { ws ->
+fun createWebSocketConfig(controller: WebSocketController) = { ws: WsHandler ->
   with(ws) {
     onConnect { session ->
       controller.registerSession(session)

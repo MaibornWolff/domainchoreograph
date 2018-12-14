@@ -16,6 +16,7 @@ internal class ExportNodeCreator(
         return ExportNode(
             id = nodeId,
             name = name,
+            javaClass = type.canonicalName,
             value = value,
             type = type,
             scope = scope.id,

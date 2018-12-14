@@ -1,13 +1,9 @@
 package de.maibornwolff.domainchoreograph.analyticsserver.testingtool
 
-import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
+import de.maibornwolff.domainchoreograph.analyticsserver.shared.MyDomainDefinition
+import de.maibornwolff.domainchoreograph.analyticsserver.shared.NoDomainDefinition
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
-
-@DomainDefinition
-class MyDomainDefinition
-
-class NoDomainDefinition
 
 class ScanForDomainDefinitions {
     @Test

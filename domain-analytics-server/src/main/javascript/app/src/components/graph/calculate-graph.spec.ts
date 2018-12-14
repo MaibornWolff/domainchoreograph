@@ -11,19 +11,19 @@ describe('calculateGraph', () => {
         0: {
           id: '0',
           name: 'node-0',
-          scope: 's0',
+          scope: 'root',
           value: { key: 'value-0' },
         },
         1: {
           id: '1',
           name: 'node-1',
-          scope: 's0',
+          scope: 'root',
           value: { key: 'value-1' },
         }
       },
       scopes: {
-        s0: {
-          id: 's0',
+        root: {
+          id: 'root',
           nodes: ['0', '1'],
           executionContext: 'root',
         }
@@ -31,11 +31,11 @@ describe('calculateGraph', () => {
       executionContexts: {
         root: {
           id: 'root',
-          scopes: ['s0']
+          scopes: ['root']
         }
       }
     },
-    scopeKey: 's0',
+    scopeKey: 'root',
     nodeOptions: {
       maxWidthInPx: 10,
       minHeightInPx: 20,
@@ -52,7 +52,7 @@ describe('calculateGraph', () => {
           {
             id: '0',
             name: 'node-0',
-            scope: 's0',
+            scope: 'root',
             value: baseProps.graph.nodes['0'].value,
             outsideScope: false,
             executionContext: undefined,
@@ -64,7 +64,7 @@ describe('calculateGraph', () => {
           {
             id: '1',
             name: 'node-1',
-            scope: 's0',
+            scope: 'root',
             value: baseProps.graph.nodes['1'].value,
             outsideScope: false,
             executionContext: undefined,
@@ -108,13 +108,13 @@ describe('calculateGraph', () => {
           1: {
             id: '1',
             name: 'node-1',
-            scope: 's0',
+            scope: 'root',
             value: { key: 'value-1' },
           }
         },
         scopes: {
-          s0: {
-            id: 's0',
+          root: {
+            id: 'root',
             nodes: ['1'],
             executionContext: 'root',
           },
@@ -127,7 +127,7 @@ describe('calculateGraph', () => {
         executionContexts: {
           root: {
             id: 'root',
-            scopes: ['s0', 's1']
+            scopes: ['root', 's1']
           }
         }
       }

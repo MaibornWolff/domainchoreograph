@@ -1,12 +1,17 @@
 package de.maibornwolff.domainchoreograph.analyticsserver.testingtool
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import de.maibornwolff.domainchoreograph.core.processing.resolveDomainDefinition
+import de.maibornwolff.domainchoreograph.core.api.DomainChoreographyOptions
+import de.maibornwolff.domainchoreograph.core.processing.resolveDomainDefinitionWithOptions
 
-fun runChoreographyFromJson(targetCanonicalName: String, inputs: Set<JsonEncodedClass>): Any {
+fun runChoreographyFromJson(
+    targetCanonicalName: String,
+    inputs: Set<JsonEncodedClass>,
+    options: DomainChoreographyOptions? = null
+): Any {
     val targetClass = loadClassByName(targetCanonicalName)
     val inputs = inputs.map { it.asClass() }.toList()
-    return resolveDomainDefinition(targetClass.kotlin, inputs)
+    return resolveDomainDefinitionWithOptions(options, targetClass.kotlin, inputs)
 }
 
 class JsonEncodedClass(

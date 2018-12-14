@@ -2321,10 +2321,10 @@ clean-css@4.1.x:
   dependencies:
     source-map "0.5.x"
 
-clean-forms@^2.2.2:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/clean-forms/-/clean-forms-2.4.0.tgz#af5ead902bf0b35f0aa4c9b2450adc50ea2987fe"
-  integrity sha512-21n8viaez0fZ7EXHkERSgAcYirryui5SX2oI6CTpeeZe/s3VCHbMB/fxwi1/M+9k7Irq/HVPWtnxEzRbIi/P/g==
+clean-forms@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/clean-forms/-/clean-forms-2.4.4.tgz#ce66041dddd6f7b4774cf2f5cffa903a22b7787d"
+  integrity sha512-R1yYbe8qe7gxKhRJJ9yEfMW+Qk066OSqvuKotCT+qAtmdWoOeX4dIJn9EdzEmRFCizlqeSwRru7Rdc7vc8SlfA==
   dependencies:
     prop-types "^15.6.2"
 
@@ -2376,10 +2376,6 @@ cliui@^4.0.0:
 clone-stats@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/clone-stats/-/clone-stats-0.0.1.tgz#b88f94a82cf38b8791d58046ea4029ad88ca99d1"
-
-clone@2.x:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
 
 clone@^1.0.0, clone@^1.0.2:
   version "1.0.4"
@@ -2636,14 +2632,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-create-react-class@^15.6.0:
-  version "15.6.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 cross-env@^5.2.0:
   version "5.2.0"
@@ -3477,16 +3465,6 @@ emojis-list@^2.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
   integrity sha1-TapNnbAPmBmIDHn6RXrlsJof04k=
 
-emotion-enzyme-mock@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/emotion-enzyme-mock/-/emotion-enzyme-mock-1.2.1.tgz#f293e6d083aae0a9891129b65f533d8d066b7302"
-  dependencies:
-    html-tag-names "^1.1.2"
-    node-cache "^4.1.1"
-    react "^15.6.1"
-    svg-tag-names "^1.1.1"
-    tiny-uuid4 "^1.0.1"
-
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -4029,7 +4007,7 @@ fbemitter@^2.0.0:
   dependencies:
     fbjs "^0.8.4"
 
-fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.5, fbjs@^0.8.9:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.5:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -4767,10 +4745,6 @@ html-minifier@^3.2.3, html-minifier@^3.5.8:
     param-case "2.1.x"
     relateurl "0.2.x"
     uglify-js "3.4.x"
-
-html-tag-names@^1.1.2:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/html-tag-names/-/html-tag-names-1.1.3.tgz#f81f75e59d626cb8a958a19e58f90c1d69707b82"
 
 html-webpack-plugin@^3.2.0:
   version "3.2.0"
@@ -6295,13 +6269,13 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@4.x, lodash@^4.11.1, lodash@^4.17.3:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
-
 lodash@^3.2.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
+lodash@^4.11.1, lodash@^4.17.3:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
@@ -6822,13 +6796,6 @@ no-case@^2.2.0, no-case@^2.3.2:
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
     lower-case "^1.1.1"
-
-node-cache@^4.1.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/node-cache/-/node-cache-4.2.0.tgz#48ac796a874e762582692004a376d26dfa875811"
-  dependencies:
-    clone "2.x"
-    lodash "4.x"
 
 node-fetch@^1.0.1:
   version "1.7.3"
@@ -7789,7 +7756,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -8096,16 +8063,6 @@ react-transition-group@^2.2.1, react-transition-group@^2.5.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
-
-react@^15.6.1:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
-  dependencies:
-    create-react-class "^15.6.0"
-    fbjs "^0.8.9"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
 
 react@^16.7.0-alpha.2:
   version "16.7.0-alpha.2"
@@ -9288,10 +9245,6 @@ svg-inline-loader@^0.8.0:
     object-assign "^4.0.1"
     simple-html-tokenizer "^0.1.1"
 
-svg-tag-names@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/svg-tag-names/-/svg-tag-names-1.1.1.tgz#9641b29ef71025ee094c7043f7cdde7d99fbd50a"
-
 svg2png@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/svg2png/-/svg2png-3.0.1.tgz#a2644d68b0231ac00af431aa163714ff17106447"
@@ -9405,10 +9358,6 @@ timers-browserify@^2.0.4:
   integrity sha512-YvC1SV1XdOUaL6gx5CoGroT3Gu49pK9+TZ38ErPldOWW4j49GI1HKs9DV+KGq/w6y+LZ72W1c8cKz2vzY+qpzg==
   dependencies:
     setimmediate "^1.0.4"
-
-tiny-uuid4@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tiny-uuid4/-/tiny-uuid4-1.0.1.tgz#bd44e9dd5f5fbd1768d6d1fbf3020c886a1b7766"
 
 tinycolor2@^1.1.2:
   version "1.4.1"

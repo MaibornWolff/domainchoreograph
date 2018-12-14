@@ -1,6 +1,7 @@
 package de.maibornwolff.domainchoreograph.core.processing.dependencygraph
 
 import com.squareup.kotlinpoet.asClassName
+import de.maibornwolff.domainchoreograph.core.api.DomainException
 import de.maibornwolff.domainchoreograph.core.processing.reflection.asReflectionType
 import de.maibornwolff.domainchoreograph.scenarios.deepchoreography.*
 import de.maibornwolff.domainchoreograph.scenarios.nestedchoreography.NestedChoreography
@@ -10,6 +11,7 @@ import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDoma
 import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDomainObject2
 import de.maibornwolff.domainchoreograph.scenarios.simplechoreography.SimpleDomainObject3
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.catchThrowable
 import org.junit.Test
 
 class DependencyGraphTest {
@@ -138,5 +140,52 @@ class DependencyGraphTest {
             resultNode
         )
         assertThat(graph.target).isEqualTo(resultNode)
+    }
+
+    @Test
+    fun `should not throw an error if unsafe flag is not set and the parameters are missing`() {
+        val thrown = catchThrowable {
+            DependencyGraph.create(
+                SimpleDomainObject3::class.asReflectionType(),
+                listOf(),
+                unsafe = false
+            )
+        }
+
+        assertThat(thrown).isInstanceOf(DomainException::class.java)
+    }
+
+    @Test
+    fun `should not throw an error if unsafe flag is set and the parameters are missing`() {
+        val graph = DependencyGraph.create(
+            SimpleDomainObject3::class.asReflectionType(),
+            listOf(),
+            unsafe = true
+        )
+
+        val d1Node = DependencyNode.VariableNode(
+            type = SimpleDomainObject1::class.asClassName(),
+            domainType = SimpleDomainObject1::class.asClassName(),
+            name = "simpleDomainObject1"
+        )
+        val d2Node = DependencyNode.VariableNode(
+            type = SimpleDomainObject2::class.asClassName(),
+            domainType = SimpleDomainObject2::class.asClassName(),
+            name = "simpleDomainObject2"
+        )
+        val d3Node = DependencyNode.FunctionNode(
+            type = SimpleDomainObject3::class.asClassName(),
+            domainType = SimpleDomainObject3::class.asClassName(),
+            caller = SimpleDomainObject3::class.asClassName(),
+            name = "create",
+            parameters = listOf(d1Node, d2Node)
+        )
+
+        assertThat(graph.nodes).containsExactly(
+            d1Node,
+            d2Node,
+            d3Node
+        )
+        assertThat(graph.target).isEqualTo(d3Node)
     }
 }

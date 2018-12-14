@@ -1,8 +1,11 @@
 package de.maibornwolff.domainchoreograph.exportdefinitions.adapter
 
-import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainChoreographyOptions
+import de.maibornwolff.domainchoreograph.core.api.DomainChoreographySchema
+import de.maibornwolff.domainchoreograph.core.api.DomainContext
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
+import de.maibornwolff.domainchoreograph.core.processing.dependencygraph.DependencyGraph
+import de.maibornwolff.domainchoreograph.core.processing.reflection.asReflectionType
 import de.maibornwolff.domainchoreograph.exportdefinitions.model.*
 import de.maibornwolff.domainchoreograph.scenarios.orderprice.choreographies.OrderPriceCalculator
 import de.maibornwolff.domainchoreograph.scenarios.orderprice.domaintypes.*
@@ -50,6 +53,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "order",
                     name = "Order",
                     value = order,
+                    javaClass = Order::class.java.canonicalName,
                     hasException = false,
                     scope = "root",
                     type = Order::class.java
@@ -58,6 +62,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "articlePriceService",
                     name = "ArticlePriceService",
                     value = articlePriceService,
+                    javaClass = ArticlePriceService::class.java.canonicalName,
                     hasException = false,
                     scope = "root",
                     type = ArticlePriceService::class.java
@@ -66,6 +71,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice",
                     name = "OrderPrice",
                     value = null,
+                    javaClass = OrderPrice::class.java.canonicalName,
                     hasException = true,
                     exception = expectedException,
                     scope = "root",
@@ -75,6 +81,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::0::article",
                     name = "Article",
                     value = Article("iphone"),
+                    javaClass = Article::class.java.canonicalName,
                     hasException = false,
                     scope = "orderPrice::0",
                     type = Article::class.java
@@ -83,6 +90,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::0::articlePrice",
                     name = "ArticlePrice",
                     value = ArticlePrice(999f),
+                    javaClass = ArticlePrice::class.java.canonicalName,
                     hasException = false,
                     scope = "orderPrice::0",
                     type = ArticlePrice::class.java
@@ -91,6 +99,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::0::articlePriceService",
                     name = "ArticlePriceService",
                     value = articlePriceService,
+                    javaClass = ArticlePriceService::class.java.canonicalName,
                     hasException = false,
                     scope = "orderPrice::0",
                     type = ArticlePriceService::class.java
@@ -99,6 +108,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::1::article",
                     name = "Article",
                     value = Article("car"),
+                    javaClass = Article::class.java.canonicalName,
                     hasException = false,
                     scope = "orderPrice::1",
                     type = Article::class.java
@@ -107,6 +117,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::1::articlePrice",
                     name = "ArticlePrice",
                     value = null,
+                    javaClass = ArticlePrice::class.java.canonicalName,
                     hasException = true,
                     exception = expectedException,
                     scope = "orderPrice::1",
@@ -116,6 +127,7 @@ internal class DomainContextAsExportGraphKtTest {
                     id = "orderPrice::1::articlePriceService",
                     name = "ArticlePriceService",
                     value = articlePriceService,
+                    javaClass = ArticlePriceService::class.java.canonicalName,
                     hasException = false,
                     scope = "orderPrice::1",
                     type = ArticlePriceService::class.java
@@ -154,6 +166,64 @@ internal class DomainContextAsExportGraphKtTest {
                 "orderPrice" to ExportExecutionContext(
                     id = "orderPrice",
                     scopes = mutableListOf("orderPrice::0", "orderPrice::1")
+                )
+            )
+        )
+
+        assertThat(actual).isEqualToComparingFieldByFieldRecursively(expected)
+    }
+
+    @Test
+    fun `it should work with just the depedency graph`() {
+        val graph = DependencyGraph.create(OrderPrice::class.asReflectionType(), listOf(), unsafe = true)
+        val actual = graph.asExportGraph("id")
+
+        val expected = ExportGraph(
+            id = "id",
+            nodes = mapOf(
+                "order" to ExportNode(
+                    id = "order",
+                    name = "Order",
+                    value = null,
+                    javaClass = Order::class.java.canonicalName,
+                    hasException = false,
+                    scope = "root",
+                    type = Order::class.java
+                ),
+                "articlePriceService" to ExportNode(
+                    id = "articlePriceService",
+                    name = "ArticlePriceService",
+                    value = null,
+                    javaClass = ArticlePriceService::class.java.canonicalName,
+                    hasException = false,
+                    scope = "root",
+                    type = ArticlePriceService::class.java
+                ),
+                "orderPrice" to ExportNode(
+                    id = "orderPrice",
+                    name = "OrderPrice",
+                    value = null,
+                    javaClass = OrderPrice::class.java.canonicalName,
+                    hasException = false,
+                    scope = "root",
+                    type = OrderPrice::class.java
+                )
+            ),
+            dependencies = listOf(
+                ExportDependency("order", "orderPrice"),
+                ExportDependency("articlePriceService", "orderPrice")
+            ),
+            scopes = mapOf(
+                "root" to ExportScope(
+                    id = "root",
+                    executionContext = "Application",
+                    nodes = mutableListOf("order", "articlePriceService", "orderPrice")
+                )
+            ),
+            executionContexts = mapOf(
+                "Application" to ExportExecutionContext(
+                    id = "Application",
+                    scopes = mutableListOf("root")
                 )
             )
         )

@@ -36,10 +36,11 @@ fun <T : Any> resolveDomainDefinitionWithOptions(
         target.asReflectionType(),
         params.asReflectionVariables()
     )
+    val graphTarget = graph.target as DependencyNode.FunctionNode
     val runner = DomainChoreographyRunner(
         meta = object : DomainChoreographyMeta {
             override val schemas = mapOf(
-                graph.target.name to DomainChoreographySchema(
+                graphTarget.name to DomainChoreographySchema(
                     rootNode = graph.target,
                     nodeOrder = graph.nodes
                 )
@@ -54,7 +55,7 @@ fun <T : Any> resolveDomainDefinitionWithOptions(
         .toMap()
         .toMutableMap()
 
-    runner.run(graph.target.name) { context ->
+    runner.run(graphTarget.name) { context ->
         params.forEach { context.save(it::class.java, it) }
         graph.nodes.forEach {
             when (it) {

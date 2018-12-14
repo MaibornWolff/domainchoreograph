@@ -8,19 +8,21 @@ export const graphMock: ChoreoGraph = {
     0: {
       id: '0',
       name: 'node-0',
-      scope: 's0',
+      scope: 'root',
+      javaClass: 'my.java.class0',
       value: { key: 'value-0' },
     },
     1: {
       id: '1',
       name: 'node-1',
-      scope: 's0',
+      scope: 'root',
+      javaClass: 'my.java.class1',
       value: { key: 'value-1' },
     }
   },
   scopes: {
-    s0: {
-      id: 's0',
+    root: {
+      id: 'root',
       nodes: ['0', '1'],
       executionContext: 'root',
     }
@@ -28,7 +30,7 @@ export const graphMock: ChoreoGraph = {
   executionContexts: {
     root: {
       id: 'root',
-      scopes: ['s0']
+      scopes: ['root']
     }
   }
 };

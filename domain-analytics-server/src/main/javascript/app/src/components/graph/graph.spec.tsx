@@ -207,7 +207,7 @@ describe('Graph', () => {
   it('should select edges', () => {
     expect(renderWithProviders(<Graph
       graph={graphMock}
-      scope={'s0'}
+      scope={'root'}
       nodeOptions={NODE_OPTIONS}
       selectedEdgeIds={{ '0->1': true }}
     />)).toMatchSnapshot();
@@ -216,7 +216,7 @@ describe('Graph', () => {
   it('should select edges with color', () => {
     expect(renderWithProviders(<Graph
       graph={graphMock}
-      scope={'s0'}
+      scope={'root'}
       nodeOptions={NODE_OPTIONS}
       selectedEdgeIds={{ '0->1': { color: 'red' } }}
     />)).toMatchSnapshot();
@@ -225,7 +225,7 @@ describe('Graph', () => {
   it('should select nodes', () => {
     expect(renderWithProviders(<Graph
       graph={graphMock}
-      scope={'s0'}
+      scope={'root'}
       nodeOptions={NODE_OPTIONS}
       selectedNodeIds={{ 0: true }}
     />)).toMatchSnapshot();
@@ -234,7 +234,7 @@ describe('Graph', () => {
   it('should select nodes with color', () => {
     expect(renderWithProviders(<Graph
       graph={graphMock}
-      scope={'s0'}
+      scope={'root'}
       nodeOptions={NODE_OPTIONS}
       selectedNodeIds={{ 0: { color: 'red' } }}
     />)).toMatchSnapshot();
