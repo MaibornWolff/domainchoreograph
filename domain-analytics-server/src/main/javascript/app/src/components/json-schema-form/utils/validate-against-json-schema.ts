@@ -23,7 +23,6 @@ export function validateAgainstJsonSchema(schema: JSONSchema4): ValidationFuncti
 
       return [ property, message ] as [string, string];
     });
-    console.log(result, errors);
     return errors;
   }
 }

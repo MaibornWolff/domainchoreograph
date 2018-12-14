@@ -6,39 +6,46 @@ import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
 import de.maibornwolff.domainchoreograph.core.api.DomainFunction
 import de.maibornwolff.domainchoreograph.domainanalytics.DomainAnalytics
 
+@DomainDefinition
 data class Delivery(
     val productName: String,
     val elfName: String,
     val deliveryTimeInHours: Double
 )
 
+@DomainDefinition
 data class DeliveryPlan(
     val deliveries: List<Delivery>
 )
 
+@DomainDefinition
 data class Product(
     val name: String,
     val price: Double
 )
 
+@DomainDefinition
 data class Products(
     val values: List<Product>
 )
 
+@DomainDefinition
 data class Elf(
     val name: String,
     val costsPerHour: Double
 )
 
+@DomainDefinition
 data class Elfs(
     val values: List<Elf>
 )
 
-
+@DomainDefinition
 class ProductCosts(
     val value: Double
 ) {
     companion object {
+        @DomainFunction
         fun calculate(deliveryPlan: DeliveryPlan, products: Products) = ProductCosts(
             value = deliveryPlan.deliveries.sumByDouble { delivery ->
                 val product = products.values.find { it.name == delivery.productName }!!
@@ -50,10 +57,12 @@ class ProductCosts(
     override fun toString() = "$$value"
 }
 
+@DomainDefinition
 class ElfLaborCosts(
     val value: Double
 ) {
     companion object {
+        @DomainFunction
         fun calculate(deliveryPlan: DeliveryPlan, elfs: Elfs) = ElfLaborCosts(
             value = deliveryPlan.deliveries.sumByDouble { delivery ->
                 val elf = elfs.values.find { it.name == delivery.elfName }!!
@@ -65,6 +74,7 @@ class ElfLaborCosts(
     override fun toString() = "$$value"
 }
 
+@DomainDefinition
 class DeliveryCosts(
     val value: Double
 ) {
@@ -99,5 +109,18 @@ fun main(args: Array<String>) {
         Product(name = "Lego", price = 500.00)
     ))
 
-    // ???
+    val analytics = DomainAnalytics()
+    analytics.server.start()
+    val environment = DomainEnvironment(setOf(
+        analytics.logger
+    ))
+    val factory = environment.get<SantaClausFactory>()
+
+    val result = factory.planDeliveryCosts(
+        deliveryPlan,
+        elfs,
+        products
+    )
+
+    println(result)
 }

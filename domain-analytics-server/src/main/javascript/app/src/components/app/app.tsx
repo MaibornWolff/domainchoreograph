@@ -30,7 +30,8 @@ const GlobalStyle = createGlobalStyle`
 const Wrapper = styled('div')`
   color: ${({ theme }) => theme.colors.text.normal.primary};
   background: ${({ theme }) => theme.colors.background[0]};
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 `;
 
 const ContentWrapper = styled('div')`

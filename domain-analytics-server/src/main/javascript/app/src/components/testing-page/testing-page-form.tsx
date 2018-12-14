@@ -9,6 +9,7 @@ import { RestApi, RunChoreographyRequest } from '~api/rest';
 import { GraphInputNodeSelection } from '~components/graph-input-node-selection/graph-input-node-selection';
 import { JsonSchemaForm } from '~components/json-schema-form/json-schema-form';
 import { createDefaultValue } from '~components/json-schema-form/utils/create-default-value';
+import { FormItems } from '~components/json-schema-form/utils/form-items';
 import { validateAgainstJsonSchema } from '~components/json-schema-form/utils/validate-against-json-schema';
 import { SelectField } from '~components/select/select-field';
 import { JavaInstance } from '~components/testing-page/models/java-instance';
@@ -53,7 +54,7 @@ export const TestPageForm: React.FunctionComponent<{}> = ({}) => {
   }
 
   if (asyncTarget.loading) {
-    return <div>Loading...</div>;
+    return null;
   }
 
   return <InnerTestingPageForm
@@ -100,7 +101,6 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
     });
     let schema = await RestApi.getSchema(reverseJavaClassEscape(javaClass));
     schema = await RefParser.dereference(schema) as JSONSchema4;
-    console.log(schema);
     const newInstance = {
       javaClass,
       schema,
@@ -195,7 +195,7 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
           />
           }
         </div>
-        <div>
+        <InputWrapper>
           <FieldGroup name="inputs">
             {Object.entries(model.inputs)
               .map(([javaClass, value]) => {
@@ -211,7 +211,7 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
                 );
               })}
           </FieldGroup>
-        </div>
+        </InputWrapper>
         <SubmitWrapper>
           <Button color="primary" variant="contained" type="submit">Submit</Button>
         </SubmitWrapper>
@@ -246,4 +246,10 @@ const SubmitWrapper = styled.div`
     width: 100%;
     justify-content: center;
     justify-items: center;
+`;
+
+const InputWrapper = styled.div`
+  & > * {
+    margin-bottom: 1rem;
+  }
 `;

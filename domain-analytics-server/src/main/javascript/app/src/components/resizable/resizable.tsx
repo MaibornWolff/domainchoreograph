@@ -2,24 +2,27 @@ import * as React from 'react';
 import { styled } from '~utils/styled';
 
 const Wrapper = styled('div')`
-  position: relative;;
-  height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
 `;
 
 const ScrollWrapper = styled('div')`
-  overflow: auto;
-  height: 100%;
+    overflow: auto;
+    height: 100%;
 `;
 
 const resizeAreaWidth = 50;
 const ResizeArea = styled('div')`
-  position: absolute;
-  width: ${resizeAreaWidth}px;
-  left: -${resizeAreaWidth / 2}px;
-  top: 0;
-  bottom: 0;
-  cursor: col-resize;
-  user-select: none;
+    position: absolute;
+    width: ${resizeAreaWidth}px;
+    left: -${resizeAreaWidth / 2}px;
+    top: 0;
+    bottom: 0;
+    cursor: col-resize;
+    user-select: none;
 `;
 
 export interface ResizableProps {
@@ -43,7 +46,7 @@ export class Resizable extends React.Component<ResizableProps, ResizableState> {
   public render() {
     return (
       <Wrapper
-        style={{width: this.state.width}}
+        style={{ width: this.state.width }}
         className={this.props.wrapperClassName}
       >
         <ResizeArea

@@ -33,7 +33,10 @@ export const Select: React.FunctionComponent<SelectProps> = ({
         )}
         onFocus={handleFocus}
       >
-        {options.map(option => <MenuItem value={option}>{option}</MenuItem>)}
+        {options.map(option => <MenuItem
+          key={option}
+          value={option}
+        >{option}</MenuItem>)}
       </MatSelect>
     </FormControl>
   );
