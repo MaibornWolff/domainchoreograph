@@ -58,7 +58,7 @@ const JsonSchemaField = memo(function _JsonSchemaField({
             <FieldGroupWrapper>
               <FormItems>
                 <Button color="secondary" onClick={remove}>Delete</Button>
-                <JsonSchemaFields schema={itemSchema}/>
+                <JsonSchemaField name={null!} schema={itemSchema}/>
               </FormItems>
             </FieldGroupWrapper>
           )}/>

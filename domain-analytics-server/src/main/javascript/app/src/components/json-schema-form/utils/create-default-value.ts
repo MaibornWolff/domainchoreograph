@@ -10,8 +10,15 @@ const defaultValues: Record<Exclude<JSONSchema4TypeName, 'object'>, any> = {
   any: ''
 };
 
-export function createDefaultValue(schema: JSONSchema4): object {
-  return createDefaultValueForObject(schema);
+export function createDefaultValue(schema: JSONSchema4): any {
+  const type = schema.type || 'any';
+  if (type instanceof Array) {
+    throw new Error('Array types are not supported');
+  } else if (type === 'object') {
+    return createDefaultValueForObject(schema);
+  } else {
+    return defaultValues[type];
+  }
 }
 
 function createDefaultValueForObject(schema: JSONSchema4): Promise<object> {
@@ -21,15 +28,9 @@ function createDefaultValueForObject(schema: JSONSchema4): Promise<object> {
   let defaultValue: any = {};
   if (schema.properties) {
     Object.entries(schema.properties).forEach(([key, property]) => {
-      const type = property.type || 'any';
-      if (type instanceof Array) {
-        throw new Error('Array types are no supported');
-      } else if (type === 'object') {
-        defaultValue[key] = createDefaultValueForObject(property);
-      } else {
-        defaultValue[key] = defaultValues[type];
-      }
+      defaultValue[key] = createDefaultValue(property)
     });
   }
   return defaultValue;
 }
+

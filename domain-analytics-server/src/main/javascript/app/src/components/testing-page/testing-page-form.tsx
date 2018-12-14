@@ -126,6 +126,7 @@ export const InnerTestingPageForm: React.FunctionComponent<_TestingPageFormProps
     });
   }, [formState, model, setFormState, validationState]);
 
+  console.log(model);
   const handleOnInputRemove = useCallback((javaClass: string) => {
     javaClass = escapeJavaClass(javaClass);
     const newInputs = { ...model.inputs };
