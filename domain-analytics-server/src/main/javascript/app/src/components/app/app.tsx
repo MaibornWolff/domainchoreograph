@@ -1,9 +1,8 @@
 import { ConnectedRouter } from 'connected-react-router';
 import * as React from 'react';
 import { Redirect, Route, RouteComponentProps, Switch } from 'react-router';
-import { Link } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import { DropMessage } from '~components/drop-message/drop-message';
+import { NoGraphMessage } from '~components/no-graph-message/no-graph-message';
 import { TestingPage } from '~components/testing-page/testing-page';
 import { DropZoneContainer } from '~containers/drop-zone.container';
 import { GraphPageContainer } from '~containers/graph-page.container';
@@ -62,7 +61,7 @@ export class App extends React.Component<AppProps, AppState> {
               <Route path="/load" component={() =>
                 this.props.loadedGraph
                   ? <Redirect to={'/Application'}/>
-                  : <DropMessage>Drop json here</DropMessage>}
+                  : <NoGraphMessage/>}
               />
               {this.props.loadedGraph ? null : <Redirect to={'/load'}/>}
               <Route path="/:executionContext/:scope" component={renderGraphPage}/>
