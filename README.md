@@ -7,9 +7,15 @@
 
 ## Installation
 
-1. Add the required dependencies
+1. Add the required dependencies and the repository (mavenCentral is work in progress)
 ```groovy
 // build.gradle
+
+repositories {
+    maven {
+        url = 'https://dl.bintray.com/domainchoreograph/domainchoreograph'
+    }
+}
 
 dependencies {
     compile "de.maibornwolff.domainchoreograph:core:<latest-version>"
