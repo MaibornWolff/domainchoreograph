@@ -1,24 +1,49 @@
 # DomainChoreograph
 
 [![Build Status](https://travis-ci.org/MaibornWolff/domainchoreograph.svg?branch=master)](https://travis-ci.org/MaibornWolff/domainchoreograph)
+[ ![Download](https://api.bintray.com/packages/domainchoreograph/domainchoreograph/core/images/download.svg) ](https://bintray.com/domainchoreograph/domainchoreograph/core/_latestVersion)
 
 *DomainChoreograph* is a kotlin library to describe, visualize and debug business algorithms in a declarative way. 
 
-## Getting started
+## Installation
 
-Let's start with setting up the dependencies.
+1. Add the required dependencies
+```groovy
+// build.gradle
 
-### Gradle/Maven
+dependencies {
+    compile "de.maibornwolff.domainchoreograph:core:<latest-version>"
+    kapt "de.maibornwolff.domainchoreograph:core:<latest-version>"
+}
+```
 
-*coming soon*
+2. Make sure that you have the `kotlin-kapt` plugin activated.
+This is necessary for the annotation processor. You can find more information 
+[in the docs](https://kotlinlang.org/docs/reference/kapt.html).
+```groovy
+// build.gradle
 
-### Hello World
-Let's write a *Hello World* program next.
+apply plugin: "kotlin-kapt"
+
+```
+
+
+## Hello World
+Let's write a *Hello World* program.
+
+First we need to define the domain classes we want to use. In our case
+this is just a `Name`. It is necessary to annotate the class with 
+`@DomainDefinition`.
 
 ```kotlin
 @DomainDefinition
 data class Name (val value: String)
 ```
+
+If we have a domain class that has a dependency to another domain class.
+We add a static method with the dependencies as parameters. The method
+needs to be annotated with `@DomainFunction` and all the dependencies
+need to be annotated with `@DomainDefinition`.
 
 ```kotlin
 import de.maibornwolff.domainchoreograph.core.api.DomainDefinition
@@ -37,45 +62,83 @@ data class HelloWorld(val message: String) {
 }
 ```
 
+Next we need to define out choreography. The choreography is an
+interface which defines all the methods that the framework should generate
+for you. The interface needs to be annotated with `@DomainChoreography`.
+
+```kotlin
+import de.maibornwolff.domainchoreograph.core.api.DomainChoreography
+
+@DomainChoreography
+interface HelloWorldChoreography {
+    fun createHelloWorldWithName(name: Name): HelloWorld
+}
+```
+
+Finally we can use our choreography implementation.
+
+```kotlin
+import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
+
+fun main(args: Array<String>) {
+    // Setup the environment. The environment can be used to configure the framework.
+    val environment = DomainEnvironment()
+
+    // We can use the environment to get our generated implementation
+    val choreography = environment.get<HelloWorldChoreography>()
+
+    // Which can be used like any normal java object
+    val helloWorld = choreography.calculate(Name("Bob"))
+    println(helloWorld.message) // Prints: Hello Bob
+}
+```
+
+## Analytics Logger
+
+A huge advantage of the framework is the possibility to visualize
+the business logic. This is possible with *Logger* which have access
+to some meta data of your program.
+
+1. To visualize our example you first need to install the analytics tool.
+```groovy
+// build.gradle
+
+dependencies {
+    compile "de.maibornwolff.domainchoreograph:domain-analytics:<latest-version>"
+}
+```
+
+2. In our main function, we now initialize the logger and start the ui server.
+
+
 ```kotlin
 import de.maibornwolff.domainchoreograph.core.api.DomainEnvironment
 import de.maibornwolff.domainchoreograph.domainanalytics.DomainAnalytics
 
-object Application {
+fun main(args: Array<String>) {
+    // First we initialize the analytics. Here you can pass some options, for example the ui port.
+    val domainAnalytics = DomainAnalytics()
+    // Next we start the ui server. This will open the browser with the user interface.
+    domainAnalytics.server.start()
 
-    @JvmStatic
-    fun main(args: Array<String>) {
+    // Finally we need to pass the logger to the environment
+    val environment = DomainEnvironment(
+        logger = setOf(domainAnalytics.logger)
+    )
 
-        // start analytics server
-        val domainAnalytics = DomainAnalytics()
-        domainAnalytics.server.start()
+    // The following code has not changed
+    val choreography = environment.get<HelloWorldChoreography>()
 
-        // setup environment
-        val environment = DomainEnvironment.builder()
-            .addLogger(domainAnalytics.logger)
-            .build()
-
-        // input parameter
-        val name = Name("Bob")
-
-        // get generated implementation
-        val choreography: HelloWorldChoreography = environment.get()
-        val helloWorld = choreography.calculate(name)
-
-        println(helloWorld.message)
-    }
+    val helloWorld = choreography.calculate(Name("Bob"))
+    println(helloWorld.message)
 }
 ```
 
-Output on console:
-```
-Start debug server on port 5400
-Hello Bob
-```
-
-What your browser is showing:
+3. If we start the program, we will see a visualization of our logic in the browser.
 
 ![Debug-View in Browser](media/hello-world-browseroutput-1.png)
+
+4. Now you now all the basics! Feel free to play around and try more complex examples.
 
 ## Some terminology
 
