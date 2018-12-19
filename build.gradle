@@ -38,23 +38,10 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'kotlin'
     apply plugin: 'kotlin-kapt'
+    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
     apply plugin: 'jacoco'
 
-    if (name != 'examples') {
-        apply plugin: 'com.jfrog.bintray'
-
-        bintray {
-            user = System.getenv('BINTRAY_USER')
-            key = System.getenv('BINTRAY_KEY')
-            configurations = ['archives']
-            pkg {
-                repo = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayrepo')
-                name = project.name
-                licenses = ['Apache-2.0']
-                vcsUrl = rootProject.findProperty('de.maibornwolff.domainchoreograph.github.url')
-            }
-        }
-    }
 
     group 'de.maibornwolff.domainchoreograph'
     version = rootProject.version
@@ -69,6 +56,36 @@ subprojects {
 
     jar {
         from sourceSets.main.allSource
+    }
+
+    if (name != 'examples') {
+        apply plugin: 'com.jfrog.bintray'
+
+        bintray {
+            user = System.getenv('BINTRAY_USER')
+            key = System.getenv('BINTRAY_KEY')
+            configurations = ['archives']
+            publications = ['maven']
+            pkg {
+                repo = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayrepo')
+                name = project.name
+                licenses = ['Apache-2.0']
+                vcsUrl = rootProject.findProperty('de.maibornwolff.domainchoreograph.github.url')
+            }
+        }
+
+        println "VERSION" + project.version
+        publishing {
+            publications {
+                maven(MavenPublication) {
+                    groupId project.group
+                    artifactId project.name
+                    version project.version
+
+                    from components.java
+                }
+            }
+        }
     }
 
     compileKotlin {
@@ -125,7 +142,9 @@ task uploadIfVersionIsSet() {
 }
 
 if (rootProject.version != '') {
-    uploadIfVersionIsSet.dependsOn(bintrayUpload)
+    bintrayUpload.dependsOn(build)
+    bintrayPublish.dependsOn(bintrayUpload)
+    uploadIfVersionIsSet.dependsOn(bintrayPublish)
 }
 
 semanticRelease {
