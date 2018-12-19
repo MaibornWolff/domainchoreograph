@@ -3,7 +3,7 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.5'
     compile 'org.slf4j:slf4j-nop:1.7.25'
-    compile 'com.squareup:kotlinpoet:1.0.0-RC1'
+    compile 'com.squareup:kotlinpoet:1.0.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 

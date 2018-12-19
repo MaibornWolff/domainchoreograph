@@ -34,7 +34,7 @@ internal class ChoreographyClassGenerator(
                 FunSpec.constructorBuilder()
                     .addParameter(
                         ParameterSpec
-                            .builder("options", DomainChoreographyOptions::class.java.asTypeName().asNullable())
+                            .builder("options", DomainChoreographyOptions::class.java.asTypeName().copy(nullable = true))
                             .defaultValue("null")
                             .build()
                     )
