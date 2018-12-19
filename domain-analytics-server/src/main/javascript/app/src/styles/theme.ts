@@ -16,17 +16,23 @@ const textDark = {
 };
 
 function createColorPalette(hue: number, saturation: number, light: number) {
-  const difference = .025;
-  return {
-    0: hsl(hue, saturation, light),
-    1: hsl(hue, saturation, light - difference),
-    2: hsl(hue, saturation, light - difference * 2),
-    3: hsl(hue, saturation, light - difference * 3),
-    4: hsl(hue, saturation, light - difference * 4),
-  };
+  const difference = .035;
+  return [
+    hsl(hue, saturation, light + difference * 4),
+    hsl(hue, saturation, light + difference * 3),
+    hsl(hue, saturation, light + difference * 2),
+    hsl(hue, saturation, light + difference),
+    hsl(hue, saturation, light),
+    hsl(hue, saturation, light - difference),
+    hsl(hue, saturation, light - difference * 2),
+    hsl(hue, saturation, light - difference * 3),
+    hsl(hue, saturation, light - difference * 4),
+  ];
 }
 
-const primary = createColorPalette(225, .5, .45);
+export const mainColorIndex = 4;
+
+const primary = createColorPalette(225, .4, .5);
 
 const secondary =  createColorPalette(140, .5, .45);
 
@@ -43,6 +49,7 @@ const shadows = {
 };
 
 export const THEME = {
+  type: 'light' as 'light' | 'dark',
   shadows,
   colors: {
     primary,
@@ -75,9 +82,9 @@ export const THEME = {
     },
     graph: {
       edge: lighten(.6, 'black'),
-      selectedEdge: lighten(.15, primary[0]),
+      selectedEdge: lighten(.15, primary[mainColorIndex]),
     },
-    selectedNode: primary[0],
+    selectedNode: primary[mainColorIndex],
   },
   jsonViewTheme: 'rjv-default',
   animations,
@@ -96,6 +103,7 @@ export const THEME = {
 export type Theme = typeof THEME;
 
 const DARK_THEME: Theme = {
+  type: 'dark',
   shadows,
   colors: {
     primary,
@@ -128,9 +136,9 @@ const DARK_THEME: Theme = {
     },
     graph: {
       edge: darken(.5, 'white'),
-      selectedEdge: primary[0],
+      selectedEdge: primary[mainColorIndex],
     },
-    selectedNode: primary[0],
+    selectedNode: primary[mainColorIndex],
   },
   animations,
   jsonViewTheme: 'bright',

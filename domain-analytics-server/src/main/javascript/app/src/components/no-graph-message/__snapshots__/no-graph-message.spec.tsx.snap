@@ -20,11 +20,7 @@ exports[`NoGraphMessage should render 1`] = `
   padding: 2rem;
   box-sizing: border-box;
   font-size: 2rem;
-  color: 0:#39ac60;
-  1: #36a35a;
-  2: #395;
-  3: #308f50;
-  4: #2d864a;
+  color: #62cb85#55c67b#47c270#3eba67#39ac60#359f58#309151#2c8449#287742;
   background: #FAFAFA;
 }
 
@@ -94,11 +90,7 @@ exports[`NoGraphMessage should render with message 1`] = `
   padding: 2rem;
   box-sizing: border-box;
   font-size: 2rem;
-  color: 0:#39ac60;
-  1: #36a35a;
-  2: #395;
-  3: #308f50;
-  4: #2d864a;
+  color: #62cb85#55c67b#47c270#3eba67#39ac60#359f58#309151#2c8449#287742;
   background: #FAFAFA;
 }
 

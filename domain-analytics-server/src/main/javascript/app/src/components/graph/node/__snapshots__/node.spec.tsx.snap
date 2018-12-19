@@ -57,8 +57,8 @@ exports[`Node should render if selected 1`] = `
 .c0 {
   position: absolute;
   background: #FFFFFF;
-  border: solid 2px #3956ac;
-  box-shadow: 0 0 5px 1px rgba(57,86,172,0.5);
+  border: solid 2px #4d66b3;
+  box-shadow: 0 0 5px 1px rgba(77,102,179,0.5);
   border-radius: 5px;
   display: -webkit-box;
   display: -webkit-flex;

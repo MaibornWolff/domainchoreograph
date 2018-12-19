@@ -62,7 +62,7 @@ const JsonSchemaField = memo(function _JsonSchemaField({
               </FormItems>
             </FieldGroupWrapper>
           )}/>
-          <Button color="primary" onClick={() => addItem(createDefaultValue(itemSchema))}>Add Item</Button>
+          <Button variant="outlined" color="primary" onClick={() => addItem(createDefaultValue(itemSchema))}>Add Item</Button>
         </>
       )}/>
     );

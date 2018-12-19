@@ -6,6 +6,7 @@ import { render } from 'react-dom';
 import { AppContainer as HotLoadingContainer, setConfig } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { startWebsocket } from '~api/websocket';
+import { MyMuiTheme } from '~components/my-mui-theme/my-mui-theme';
 import { AppContainer } from '~containers/app.container';
 import { ThemeProviderContainer } from '~containers/theme-provider.container';
 import { store } from '~store';
@@ -24,9 +25,11 @@ const renderApp = () =>
     <HotLoadingContainer>
       <Provider store={store}>
         <ThemeProviderContainer>
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <AppContainer/>
-          </MuiPickersUtilsProvider>
+          <MyMuiTheme>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+              <AppContainer/>
+            </MuiPickersUtilsProvider>
+          </MyMuiTheme>
         </ThemeProviderContainer>
       </Provider>
     </HotLoadingContainer>,

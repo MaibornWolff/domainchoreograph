@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { mainColorIndex } from '~styles/theme';
 import { styled } from '~utils/styled';
 
 const StyledLink = styled(Link)`
@@ -25,7 +26,7 @@ const StyledLink = styled(Link)`
 `;
 
 const InnerPoint = styled('div')`
-  background: ${({ theme }) => theme.colors.secondary[0]};
+  background: ${({ theme }) => theme.colors.secondary[mainColorIndex]};
   border-radius: 100%;
   transition: transform 300ms ease;
   transform: scale(.8);
@@ -37,7 +38,7 @@ const InnerPoint = styled('div')`
 
 const OuterPoint = styled('div')`
   background: transparent;
-  border: 1px solid ${({ theme }) => theme.colors.secondary[0]};
+  border: 1px solid ${({ theme }) => theme.colors.secondary[mainColorIndex]};
   border-radius: 100%;
   transition: transform 300ms ease;
   transform: scale(.8);

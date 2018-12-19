@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '~components/button/button';
-import { ThemeKey } from '~styles/theme';
+import { mainColorIndex, ThemeKey } from '~styles/theme';
 import { ChoreoExecutionContext, ChoreoGraph, ChoreoScope } from '~types/choreo-graph';
 import { styled } from '~utils/styled';
 
@@ -11,7 +11,7 @@ const StyledNav = styled('nav')`
   justify-content: space-between;
   height: 3.5rem;
   padding: 0 .8rem;
-  background: ${({ theme }) => theme.colors.primary[0]};
+  background: ${({ theme }) => theme.colors.primary[mainColorIndex + 2]};
   color: ${({ theme }) => theme.colors.text.light.primary};
 `;
 
