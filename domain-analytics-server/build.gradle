@@ -72,22 +72,51 @@ node {
     nodeModulesDir = file("${projectDir}/src/main/javascript/app/node_modules")
 }
 
+
+String uiDir = "${projectDir}/src/main/javascript/app"
+
 task setupWebapp(type: YarnTask) {
     workingDir = file("${projectDir}/src/main/javascript/app")
+    inputs.file("${uiDir}/yarn.lock")
+    outputs.dir("${uiDir}/node_modules")
+    outputs.cacheIf { true }
+
     args = ['install', '--prefer-offline', '--pure-lockfile']
 }
 
 task testWebapp(type: YarnTask) {
     workingDir = file("${projectDir}/src/main/javascript/app")
+    inputs.file("${uiDir}/jest.config.js")
+    inputs.file("${uiDir}/jest.setup.js")
+    inputs.file("${uiDir}/jest.setup-test-framework.js")
+    inputs.file("${uiDir}/tsconfig.app.json")
+    inputs.file("${uiDir}/tsconfig.json")
+    inputs.file("${uiDir}/yarn.lock")
+    inputs.dir("${uiDir}/src")
+    outputs.cacheIf { true }
+
     args = ['test']
 }
 
 task buildWebapp(type: YarnTask) {
     workingDir = file("${projectDir}/src/main/javascript/app")
+    inputs.file("${uiDir}/tsconfig.app.json")
+    inputs.file("${uiDir}/tsconfig.json")
+    inputs.file("${uiDir}/webpack.config.js")
+    inputs.file("${uiDir}/yarn.lock")
+    inputs.dir("${uiDir}/src")
+    inputs.dir("${uiDir}/graphics")
+    outputs.dir("${uiDir}/dist")
+    outputs.cacheIf { true }
+
     args = ['build']
 }
 
 task prepareResources(type: Copy) {
+    inputs.dir("${projectDir}/src/main/javascript/app/dist")
+    outputs.dir("${projectDir}/src/main/resources/webapp")
+    outputs.cacheIf { true }
+
     from file("${projectDir}/src/main/javascript/app/dist")
     into file("${projectDir}/src/main/resources/webapp")
     include '**/*.*'
