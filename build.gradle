@@ -1,22 +1,62 @@
+buildscript {
+    ext.kotlin_version = '1.2.71'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+    }
+}
+
 plugins {
     id 'de.gliderpilot.semantic-release' version '1.4.0'
-    id "com.jfrog.bintray" version "1.8.4"
     id "com.github.ben-manes.versions" version "0.20.0"
 }
 
 apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()
 }
 
+def getVersionName = {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'tag', '-l', '--points-at', 'HEAD'
+        standardOutput = stdout
+    }
+    def version = stdout.toString().trim()
+    return version
+}
+
+rootProject.version = getVersionName()
+
 subprojects {
-    apply plugin: 'java'
-    apply plugin: 'maven'
+    apply plugin: 'kotlin'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'jacoco'
+
+    if (name != 'examples') {
+        apply plugin: 'com.jfrog.bintray'
+
+        bintray {
+            user = System.getenv('BINTRAY_USER')
+            key = System.getenv('BINTRAY_KEY')
+            configurations = ['archives']
+            pkg {
+                repo = rootProject.findProperty('de.maibornwolff.domainchoreograph.bintrayrepo')
+                name = project.name
+                licenses = ['Apache-2.0']
+                vcsUrl = rootProject.findProperty('de.maibornwolff.domainchoreograph.github.url')
+            }
+        }
+    }
 
     group 'de.maibornwolff.domainchoreograph'
+    version = rootProject.version
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
@@ -29,7 +69,16 @@ subprojects {
         from sourceSets.main.allSource
     }
 
-    ext.kotlin_version = '1.2.71'
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
 }
 
 // RELEASE config
@@ -37,37 +86,44 @@ subprojects {
 task sourcesJarCore(type: Jar) {
     def moduleName = 'core'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
 }
 
 task sourcesJarDomainAnalytics(type: Jar) {
     def moduleName = 'domain-analytics'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
 }
 
 task sourcesJarDomainAnalyticsLogger(type: Jar) {
     def moduleName = 'domain-analytics-logger'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
 }
 
 task sourcesJarDomainAnalyticsServer(type: Jar) {
     def moduleName = 'domain-analytics-server'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
 }
 
 task sourcesJarExamples(type: Jar) {
     def moduleName = 'examples'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
 }
 
 task sourcesJarExportDefinitions(type: Jar) {
     def moduleName = 'export-definitions'
     classifier = moduleName
-    from getRootProject().subprojects.findAll{it.name == moduleName}.sourceSets.main.output
+    from getRootProject().subprojects.findAll { it.name == moduleName }.sourceSets.main.output
+}
+
+task uploadIfVersionIsSet() {
+}
+
+if (rootProject.version != '') {
+    uploadIfVersionIsSet.dependsOn(bintrayUpload)
 }
 
 semanticRelease {
@@ -83,5 +139,3 @@ semanticRelease {
     }
 }
 
-if (!version.toString().endsWith('-SNAPSHOT'))
-    publish.dependsOn bintrayUpload
