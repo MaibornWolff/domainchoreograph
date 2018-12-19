@@ -7,7 +7,7 @@
 
 ## Installation
 
-1. Add the required dependencies and the repository (mavenCentral is work in progress)
+1. Add the required dependencies and the repository.
 ```groovy
 // build.gradle
 
@@ -18,8 +18,10 @@ repositories {
 }
 
 dependencies {
+    ...
     compile "de.maibornwolff.domainchoreograph:core:<latest-version>"
     kapt "de.maibornwolff.domainchoreograph:core:<latest-version>"
+    ...
 }
 ```
 
@@ -110,7 +112,9 @@ to some meta data of your program.
 // build.gradle
 
 dependencies {
+    ...
     compile "de.maibornwolff.domainchoreograph:domain-analytics:<latest-version>"
+    ...
 }
 ```
 
